@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <JavaMaximumHeapSize>1G</JavaMaximumHeapSize>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProjectGuid>{99EE5C58-12F9-429E-B0C2-4CA2ED5CD439}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Gudu</RootNamespace>
+    <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
+    <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
+    <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
+    <AndroidResgenClass>Resource</AndroidResgenClass>
+    <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
+    <AndroidApplication>True</AndroidApplication>
+    <AndroidUseLatestPlatformSdk>False</AndroidUseLatestPlatformSdk>
+    <AssemblyName>Gudu</AssemblyName>
+    <TargetFrameworkVersion>v4.0.3</TargetFrameworkVersion>
+    <ReleaseVersion>0.2</ReleaseVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AndroidLinkMode>None</AndroidLinkMode>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
+    <ConsolePause>false</ConsolePause>
+    <DebugType>full</DebugType>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Mono.Android" />
+    <Reference Include="System.Reactive.Core">
+      <HintPath>lib\System.Reactive.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.Interfaces">
+      <HintPath>lib\System.Reactive.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.Linq">
+      <HintPath>lib\System.Reactive.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.PlatformServices">
+      <HintPath>lib\System.Reactive.PlatformServices.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.v4">
+      <HintPath>..\packages\Xamarin.Android.Support.v4.22.2.1.0\lib\MonoAndroid403\Xamarin.Android.Support.v4.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Json" />
+    <Reference Include="VolleyCSharp">
+      <HintPath>lib\VolleyCSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\portable-net40+sl5+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Picasso">
+      <HintPath>lib\Picasso.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Resources\Resource.designer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Class\Tool.cs" />
+    <Compile Include="ProgressHUD.cs" />
+    <Compile Include="Activity\MainActivity.cs" />
+    <Compile Include="Activity\TabSampleActivity.cs" />
+    <Compile Include="Class\SharedPreferenceSignal.cs" />
+    <Compile Include="Activity\SelectCampusActivity.cs" />
+    <Compile Include="Class\SPConstant.cs" />
+    <Compile Include="View\SegmentedRadioGroup.cs" />
+    <Compile Include="Activity\StoreIndexActivity.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AboutResources.txt" />
+    <None Include="Properties\AndroidManifest.xml" />
+    <None Include="Assets\AboutAssets.txt" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\Main.axml" />
+    <AndroidResource Include="Resources\values\Strings.xml" />
+    <AndroidResource Include="Resources\drawable-hdpi\Icon.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\Icon.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\Icon.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\Icon.png" />
+    <AndroidResource Include="Resources\layout\StoreListCell.axml" />
+    <AndroidResource Include="Resources\layout\progress_hud.axml" />
+    <AndroidResource Include="Resources\drawable-mdpi\progress_hud_bg.xml" />
+    <AndroidResource Include="Resources\drawable-mdpi\spinner_0.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\spinner_1.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\spinner_2.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\spinner_3.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\spinner_4.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\spinner_5.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\spinner_6.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\spinner_7.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\spinner_8.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\spinner_9.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\spinner_10.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\spinner_11.png" />
+    <AndroidResource Include="Resources\values\Styles.xml" />
+    <AndroidResource Include="Resources\drawable-mdpi\spinner.xml" />
+    <AndroidResource Include="Resources\values\Colors.xml" />
+    <AndroidResource Include="Resources\values\Dimensions.xml" />
+    <AndroidResource Include="Resources\drawable-hdpi\home_normal.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\home_selected.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\search_normal.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\search_selected.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\home_normal.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\home_selected.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\search_normal.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\search_selected.png" />
+    <AndroidResource Include="Resources\layout\arrowspage.axml" />
+    <AndroidResource Include="Resources\layout\optionspage.axml" />
+    <AndroidResource Include="Resources\layout\tab_indicator.axml" />
+    <AndroidResource Include="Resources\layout\tab_main.axml" />
+    <AndroidResource Include="Resources\drawable\app_background.xml" />
+    <AndroidResource Include="Resources\drawable\tab_focus.xml" />
+    <AndroidResource Include="Resources\drawable\tab_home.xml" />
+    <AndroidResource Include="Resources\drawable\tab_indicator.xml" />
+    <AndroidResource Include="Resources\drawable\tab_press.xml" />
+    <AndroidResource Include="Resources\drawable\tab_search.xml" />
+    <AndroidResource Include="Resources\drawable\tab_selected.xml" />
+    <AndroidResource Include="Resources\drawable\tab_unselected.xml" />
+    <AndroidResource Include="Resources\drawable-hdpi\about_tab_select.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\about_tab.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\cart_tab_select.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\cart_tab.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\class_tab_select.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\class_tab.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\index_tab_select.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\index_tab.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\my_tab_select.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\my_tab.png" />
+    <AndroidResource Include="Resources\drawable\tab_cart.xml" />
+    <AndroidResource Include="Resources\drawable\tab_mine.xml" />
+    <AndroidResource Include="Resources\layout\select_campus_activity.axml" />
+    <AndroidResource Include="Resources\layout\CampusListCell.axml" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\about_tab.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\segment_grey_focus.9.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\segment_grey_press.9.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\segment_grey.9.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\segment_radio_grey_left_focus.9.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\segment_radio_grey_left_press.9.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\segment_radio_grey_left.9.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\segment_radio_grey_middle_focus.9.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\segment_radio_grey_middle_press.9.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\segment_radio_grey_middle.9.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\segment_radio_grey_right_focus.9.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\segment_radio_grey_right_press.9.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\segment_radio_grey_right.9.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\segment_radio_white_left_focus.9.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\segment_radio_white_left_press.9.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\segment_radio_white_left.9.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\segment_radio_white_middle_focus.9.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\segment_radio_white_middle_press.9.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\segment_radio_white_middle.9.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\segment_radio_white_right_focus.9.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\segment_radio_white_right_press.9.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\segment_radio_white_right.9.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\segment_white_focus.9.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\segment_white.9.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\segment_grey_focus.9.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\segment_grey_press.9.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\segment_grey.9.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\segment_radio_grey_left_focus.9.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\segment_radio_grey_left_press.9.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\segment_radio_grey_left.9.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\segment_radio_grey_middle_focus.9.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\segment_radio_grey_middle_press.9.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\segment_radio_grey_middle.9.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\segment_radio_grey_right_focus.9.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\segment_radio_grey_right_press.9.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\segment_radio_grey_right.9.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\segment_radio_white_left_focus.9.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\segment_radio_white_left_press.9.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\segment_radio_white_left.9.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\segment_radio_white_middle_focus.9.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\segment_radio_white_middle_press.9.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\segment_radio_white_middle.9.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\segment_radio_white_right_focus.9.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\segment_radio_white_right_press.9.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\segment_radio_white_right.9.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\segment_white_focus.9.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\segment_white.9.png" />
+    <AndroidResource Include="Resources\drawable\segment_button.xml" />
+    <AndroidResource Include="Resources\drawable\segment_radio_left.xml" />
+    <AndroidResource Include="Resources\drawable\segment_radio_middle.xml" />
+    <AndroidResource Include="Resources\drawable\segment_radio_right.xml" />
+    <AndroidResource Include="Resources\layout\store_index_activity.axml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
+  <ItemGroup>
+    <Folder Include="Class\" />
+    <Folder Include="Activity\" />
+    <Folder Include="Resources\drawable\" />
+    <Folder Include="View\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GuduCommon\GuduCommon.csproj">
+      <Project>{E8BB48E8-F8EE-4697-A987-1505EFF779A5}</Project>
+      <Name>GuduCommon</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MaterialUI\MaterialUI.csproj">
+      <Project>{8EE1B57F-1556-4DF0-B3F4-849FFD32119E}</Project>
+      <Name>MaterialUI</Name>
+    </ProjectReference>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,1112 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<api>
+<package name="com.squareup.picasso">
+<class abstract="true" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="Action" static="false" visibility="">
+<typeParameters>
+<typeParameter name="T"/>
+</typeParameters>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.ref.WeakReference" extends-generic-aware="java.lang.ref.WeakReference&lt;M&gt;" final="false" name="Action.RequestWeakReference" static="true" visibility="">
+<typeParameters>
+<typeParameter name="M"/>
+</typeParameters>
+<constructor deprecated="not deprecated" final="false" name="Action.RequestWeakReference" static="false" type="com.squareup.picasso.Action.RequestWeakReference" visibility="public">
+<parameter name="p0" type="com.squareup.picasso.Action">
+</parameter>
+<parameter name="p1" type="M">
+</parameter>
+<parameter name="p2" type="java.lang.ref.ReferenceQueue&lt;? super M&gt;">
+</parameter>
+</constructor>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="com.squareup.picasso.RequestHandler" extends-generic-aware="com.squareup.picasso.RequestHandler" final="false" name="AssetRequestHandler" static="false" visibility="">
+<constructor deprecated="not deprecated" final="false" name="AssetRequestHandler" static="false" type="com.squareup.picasso.AssetRequestHandler" visibility="public">
+<parameter name="p0" type="android.content.Context">
+</parameter>
+</constructor>
+<method abstract="false" deprecated="not deprecated" final="false" name="canHandleRequest" native="false" return="boolean" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="com.squareup.picasso.Request">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="load" native="false" return="com.squareup.picasso.RequestHandler.Result" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="com.squareup.picasso.Request">
+</parameter>
+<parameter name="p1" type="int">
+</parameter>
+<exception name="IOException" type="java.io.IOException">
+</exception>
+</method>
+<field deprecated="not deprecated" final="true" name="ANDROID_ASSET" static="true" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" value="&quot;android_asset&quot;" visibility="protected" volatile="false">
+</field>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="BitmapHunter" static="false" visibility="">
+<implements name="java.lang.Runnable" name-generic-aware="java.lang.Runnable">
+</implements>
+<method abstract="false" deprecated="not deprecated" final="false" name="run" native="false" return="void" static="false" synchronized="false" visibility="public">
+</method>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.ThreadLocal" extends-generic-aware="java.lang.ThreadLocal&lt;java.lang.StringBuilder&gt;" final="false" name="BitmapHunter.1" static="true" visibility=""/>
+<class abstract="false" deprecated="not deprecated" extends="com.squareup.picasso.RequestHandler" extends-generic-aware="com.squareup.picasso.RequestHandler" final="false" name="BitmapHunter.2" static="true" visibility="">
+<method abstract="false" deprecated="not deprecated" final="false" name="canHandleRequest" native="false" return="boolean" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="com.squareup.picasso.Request">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="load" native="false" return="com.squareup.picasso.RequestHandler.Result" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="com.squareup.picasso.Request">
+</parameter>
+<parameter name="p1" type="int">
+</parameter>
+<exception name="IOException" type="java.io.IOException">
+</exception>
+</method>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="BitmapHunter.3" static="true" visibility="">
+<implements name="java.lang.Runnable" name-generic-aware="java.lang.Runnable">
+</implements>
+<method abstract="false" deprecated="not deprecated" final="false" name="run" native="false" return="void" static="false" synchronized="false" visibility="public">
+</method>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="BitmapHunter.4" static="true" visibility="">
+<implements name="java.lang.Runnable" name-generic-aware="java.lang.Runnable">
+</implements>
+<method abstract="false" deprecated="not deprecated" final="false" name="run" native="false" return="void" static="false" synchronized="false" visibility="public">
+</method>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="BitmapHunter.5" static="true" visibility="">
+<implements name="java.lang.Runnable" name-generic-aware="java.lang.Runnable">
+</implements>
+<method abstract="false" deprecated="not deprecated" final="false" name="run" native="false" return="void" static="false" synchronized="false" visibility="public">
+</method>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="BitmapHunter.6" static="true" visibility="">
+<implements name="java.lang.Runnable" name-generic-aware="java.lang.Runnable">
+</implements>
+<method abstract="false" deprecated="not deprecated" final="false" name="run" native="false" return="void" static="false" synchronized="false" visibility="public">
+</method>
+</class>
+<interface abstract="true" deprecated="not deprecated" final="false" name="Cache" static="false" visibility="public">
+<method abstract="true" deprecated="not deprecated" final="false" name="clear" native="false" return="void" static="false" synchronized="false" visibility="public">
+</method>
+<method abstract="true" deprecated="not deprecated" final="false" name="clearKeyUri" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+</method>
+<method abstract="true" deprecated="not deprecated" final="false" name="get" native="false" return="android.graphics.Bitmap" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+</method>
+<method abstract="true" deprecated="not deprecated" final="false" name="maxSize" native="false" return="int" static="false" synchronized="false" visibility="public">
+</method>
+<method abstract="true" deprecated="not deprecated" final="false" name="set" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+<parameter name="p1" type="android.graphics.Bitmap">
+</parameter>
+</method>
+<method abstract="true" deprecated="not deprecated" final="false" name="size" native="false" return="int" static="false" synchronized="false" visibility="public">
+</method>
+<field deprecated="not deprecated" final="true" name="NONE" static="true" transient="false" type="com.squareup.picasso.Cache" type-generic-aware="com.squareup.picasso.Cache" visibility="public" volatile="false">
+</field>
+</interface>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="Cache.1" static="true" visibility="">
+<implements name="com.squareup.picasso.Cache" name-generic-aware="com.squareup.picasso.Cache">
+</implements>
+<method abstract="false" deprecated="not deprecated" final="false" name="clear" native="false" return="void" static="false" synchronized="false" visibility="public">
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="clearKeyUri" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="get" native="false" return="android.graphics.Bitmap" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="maxSize" native="false" return="int" static="false" synchronized="false" visibility="public">
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="set" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+<parameter name="p1" type="android.graphics.Bitmap">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="size" native="false" return="int" static="false" synchronized="false" visibility="public">
+</method>
+</class>
+<interface abstract="true" deprecated="not deprecated" final="false" name="Callback" static="false" visibility="public">
+<method abstract="true" deprecated="not deprecated" final="false" name="onError" native="false" return="void" static="false" synchronized="false" visibility="public">
+</method>
+<method abstract="true" deprecated="not deprecated" final="false" name="onSuccess" native="false" return="void" static="false" synchronized="false" visibility="public">
+</method>
+</interface>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="Callback.EmptyCallback" static="true" visibility="public">
+<implements name="com.squareup.picasso.Callback" name-generic-aware="com.squareup.picasso.Callback">
+</implements>
+<constructor deprecated="not deprecated" final="false" name="Callback.EmptyCallback" static="false" type="com.squareup.picasso.Callback.EmptyCallback" visibility="public">
+</constructor>
+<method abstract="false" deprecated="not deprecated" final="false" name="onError" native="false" return="void" static="false" synchronized="false" visibility="public">
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="onSuccess" native="false" return="void" static="false" synchronized="false" visibility="public">
+</method>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="com.squareup.picasso.RequestHandler" extends-generic-aware="com.squareup.picasso.RequestHandler" final="false" name="ContactsPhotoRequestHandler" static="false" visibility="">
+<method abstract="false" deprecated="not deprecated" final="false" name="canHandleRequest" native="false" return="boolean" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="com.squareup.picasso.Request">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="load" native="false" return="com.squareup.picasso.RequestHandler.Result" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="com.squareup.picasso.Request">
+</parameter>
+<parameter name="p1" type="int">
+</parameter>
+<exception name="IOException" type="java.io.IOException">
+</exception>
+</method>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="ContactsPhotoRequestHandler.ContactPhotoStreamIcs" static="true" visibility=""/>
+<class abstract="false" deprecated="not deprecated" extends="com.squareup.picasso.RequestHandler" extends-generic-aware="com.squareup.picasso.RequestHandler" final="false" name="ContentStreamRequestHandler" static="false" visibility="">
+<method abstract="false" deprecated="not deprecated" final="false" name="canHandleRequest" native="false" return="boolean" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="com.squareup.picasso.Request">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="load" native="false" return="com.squareup.picasso.RequestHandler.Result" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="com.squareup.picasso.Request">
+</parameter>
+<parameter name="p1" type="int">
+</parameter>
+<exception name="IOException" type="java.io.IOException">
+</exception>
+</method>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="DeferredRequestCreator" static="false" visibility="">
+<implements name="android.view.ViewTreeObserver.OnPreDrawListener" name-generic-aware="android.view.ViewTreeObserver.OnPreDrawListener">
+</implements>
+<method abstract="false" deprecated="not deprecated" final="false" name="onPreDraw" native="false" return="boolean" static="false" synchronized="false" visibility="public">
+</method>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="Dispatcher" static="false" visibility=""/>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="Dispatcher.1" static="false" visibility="">
+<implements name="java.lang.Runnable" name-generic-aware="java.lang.Runnable">
+</implements>
+<method abstract="false" deprecated="not deprecated" final="false" name="run" native="false" return="void" static="false" synchronized="false" visibility="public">
+</method>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="android.os.Handler" extends-generic-aware="android.os.Handler" final="false" name="Dispatcher.DispatcherHandler" static="true" visibility="">
+<constructor deprecated="not deprecated" final="false" name="Dispatcher.DispatcherHandler" static="false" type="com.squareup.picasso.Dispatcher.DispatcherHandler" visibility="public">
+<parameter name="p0" type="android.os.Looper">
+</parameter>
+<parameter name="p1" type="com.squareup.picasso.Dispatcher">
+</parameter>
+</constructor>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="Dispatcher.DispatcherHandler.1" static="false" visibility="">
+<implements name="java.lang.Runnable" name-generic-aware="java.lang.Runnable">
+</implements>
+<method abstract="false" deprecated="not deprecated" final="false" name="run" native="false" return="void" static="false" synchronized="false" visibility="public">
+</method>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="android.os.HandlerThread" extends-generic-aware="android.os.HandlerThread" final="false" name="Dispatcher.DispatcherThread" static="true" visibility=""/>
+<class abstract="false" deprecated="not deprecated" extends="android.content.BroadcastReceiver" extends-generic-aware="android.content.BroadcastReceiver" final="false" name="Dispatcher.NetworkBroadcastReceiver" static="true" visibility="">
+<method abstract="false" deprecated="not deprecated" final="false" name="onReceive" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="android.content.Context">
+</parameter>
+<parameter name="p1" type="android.content.Intent">
+</parameter>
+</method>
+</class>
+<interface abstract="true" deprecated="not deprecated" final="false" name="Downloader" static="false" visibility="public">
+<method abstract="true" deprecated="not deprecated" final="false" name="load" native="false" return="com.squareup.picasso.Downloader.Response" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="android.net.Uri">
+</parameter>
+<parameter name="p1" type="int">
+</parameter>
+<exception name="IOException" type="java.io.IOException">
+</exception>
+</method>
+<method abstract="true" deprecated="not deprecated" final="false" name="shutdown" native="false" return="void" static="false" synchronized="false" visibility="public">
+</method>
+</interface>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="Downloader.Response" static="true" visibility="public">
+<constructor deprecated="deprecated" final="false" name="Downloader.Response" static="false" type="com.squareup.picasso.Downloader.Response" visibility="public">
+<parameter name="p0" type="android.graphics.Bitmap">
+</parameter>
+<parameter name="p1" type="boolean">
+</parameter>
+</constructor>
+<constructor deprecated="deprecated" final="false" name="Downloader.Response" static="false" type="com.squareup.picasso.Downloader.Response" visibility="public">
+<parameter name="p0" type="java.io.InputStream">
+</parameter>
+<parameter name="p1" type="boolean">
+</parameter>
+</constructor>
+<constructor deprecated="deprecated" final="false" name="Downloader.Response" static="false" type="com.squareup.picasso.Downloader.Response" visibility="public">
+<parameter name="p0" type="android.graphics.Bitmap">
+</parameter>
+<parameter name="p1" type="boolean">
+</parameter>
+<parameter name="p2" type="long">
+</parameter>
+</constructor>
+<constructor deprecated="not deprecated" final="false" name="Downloader.Response" static="false" type="com.squareup.picasso.Downloader.Response" visibility="public">
+<parameter name="p0" type="java.io.InputStream">
+</parameter>
+<parameter name="p1" type="boolean">
+</parameter>
+<parameter name="p2" type="long">
+</parameter>
+</constructor>
+<method abstract="false" deprecated="deprecated" final="false" name="getBitmap" native="false" return="android.graphics.Bitmap" static="false" synchronized="false" visibility="public">
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="getContentLength" native="false" return="long" static="false" synchronized="false" visibility="public">
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="getInputStream" native="false" return="java.io.InputStream" static="false" synchronized="false" visibility="public">
+</method>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="java.io.IOException" extends-generic-aware="java.io.IOException" final="false" name="Downloader.ResponseException" static="true" visibility="public">
+<constructor deprecated="not deprecated" final="false" name="Downloader.ResponseException" static="false" type="com.squareup.picasso.Downloader.ResponseException" visibility="public">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+<parameter name="p1" type="int">
+</parameter>
+<parameter name="p2" type="int">
+</parameter>
+</constructor>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="com.squareup.picasso.Action" extends-generic-aware="com.squareup.picasso.Action&lt;java.lang.Object&gt;" final="false" name="FetchAction" static="false" visibility=""/>
+<class abstract="false" deprecated="not deprecated" extends="com.squareup.picasso.ContentStreamRequestHandler" extends-generic-aware="com.squareup.picasso.ContentStreamRequestHandler" final="false" name="FileRequestHandler" static="false" visibility="">
+<method abstract="false" deprecated="not deprecated" final="false" name="canHandleRequest" native="false" return="boolean" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="com.squareup.picasso.Request">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="load" native="false" return="com.squareup.picasso.RequestHandler.Result" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="com.squareup.picasso.Request">
+</parameter>
+<parameter name="p1" type="int">
+</parameter>
+<exception name="IOException" type="java.io.IOException">
+</exception>
+</method>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="com.squareup.picasso.Action" extends-generic-aware="com.squareup.picasso.Action&lt;java.lang.Void&gt;" final="false" name="GetAction" static="false" visibility="">
+<method abstract="false" deprecated="not deprecated" final="false" name="error" native="false" return="void" static="false" synchronized="false" visibility="public">
+</method>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="com.squareup.picasso.Action" extends-generic-aware="com.squareup.picasso.Action&lt;android.widget.ImageView&gt;" final="false" name="ImageViewAction" static="false" visibility="">
+<method abstract="false" deprecated="not deprecated" final="false" name="complete" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="android.graphics.Bitmap">
+</parameter>
+<parameter name="p1" type="com.squareup.picasso.Picasso.LoadedFrom">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="error" native="false" return="void" static="false" synchronized="false" visibility="public">
+</method>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="LruCache" static="false" visibility="public">
+<implements name="com.squareup.picasso.Cache" name-generic-aware="com.squareup.picasso.Cache">
+</implements>
+<constructor deprecated="not deprecated" final="false" name="LruCache" static="false" type="com.squareup.picasso.LruCache" visibility="public">
+<parameter name="p0" type="int">
+</parameter>
+</constructor>
+<constructor deprecated="not deprecated" final="false" name="LruCache" static="false" type="com.squareup.picasso.LruCache" visibility="public">
+<parameter name="p0" type="android.content.Context">
+</parameter>
+</constructor>
+<method abstract="false" deprecated="not deprecated" final="true" name="clear" native="false" return="void" static="false" synchronized="true" visibility="public">
+</method>
+<method abstract="false" deprecated="not deprecated" final="true" name="clearKeyUri" native="false" return="void" static="false" synchronized="true" visibility="public">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="true" name="evictAll" native="false" return="void" static="false" synchronized="false" visibility="public">
+</method>
+<method abstract="false" deprecated="not deprecated" final="true" name="evictionCount" native="false" return="int" static="false" synchronized="true" visibility="public">
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="get" native="false" return="android.graphics.Bitmap" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="true" name="hitCount" native="false" return="int" static="false" synchronized="true" visibility="public">
+</method>
+<method abstract="false" deprecated="not deprecated" final="true" name="maxSize" native="false" return="int" static="false" synchronized="true" visibility="public">
+</method>
+<method abstract="false" deprecated="not deprecated" final="true" name="missCount" native="false" return="int" static="false" synchronized="true" visibility="public">
+</method>
+<method abstract="false" deprecated="not deprecated" final="true" name="putCount" native="false" return="int" static="false" synchronized="true" visibility="public">
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="set" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+<parameter name="p1" type="android.graphics.Bitmap">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="true" name="size" native="false" return="int" static="false" synchronized="true" visibility="public">
+</method>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="java.io.InputStream" extends-generic-aware="java.io.InputStream" final="true" name="MarkableInputStream" static="false" visibility="">
+<constructor deprecated="not deprecated" final="false" name="MarkableInputStream" static="false" type="com.squareup.picasso.MarkableInputStream" visibility="public">
+<parameter name="p0" type="java.io.InputStream">
+</parameter>
+</constructor>
+<constructor deprecated="not deprecated" final="false" name="MarkableInputStream" static="false" type="com.squareup.picasso.MarkableInputStream" visibility="public">
+<parameter name="p0" type="java.io.InputStream">
+</parameter>
+<parameter name="p1" type="int">
+</parameter>
+</constructor>
+<method abstract="false" deprecated="not deprecated" final="false" name="read" native="false" return="int" static="false" synchronized="false" visibility="public">
+<exception name="IOException" type="java.io.IOException">
+</exception>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="reset" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="long">
+</parameter>
+<exception name="IOException" type="java.io.IOException">
+</exception>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="savePosition" native="false" return="long" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="int">
+</parameter>
+</method>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="com.squareup.picasso.ContentStreamRequestHandler" extends-generic-aware="com.squareup.picasso.ContentStreamRequestHandler" final="false" name="MediaStoreRequestHandler" static="false" visibility="">
+<method abstract="false" deprecated="not deprecated" final="false" name="canHandleRequest" native="false" return="boolean" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="com.squareup.picasso.Request">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="load" native="false" return="com.squareup.picasso.RequestHandler.Result" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="com.squareup.picasso.Request">
+</parameter>
+<parameter name="p1" type="int">
+</parameter>
+<exception name="IOException" type="java.io.IOException">
+</exception>
+</method>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Enum" extends-generic-aware="java.lang.Enum&lt;com.squareup.picasso.MediaStoreRequestHandler.PicassoKind&gt;" final="true" name="MediaStoreRequestHandler.PicassoKind" static="true" visibility="">
+<field deprecated="not deprecated" final="true" name="FULL" static="true" transient="false" type="com.squareup.picasso.MediaStoreRequestHandler.PicassoKind" type-generic-aware="com.squareup.picasso.MediaStoreRequestHandler.PicassoKind" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="MICRO" static="true" transient="false" type="com.squareup.picasso.MediaStoreRequestHandler.PicassoKind" type-generic-aware="com.squareup.picasso.MediaStoreRequestHandler.PicassoKind" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="MINI" static="true" transient="false" type="com.squareup.picasso.MediaStoreRequestHandler.PicassoKind" type-generic-aware="com.squareup.picasso.MediaStoreRequestHandler.PicassoKind" visibility="public" volatile="false">
+</field>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Enum" extends-generic-aware="java.lang.Enum&lt;com.squareup.picasso.MemoryPolicy&gt;" final="true" name="MemoryPolicy" static="false" visibility="public">
+<method abstract="false" deprecated="not deprecated" final="false" name="valueOf" native="false" return="com.squareup.picasso.MemoryPolicy" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="values" native="false" return="com.squareup.picasso.MemoryPolicy[]" static="true" synchronized="false" visibility="public">
+</method>
+<field deprecated="not deprecated" final="true" name="NO_CACHE" static="true" transient="false" type="com.squareup.picasso.MemoryPolicy" type-generic-aware="com.squareup.picasso.MemoryPolicy" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="NO_STORE" static="true" transient="false" type="com.squareup.picasso.MemoryPolicy" type-generic-aware="com.squareup.picasso.MemoryPolicy" visibility="public" volatile="false">
+</field>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Enum" extends-generic-aware="java.lang.Enum&lt;com.squareup.picasso.NetworkPolicy&gt;" final="true" name="NetworkPolicy" static="false" visibility="public">
+<method abstract="false" deprecated="not deprecated" final="false" name="isOfflineOnly" native="false" return="boolean" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="int">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="shouldReadFromDiskCache" native="false" return="boolean" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="int">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="shouldWriteToDiskCache" native="false" return="boolean" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="int">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="valueOf" native="false" return="com.squareup.picasso.NetworkPolicy" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="values" native="false" return="com.squareup.picasso.NetworkPolicy[]" static="true" synchronized="false" visibility="public">
+</method>
+<field deprecated="not deprecated" final="true" name="NO_CACHE" static="true" transient="false" type="com.squareup.picasso.NetworkPolicy" type-generic-aware="com.squareup.picasso.NetworkPolicy" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="NO_STORE" static="true" transient="false" type="com.squareup.picasso.NetworkPolicy" type-generic-aware="com.squareup.picasso.NetworkPolicy" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="OFFLINE" static="true" transient="false" type="com.squareup.picasso.NetworkPolicy" type-generic-aware="com.squareup.picasso.NetworkPolicy" visibility="public" volatile="false">
+</field>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="com.squareup.picasso.RequestHandler" extends-generic-aware="com.squareup.picasso.RequestHandler" final="false" name="NetworkRequestHandler" static="false" visibility="">
+<constructor deprecated="not deprecated" final="false" name="NetworkRequestHandler" static="false" type="com.squareup.picasso.NetworkRequestHandler" visibility="public">
+<parameter name="p0" type="com.squareup.picasso.Downloader">
+</parameter>
+<parameter name="p1" type="com.squareup.picasso.Stats">
+</parameter>
+</constructor>
+<method abstract="false" deprecated="not deprecated" final="false" name="canHandleRequest" native="false" return="boolean" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="com.squareup.picasso.Request">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="load" native="false" return="com.squareup.picasso.RequestHandler.Result" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="com.squareup.picasso.Request">
+</parameter>
+<parameter name="p1" type="int">
+</parameter>
+<exception name="IOException" type="java.io.IOException">
+</exception>
+</method>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="java.io.IOException" extends-generic-aware="java.io.IOException" final="false" name="NetworkRequestHandler.ContentLengthException" static="true" visibility="">
+<constructor deprecated="not deprecated" final="false" name="NetworkRequestHandler.ContentLengthException" static="false" type="com.squareup.picasso.NetworkRequestHandler.ContentLengthException" visibility="public">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+</constructor>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="Picasso" static="false" visibility="public">
+<method abstract="false" deprecated="not deprecated" final="false" name="areIndicatorsEnabled" native="false" return="boolean" static="false" synchronized="false" visibility="public">
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="cancelRequest" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="android.widget.ImageView">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="cancelRequest" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="android.widget.RemoteViews">
+</parameter>
+<parameter name="p1" type="int">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="cancelRequest" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="com.squareup.picasso.Target">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="cancelTag" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="java.lang.Object">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="getSnapshot" native="false" return="com.squareup.picasso.StatsSnapshot" static="false" synchronized="false" visibility="public">
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="invalidate" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="android.net.Uri">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="invalidate" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="java.io.File">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="invalidate" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+</method>
+<method abstract="false" deprecated="deprecated" final="false" name="isDebugging" native="false" return="boolean" static="false" synchronized="false" visibility="public">
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="isLoggingEnabled" native="false" return="boolean" static="false" synchronized="false" visibility="public">
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="load" native="false" return="com.squareup.picasso.RequestCreator" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="android.net.Uri">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="load" native="false" return="com.squareup.picasso.RequestCreator" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="int">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="load" native="false" return="com.squareup.picasso.RequestCreator" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="java.io.File">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="load" native="false" return="com.squareup.picasso.RequestCreator" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="pauseTag" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="java.lang.Object">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="resumeTag" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="java.lang.Object">
+</parameter>
+</method>
+<method abstract="false" deprecated="deprecated" final="false" name="setDebugging" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="boolean">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="setIndicatorsEnabled" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="boolean">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="setLoggingEnabled" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="boolean">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="setSingletonInstance" native="false" return="void" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="com.squareup.picasso.Picasso">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="shutdown" native="false" return="void" static="false" synchronized="false" visibility="public">
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="with" native="false" return="com.squareup.picasso.Picasso" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="android.content.Context">
+</parameter>
+</method>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="android.os.Handler" extends-generic-aware="android.os.Handler" final="false" name="Picasso.1" static="true" visibility=""/>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="Picasso.Builder" static="true" visibility="public">
+<constructor deprecated="not deprecated" final="false" name="Picasso.Builder" static="false" type="com.squareup.picasso.Picasso.Builder" visibility="public">
+<parameter name="p0" type="android.content.Context">
+</parameter>
+</constructor>
+<method abstract="false" deprecated="not deprecated" final="false" name="addRequestHandler" native="false" return="com.squareup.picasso.Picasso.Builder" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="com.squareup.picasso.RequestHandler">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="build" native="false" return="com.squareup.picasso.Picasso" static="false" synchronized="false" visibility="public">
+</method>
+<method abstract="false" deprecated="deprecated" final="false" name="debugging" native="false" return="com.squareup.picasso.Picasso.Builder" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="boolean">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="defaultBitmapConfig" native="false" return="com.squareup.picasso.Picasso.Builder" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="android.graphics.Bitmap.Config">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="downloader" native="false" return="com.squareup.picasso.Picasso.Builder" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="com.squareup.picasso.Downloader">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="executor" native="false" return="com.squareup.picasso.Picasso.Builder" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="java.util.concurrent.ExecutorService">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="indicatorsEnabled" native="false" return="com.squareup.picasso.Picasso.Builder" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="boolean">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="listener" native="false" return="com.squareup.picasso.Picasso.Builder" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="com.squareup.picasso.Picasso.Listener">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="loggingEnabled" native="false" return="com.squareup.picasso.Picasso.Builder" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="boolean">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="memoryCache" native="false" return="com.squareup.picasso.Picasso.Builder" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="com.squareup.picasso.Cache">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="requestTransformer" native="false" return="com.squareup.picasso.Picasso.Builder" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="com.squareup.picasso.Picasso.RequestTransformer">
+</parameter>
+</method>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Thread" extends-generic-aware="java.lang.Thread" final="false" name="Picasso.CleanupThread" static="true" visibility=""/>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="Picasso.CleanupThread.1" static="false" visibility="">
+<implements name="java.lang.Runnable" name-generic-aware="java.lang.Runnable">
+</implements>
+<method abstract="false" deprecated="not deprecated" final="false" name="run" native="false" return="void" static="false" synchronized="false" visibility="public">
+</method>
+</class>
+<interface abstract="true" deprecated="not deprecated" final="false" name="Picasso.Listener" static="true" visibility="public">
+<method abstract="true" deprecated="not deprecated" final="false" name="onImageLoadFailed" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="com.squareup.picasso.Picasso">
+</parameter>
+<parameter name="p1" type="android.net.Uri">
+</parameter>
+<parameter name="p2" type="java.lang.Exception">
+</parameter>
+</method>
+</interface>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Enum" extends-generic-aware="java.lang.Enum&lt;com.squareup.picasso.Picasso.LoadedFrom&gt;" final="true" name="Picasso.LoadedFrom" static="true" visibility="public">
+<method abstract="false" deprecated="not deprecated" final="false" name="valueOf" native="false" return="com.squareup.picasso.Picasso.LoadedFrom" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="values" native="false" return="com.squareup.picasso.Picasso.LoadedFrom[]" static="true" synchronized="false" visibility="public">
+</method>
+<field deprecated="not deprecated" final="true" name="DISK" static="true" transient="false" type="com.squareup.picasso.Picasso.LoadedFrom" type-generic-aware="com.squareup.picasso.Picasso.LoadedFrom" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="MEMORY" static="true" transient="false" type="com.squareup.picasso.Picasso.LoadedFrom" type-generic-aware="com.squareup.picasso.Picasso.LoadedFrom" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="NETWORK" static="true" transient="false" type="com.squareup.picasso.Picasso.LoadedFrom" type-generic-aware="com.squareup.picasso.Picasso.LoadedFrom" visibility="public" volatile="false">
+</field>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Enum" extends-generic-aware="java.lang.Enum&lt;com.squareup.picasso.Picasso.Priority&gt;" final="true" name="Picasso.Priority" static="true" visibility="public">
+<method abstract="false" deprecated="not deprecated" final="false" name="valueOf" native="false" return="com.squareup.picasso.Picasso.Priority" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="values" native="false" return="com.squareup.picasso.Picasso.Priority[]" static="true" synchronized="false" visibility="public">
+</method>
+<field deprecated="not deprecated" final="true" name="HIGH" static="true" transient="false" type="com.squareup.picasso.Picasso.Priority" type-generic-aware="com.squareup.picasso.Picasso.Priority" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="LOW" static="true" transient="false" type="com.squareup.picasso.Picasso.Priority" type-generic-aware="com.squareup.picasso.Picasso.Priority" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="NORMAL" static="true" transient="false" type="com.squareup.picasso.Picasso.Priority" type-generic-aware="com.squareup.picasso.Picasso.Priority" visibility="public" volatile="false">
+</field>
+</class>
+<interface abstract="true" deprecated="not deprecated" final="false" name="Picasso.RequestTransformer" static="true" visibility="public">
+<method abstract="true" deprecated="not deprecated" final="false" name="transformRequest" native="false" return="com.squareup.picasso.Request" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="com.squareup.picasso.Request">
+</parameter>
+</method>
+<field deprecated="not deprecated" final="true" name="IDENTITY" static="true" transient="false" type="com.squareup.picasso.Picasso.RequestTransformer" type-generic-aware="com.squareup.picasso.Picasso.RequestTransformer" visibility="public" volatile="false">
+</field>
+</interface>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="Picasso.RequestTransformer.1" static="true" visibility="">
+<implements name="com.squareup.picasso.Picasso.RequestTransformer" name-generic-aware="com.squareup.picasso.Picasso.RequestTransformer">
+</implements>
+<method abstract="false" deprecated="not deprecated" final="false" name="transformRequest" native="false" return="com.squareup.picasso.Request" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="com.squareup.picasso.Request">
+</parameter>
+</method>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="android.graphics.drawable.BitmapDrawable" extends-generic-aware="android.graphics.drawable.BitmapDrawable" final="true" name="PicassoDrawable" static="false" visibility=""/>
+<class abstract="false" deprecated="not deprecated" extends="java.util.concurrent.ThreadPoolExecutor" extends-generic-aware="java.util.concurrent.ThreadPoolExecutor" final="false" name="PicassoExecutorService" static="false" visibility=""/>
+<class abstract="false" deprecated="not deprecated" extends="java.util.concurrent.FutureTask" extends-generic-aware="java.util.concurrent.FutureTask&lt;com.squareup.picasso.BitmapHunter&gt;" final="true" name="PicassoExecutorService.PicassoFutureTask" static="true" visibility="">
+<implements name="java.lang.Comparable" name-generic-aware="java.lang.Comparable&lt;com.squareup.picasso.PicassoExecutorService.PicassoFutureTask&gt;">
+</implements>
+<constructor deprecated="not deprecated" final="false" name="PicassoExecutorService.PicassoFutureTask" static="false" type="com.squareup.picasso.PicassoExecutorService.PicassoFutureTask" visibility="public">
+<parameter name="p0" type="com.squareup.picasso.BitmapHunter">
+</parameter>
+</constructor>
+<method abstract="false" deprecated="not deprecated" final="false" name="compareTo" native="false" return="int" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="java.lang.Object">
+</parameter>
+</method>
+</class>
+<class abstract="true" deprecated="not deprecated" extends="com.squareup.picasso.Action" extends-generic-aware="com.squareup.picasso.Action&lt;com.squareup.picasso.RemoteViewsAction.RemoteViewsTarget&gt;" final="false" name="RemoteViewsAction" static="false" visibility="">
+<method abstract="false" deprecated="not deprecated" final="false" name="error" native="false" return="void" static="false" synchronized="false" visibility="public">
+</method>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="com.squareup.picasso.RemoteViewsAction" extends-generic-aware="com.squareup.picasso.RemoteViewsAction" final="false" name="RemoteViewsAction.AppWidgetAction" static="true" visibility=""/>
+<class abstract="false" deprecated="not deprecated" extends="com.squareup.picasso.RemoteViewsAction" extends-generic-aware="com.squareup.picasso.RemoteViewsAction" final="false" name="RemoteViewsAction.NotificationAction" static="true" visibility=""/>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="RemoteViewsAction.RemoteViewsTarget" static="true" visibility=""/>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="true" name="Request" static="false" visibility="public">
+<method abstract="false" deprecated="not deprecated" final="false" name="buildUpon" native="false" return="com.squareup.picasso.Request.Builder" static="false" synchronized="false" visibility="public">
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="hasSize" native="false" return="boolean" static="false" synchronized="false" visibility="public">
+</method>
+<field deprecated="not deprecated" final="true" name="centerCrop" static="false" transient="false" type="boolean" type-generic-aware="boolean" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="centerInside" static="false" transient="false" type="boolean" type-generic-aware="boolean" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="config" static="false" transient="false" type="android.graphics.Bitmap.Config" type-generic-aware="android.graphics.Bitmap.Config" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="hasRotationPivot" static="false" transient="false" type="boolean" type-generic-aware="boolean" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="onlyScaleDown" static="false" transient="false" type="boolean" type-generic-aware="boolean" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="priority" static="false" transient="false" type="com.squareup.picasso.Picasso.Priority" type-generic-aware="com.squareup.picasso.Picasso.Priority" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="resourceId" static="false" transient="false" type="int" type-generic-aware="int" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="rotationDegrees" static="false" transient="false" type="float" type-generic-aware="float" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="rotationPivotX" static="false" transient="false" type="float" type-generic-aware="float" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="rotationPivotY" static="false" transient="false" type="float" type-generic-aware="float" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="stableKey" static="false" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="targetHeight" static="false" transient="false" type="int" type-generic-aware="int" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="targetWidth" static="false" transient="false" type="int" type-generic-aware="int" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="transformations" static="false" transient="false" type="java.util.List" type-generic-aware="java.util.List&lt;com.squareup.picasso.Transformation&gt;" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="uri" static="false" transient="false" type="android.net.Uri" type-generic-aware="android.net.Uri" visibility="public" volatile="false">
+</field>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="Request.1" static="true" visibility=""/>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="true" name="Request.Builder" static="true" visibility="public">
+<constructor deprecated="not deprecated" final="false" name="Request.Builder" static="false" type="com.squareup.picasso.Request.Builder" visibility="public">
+<parameter name="p0" type="android.net.Uri">
+</parameter>
+</constructor>
+<constructor deprecated="not deprecated" final="false" name="Request.Builder" static="false" type="com.squareup.picasso.Request.Builder" visibility="public">
+<parameter name="p0" type="int">
+</parameter>
+</constructor>
+<method abstract="false" deprecated="not deprecated" final="false" name="build" native="false" return="com.squareup.picasso.Request" static="false" synchronized="false" visibility="public">
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="centerCrop" native="false" return="com.squareup.picasso.Request.Builder" static="false" synchronized="false" visibility="public">
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="centerInside" native="false" return="com.squareup.picasso.Request.Builder" static="false" synchronized="false" visibility="public">
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="clearCenterCrop" native="false" return="com.squareup.picasso.Request.Builder" static="false" synchronized="false" visibility="public">
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="clearCenterInside" native="false" return="com.squareup.picasso.Request.Builder" static="false" synchronized="false" visibility="public">
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="clearOnlyScaleDown" native="false" return="com.squareup.picasso.Request.Builder" static="false" synchronized="false" visibility="public">
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="clearResize" native="false" return="com.squareup.picasso.Request.Builder" static="false" synchronized="false" visibility="public">
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="clearRotation" native="false" return="com.squareup.picasso.Request.Builder" static="false" synchronized="false" visibility="public">
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="config" native="false" return="com.squareup.picasso.Request.Builder" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="android.graphics.Bitmap.Config">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="onlyScaleDown" native="false" return="com.squareup.picasso.Request.Builder" static="false" synchronized="false" visibility="public">
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="priority" native="false" return="com.squareup.picasso.Request.Builder" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="com.squareup.picasso.Picasso.Priority">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="resize" native="false" return="com.squareup.picasso.Request.Builder" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="int">
+</parameter>
+<parameter name="p1" type="int">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="rotate" native="false" return="com.squareup.picasso.Request.Builder" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="float">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="rotate" native="false" return="com.squareup.picasso.Request.Builder" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="float">
+</parameter>
+<parameter name="p1" type="float">
+</parameter>
+<parameter name="p2" type="float">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="setResourceId" native="false" return="com.squareup.picasso.Request.Builder" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="int">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="setUri" native="false" return="com.squareup.picasso.Request.Builder" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="android.net.Uri">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="stableKey" native="false" return="com.squareup.picasso.Request.Builder" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="transform" native="false" return="com.squareup.picasso.Request.Builder" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="com.squareup.picasso.Transformation">
+</parameter>
+</method>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="RequestCreator" static="false" visibility="public">
+<method abstract="false" deprecated="not deprecated" final="false" name="centerCrop" native="false" return="com.squareup.picasso.RequestCreator" static="false" synchronized="false" visibility="public">
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="centerInside" native="false" return="com.squareup.picasso.RequestCreator" static="false" synchronized="false" visibility="public">
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="config" native="false" return="com.squareup.picasso.RequestCreator" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="android.graphics.Bitmap.Config">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="error" native="false" return="com.squareup.picasso.RequestCreator" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="android.graphics.drawable.Drawable">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="error" native="false" return="com.squareup.picasso.RequestCreator" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="int">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="fetch" native="false" return="void" static="false" synchronized="false" visibility="public">
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="fetch" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="com.squareup.picasso.Callback">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="fit" native="false" return="com.squareup.picasso.RequestCreator" static="false" synchronized="false" visibility="public">
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="get" native="false" return="android.graphics.Bitmap" static="false" synchronized="false" visibility="public">
+<exception name="IOException" type="java.io.IOException">
+</exception>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="into" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="android.widget.ImageView">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="into" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="android.widget.ImageView">
+</parameter>
+<parameter name="p1" type="com.squareup.picasso.Callback">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="into" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="android.widget.RemoteViews">
+</parameter>
+<parameter name="p1" type="int">
+</parameter>
+<parameter name="p2" type="int">
+</parameter>
+<parameter name="p3" type="android.app.Notification">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="into" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="android.widget.RemoteViews">
+</parameter>
+<parameter name="p1" type="int">
+</parameter>
+<parameter name="p2" type="int[]">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="into" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="com.squareup.picasso.Target">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="memoryPolicy" native="false" return="com.squareup.picasso.RequestCreator" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="com.squareup.picasso.MemoryPolicy">
+</parameter>
+<parameter name="p1" type="com.squareup.picasso.MemoryPolicy...">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="networkPolicy" native="false" return="com.squareup.picasso.RequestCreator" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="com.squareup.picasso.NetworkPolicy">
+</parameter>
+<parameter name="p1" type="com.squareup.picasso.NetworkPolicy...">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="noFade" native="false" return="com.squareup.picasso.RequestCreator" static="false" synchronized="false" visibility="public">
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="noPlaceholder" native="false" return="com.squareup.picasso.RequestCreator" static="false" synchronized="false" visibility="public">
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="onlyScaleDown" native="false" return="com.squareup.picasso.RequestCreator" static="false" synchronized="false" visibility="public">
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="placeholder" native="false" return="com.squareup.picasso.RequestCreator" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="android.graphics.drawable.Drawable">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="placeholder" native="false" return="com.squareup.picasso.RequestCreator" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="int">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="priority" native="false" return="com.squareup.picasso.RequestCreator" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="com.squareup.picasso.Picasso.Priority">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="resize" native="false" return="com.squareup.picasso.RequestCreator" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="int">
+</parameter>
+<parameter name="p1" type="int">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="resizeDimen" native="false" return="com.squareup.picasso.RequestCreator" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="int">
+</parameter>
+<parameter name="p1" type="int">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="rotate" native="false" return="com.squareup.picasso.RequestCreator" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="float">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="rotate" native="false" return="com.squareup.picasso.RequestCreator" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="float">
+</parameter>
+<parameter name="p1" type="float">
+</parameter>
+<parameter name="p2" type="float">
+</parameter>
+</method>
+<method abstract="false" deprecated="deprecated" final="false" name="skipMemoryCache" native="false" return="com.squareup.picasso.RequestCreator" static="false" synchronized="false" visibility="public">
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="stableKey" native="false" return="com.squareup.picasso.RequestCreator" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="tag" native="false" return="com.squareup.picasso.RequestCreator" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="java.lang.Object">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="transform" native="false" return="com.squareup.picasso.RequestCreator" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="com.squareup.picasso.Transformation">
+</parameter>
+</method>
+</class>
+<class abstract="true" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="RequestHandler" static="false" visibility="public">
+<constructor deprecated="not deprecated" final="false" name="RequestHandler" static="false" type="com.squareup.picasso.RequestHandler" visibility="public">
+</constructor>
+<method abstract="true" deprecated="not deprecated" final="false" name="canHandleRequest" native="false" return="boolean" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="com.squareup.picasso.Request">
+</parameter>
+</method>
+<method abstract="true" deprecated="not deprecated" final="false" name="load" native="false" return="com.squareup.picasso.RequestHandler.Result" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="com.squareup.picasso.Request">
+</parameter>
+<parameter name="p1" type="int">
+</parameter>
+<exception name="IOException" type="java.io.IOException">
+</exception>
+</method>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="true" name="RequestHandler.Result" static="true" visibility="public">
+<constructor deprecated="not deprecated" final="false" name="RequestHandler.Result" static="false" type="com.squareup.picasso.RequestHandler.Result" visibility="public">
+<parameter name="p0" type="android.graphics.Bitmap">
+</parameter>
+<parameter name="p1" type="com.squareup.picasso.Picasso.LoadedFrom">
+</parameter>
+</constructor>
+<constructor deprecated="not deprecated" final="false" name="RequestHandler.Result" static="false" type="com.squareup.picasso.RequestHandler.Result" visibility="public">
+<parameter name="p0" type="java.io.InputStream">
+</parameter>
+<parameter name="p1" type="com.squareup.picasso.Picasso.LoadedFrom">
+</parameter>
+</constructor>
+<method abstract="false" deprecated="not deprecated" final="false" name="getBitmap" native="false" return="android.graphics.Bitmap" static="false" synchronized="false" visibility="public">
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="getLoadedFrom" native="false" return="com.squareup.picasso.Picasso.LoadedFrom" static="false" synchronized="false" visibility="public">
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="getStream" native="false" return="java.io.InputStream" static="false" synchronized="false" visibility="public">
+</method>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="com.squareup.picasso.RequestHandler" extends-generic-aware="com.squareup.picasso.RequestHandler" final="false" name="ResourceRequestHandler" static="false" visibility="">
+<method abstract="false" deprecated="not deprecated" final="false" name="canHandleRequest" native="false" return="boolean" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="com.squareup.picasso.Request">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="load" native="false" return="com.squareup.picasso.RequestHandler.Result" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="com.squareup.picasso.Request">
+</parameter>
+<parameter name="p1" type="int">
+</parameter>
+<exception name="IOException" type="java.io.IOException">
+</exception>
+</method>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="Stats" static="false" visibility=""/>
+<class abstract="false" deprecated="not deprecated" extends="android.os.Handler" extends-generic-aware="android.os.Handler" final="false" name="Stats.StatsHandler" static="true" visibility="">
+<constructor deprecated="not deprecated" final="false" name="Stats.StatsHandler" static="false" type="com.squareup.picasso.Stats.StatsHandler" visibility="public">
+<parameter name="p0" type="android.os.Looper">
+</parameter>
+<parameter name="p1" type="com.squareup.picasso.Stats">
+</parameter>
+</constructor>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="Stats.StatsHandler.1" static="false" visibility="">
+<implements name="java.lang.Runnable" name-generic-aware="java.lang.Runnable">
+</implements>
+<method abstract="false" deprecated="not deprecated" final="false" name="run" native="false" return="void" static="false" synchronized="false" visibility="public">
+</method>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="StatsSnapshot" static="false" visibility="public">
+<constructor deprecated="not deprecated" final="false" name="StatsSnapshot" static="false" type="com.squareup.picasso.StatsSnapshot" visibility="public">
+<parameter name="p0" type="int">
+</parameter>
+<parameter name="p1" type="int">
+</parameter>
+<parameter name="p2" type="long">
+</parameter>
+<parameter name="p3" type="long">
+</parameter>
+<parameter name="p4" type="long">
+</parameter>
+<parameter name="p5" type="long">
+</parameter>
+<parameter name="p6" type="long">
+</parameter>
+<parameter name="p7" type="long">
+</parameter>
+<parameter name="p8" type="long">
+</parameter>
+<parameter name="p9" type="long">
+</parameter>
+<parameter name="p10" type="int">
+</parameter>
+<parameter name="p11" type="int">
+</parameter>
+<parameter name="p12" type="int">
+</parameter>
+<parameter name="p13" type="long">
+</parameter>
+</constructor>
+<method abstract="false" deprecated="not deprecated" final="false" name="dump" native="false" return="void" static="false" synchronized="false" visibility="public">
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="dump" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="java.io.PrintWriter">
+</parameter>
+</method>
+<field deprecated="not deprecated" final="true" name="averageDownloadSize" static="false" transient="false" type="long" type-generic-aware="long" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="averageOriginalBitmapSize" static="false" transient="false" type="long" type-generic-aware="long" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="averageTransformedBitmapSize" static="false" transient="false" type="long" type-generic-aware="long" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="cacheHits" static="false" transient="false" type="long" type-generic-aware="long" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="cacheMisses" static="false" transient="false" type="long" type-generic-aware="long" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="downloadCount" static="false" transient="false" type="int" type-generic-aware="int" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="maxSize" static="false" transient="false" type="int" type-generic-aware="int" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="originalBitmapCount" static="false" transient="false" type="int" type-generic-aware="int" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="size" static="false" transient="false" type="int" type-generic-aware="int" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="timeStamp" static="false" transient="false" type="long" type-generic-aware="long" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="totalDownloadSize" static="false" transient="false" type="long" type-generic-aware="long" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="totalOriginalBitmapSize" static="false" transient="false" type="long" type-generic-aware="long" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="totalTransformedBitmapSize" static="false" transient="false" type="long" type-generic-aware="long" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="transformedBitmapCount" static="false" transient="false" type="int" type-generic-aware="int" visibility="public" volatile="false">
+</field>
+</class>
+<interface abstract="true" deprecated="not deprecated" final="false" name="Target" static="false" visibility="public">
+<method abstract="true" deprecated="not deprecated" final="false" name="onBitmapFailed" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="android.graphics.drawable.Drawable">
+</parameter>
+</method>
+<method abstract="true" deprecated="not deprecated" final="false" name="onBitmapLoaded" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="android.graphics.Bitmap">
+</parameter>
+<parameter name="p1" type="com.squareup.picasso.Picasso.LoadedFrom">
+</parameter>
+</method>
+<method abstract="true" deprecated="not deprecated" final="false" name="onPrepareLoad" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="android.graphics.drawable.Drawable">
+</parameter>
+</method>
+</interface>
+<class abstract="false" deprecated="not deprecated" extends="com.squareup.picasso.Action" extends-generic-aware="com.squareup.picasso.Action&lt;com.squareup.picasso.Target&gt;" final="true" name="TargetAction" static="false" visibility=""/>
+<interface abstract="true" deprecated="not deprecated" final="false" name="Transformation" static="false" visibility="public">
+<method abstract="true" deprecated="not deprecated" final="false" name="key" native="false" return="java.lang.String" static="false" synchronized="false" visibility="public">
+</method>
+<method abstract="true" deprecated="not deprecated" final="false" name="transform" native="false" return="android.graphics.Bitmap" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="android.graphics.Bitmap">
+</parameter>
+</method>
+</interface>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="UrlConnectionDownloader" static="false" visibility="public">
+<implements name="com.squareup.picasso.Downloader" name-generic-aware="com.squareup.picasso.Downloader">
+</implements>
+<constructor deprecated="not deprecated" final="false" name="UrlConnectionDownloader" static="false" type="com.squareup.picasso.UrlConnectionDownloader" visibility="public">
+<parameter name="p0" type="android.content.Context">
+</parameter>
+</constructor>
+<method abstract="false" deprecated="not deprecated" final="false" name="load" native="false" return="com.squareup.picasso.Downloader.Response" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="android.net.Uri">
+</parameter>
+<parameter name="p1" type="int">
+</parameter>
+<exception name="IOException" type="java.io.IOException">
+</exception>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="openConnection" native="false" return="java.net.HttpURLConnection" static="false" synchronized="false" visibility="protected">
+<parameter name="p0" type="android.net.Uri">
+</parameter>
+<exception name="IOException" type="java.io.IOException">
+</exception>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="shutdown" native="false" return="void" static="false" synchronized="false" visibility="public">
+</method>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.ThreadLocal" extends-generic-aware="java.lang.ThreadLocal&lt;java.lang.StringBuilder&gt;" final="false" name="UrlConnectionDownloader.1" static="true" visibility=""/>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="UrlConnectionDownloader.ResponseCacheIcs" static="true" visibility=""/>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="true" name="Utils" static="false" visibility=""/>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="Utils.ActivityManagerHoneycomb" static="true" visibility=""/>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="Utils.BitmapHoneycombMR1" static="true" visibility=""/>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="Utils.OkHttpLoaderCreator" static="true" visibility=""/>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Thread" extends-generic-aware="java.lang.Thread" final="false" name="Utils.PicassoThread" static="true" visibility="">
+<constructor deprecated="not deprecated" final="false" name="Utils.PicassoThread" static="false" type="com.squareup.picasso.Utils.PicassoThread" visibility="public">
+<parameter name="p0" type="java.lang.Runnable">
+</parameter>
+</constructor>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="Utils.PicassoThreadFactory" static="true" visibility="">
+<implements name="java.util.concurrent.ThreadFactory" name-generic-aware="java.util.concurrent.ThreadFactory">
+</implements>
+<method abstract="false" deprecated="not deprecated" final="false" name="newThread" native="false" return="java.lang.Thread" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="java.lang.Runnable">
+</parameter>
+</method>
+</class>
+</package>
+</api>

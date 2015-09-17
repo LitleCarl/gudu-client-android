@@ -1,0 +1,8 @@
+/Users/MAC/Projects/Gudu/Picasso/obj/Debug/MonoAndroid,Version=v4.0.3.AssemblyAttribute.cs
+/Users/MAC/Projects/Gudu/Picasso/obj/Debug/Picasso.Jars.okhttp-2.2.0.jar
+/Users/MAC/Projects/Gudu/Picasso/obj/Debug/Picasso.Jars.okio-1.2.0.jar
+/Users/MAC/Projects/Gudu/Picasso/obj/Debug/Picasso.Jars.picasso-2.5.0.jar
+/Users/MAC/Projects/Gudu/Picasso/bin/Debug/Picasso.dll.mdb
+/Users/MAC/Projects/Gudu/Picasso/bin/Debug/Picasso.dll
+/Users/MAC/Projects/Gudu/Picasso/obj/Debug/Picasso.dll
+/Users/MAC/Projects/Gudu/Picasso/obj/Debug/Picasso.dll.mdb

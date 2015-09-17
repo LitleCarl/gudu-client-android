@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	
+	
+		<color name="transparent">#00ffffff</color>
+
+	<color name="tabMedium">#2B2B2B</color>
+	<color name="tabDark">#000000</color>
+	<color name="tabTransparent">#10ffffff</color>
+	<color name="tabBackgroundColor">#47555E</color>
+
+	<color name="lineColor">#DEDEDE</color>
+	
+	
+</resources>

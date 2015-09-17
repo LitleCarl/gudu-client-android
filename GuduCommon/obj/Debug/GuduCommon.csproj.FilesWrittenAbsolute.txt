@@ -1,0 +1,10 @@
+/Users/MAC/Projects/Gudu/GuduCommon/obj/Debug/.NETPortable,Version=v4.5,Profile=Profile78.AssemblyAttribute.cs
+/Users/MAC/Projects/Gudu/GuduCommon/bin/Debug/GuduCommon.dll.mdb
+/Users/MAC/Projects/Gudu/GuduCommon/bin/Debug/GuduCommon.dll
+/Users/MAC/Projects/Gudu/GuduCommon/obj/Debug/GuduCommon.dll
+/Users/MAC/Projects/Gudu/GuduCommon/obj/Debug/GuduCommon.dll.mdb
+/Users/MAC/Projects/Gudu/GuduCommon/bin/Debug/System.Reactive.Core.dll
+/Users/MAC/Projects/Gudu/GuduCommon/bin/Debug/System.Reactive.Interfaces.dll
+/Users/MAC/Projects/Gudu/GuduCommon/bin/Debug/System.Reactive.Linq.dll
+/Users/MAC/Projects/Gudu/GuduCommon/bin/Debug/System.Reactive.PlatformServices.dll
+/Users/MAC/Projects/Gudu/GuduCommon/bin/Debug/Newtonsoft.Json.dll

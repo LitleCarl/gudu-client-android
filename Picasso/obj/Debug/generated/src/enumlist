@@ -1,0 +1,4 @@
+com.squareup.picasso.MemoryPolicy:Com.Squareup.Picasso:MemoryPolicy
+com.squareup.picasso.NetworkPolicy:Com.Squareup.Picasso:NetworkPolicy
+com.squareup.picasso.Picasso$LoadedFrom:Com.Squareup.Picasso:Picasso.LoadedFrom
+com.squareup.picasso.Picasso$Priority:Com.Squareup.Picasso:Picasso.Priority

@@ -1,0 +1,17 @@
+/Users/MAC/Projects/Gudu/Gudu/obj/Debug/MonoAndroid,Version=v4.0.3.AssemblyAttribute.cs
+/Users/MAC/Projects/Gudu/Gudu/bin/Debug/Gudu.dll.mdb
+/Users/MAC/Projects/Gudu/Gudu/bin/Debug/Gudu.dll
+/Users/MAC/Projects/Gudu/Gudu/bin/Debug/com.gudu.morning.apk
+/Users/MAC/Projects/Gudu/Gudu/obj/Debug/android/bin/com.gudu.morning.apk
+/Users/MAC/Projects/Gudu/Gudu/obj/Debug/res/layout/main.xml
+/Users/MAC/Projects/Gudu/Gudu/obj/Debug/res/values/strings.xml
+/Users/MAC/Projects/Gudu/Gudu/obj/Debug/res/drawable-hdpi/icon.png
+/Users/MAC/Projects/Gudu/Gudu/obj/Debug/res/drawable-mdpi/icon.png
+/Users/MAC/Projects/Gudu/Gudu/obj/Debug/res/drawable-xhdpi/icon.png
+/Users/MAC/Projects/Gudu/Gudu/obj/Debug/res/drawable-xxhdpi/icon.png
+/Users/MAC/Projects/Gudu/Gudu/obj/Debug/res/drawable-xxxhdpi/icon.png
+/Users/MAC/Projects/Gudu/Gudu/obj/Debug/R.cs.flag
+/Users/MAC/Projects/Gudu/Gudu/bin/Debug/com.gudu.morning-Signed.apk
+/Users/MAC/Projects/Gudu/Gudu/obj/Debug/uploadflags.txt
+/Users/MAC/Projects/Gudu/Gudu/obj/Debug/Gudu.dll
+/Users/MAC/Projects/Gudu/Gudu/obj/Debug/Gudu.dll.mdb

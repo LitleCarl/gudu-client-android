@@ -1,0 +1,6 @@
+/Users/MAC/Projects/Gudu/MaterialUI/obj/Debug/MonoAndroid,Version=v5.1.AssemblyAttribute.cs
+/Users/MAC/Projects/Gudu/MaterialUI/obj/Debug/MaterialUI.obj.Debug.__AndroidLibraryProjects__.zip
+/Users/MAC/Projects/Gudu/MaterialUI/bin/Debug/MaterialUI.dll.mdb
+/Users/MAC/Projects/Gudu/MaterialUI/bin/Debug/MaterialUI.dll
+/Users/MAC/Projects/Gudu/MaterialUI/obj/Debug/MaterialUI.dll
+/Users/MAC/Projects/Gudu/MaterialUI/obj/Debug/MaterialUI.dll.mdb
