@@ -25,13 +25,6 @@ public class StoreListViewAdapter
 			mono.android.TypeManager.Activate ("Gudu.StoreListViewAdapter, Gudu, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", "", this, new java.lang.Object[] {  });
 	}
 
-	public StoreListViewAdapter (android.app.Activity p0, java.lang.String[] p1) throws java.lang.Throwable
-	{
-		super ();
-		if (getClass () == StoreListViewAdapter.class)
-			mono.android.TypeManager.Activate ("Gudu.StoreListViewAdapter, Gudu, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", "Android.App.Activity, Mono.Android, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065:System.String[], mscorlib, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e", this, new java.lang.Object[] { p0, p1 });
-	}
-
 
 	public long getItemId (int p0)
 	{

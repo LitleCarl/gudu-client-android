@@ -1,4 +1,0 @@
-values/Strings.xml;values/strings.xml
-values/attrs.xml;values/attrs.xml
-layout/progress_spinner.xml;layout/progress_spinner.xml
-layout/progress_wheel_activity.xml;layout/progress_wheel_activity.xml

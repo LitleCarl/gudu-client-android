@@ -16,7 +16,7 @@
     <AndroidApplication>True</AndroidApplication>
     <AndroidUseLatestPlatformSdk>False</AndroidUseLatestPlatformSdk>
     <AssemblyName>Gudu</AssemblyName>
-    <TargetFrameworkVersion>v4.0.3</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v5.1</TargetFrameworkVersion>
     <ReleaseVersion>0.2</ReleaseVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -56,9 +56,6 @@
     <Reference Include="System.Reactive.PlatformServices">
       <HintPath>lib\System.Reactive.PlatformServices.dll</HintPath>
     </Reference>
-    <Reference Include="Xamarin.Android.Support.v4">
-      <HintPath>..\packages\Xamarin.Android.Support.v4.22.2.1.0\lib\MonoAndroid403\Xamarin.Android.Support.v4.dll</HintPath>
-    </Reference>
     <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Json" />
     <Reference Include="VolleyCSharp">
@@ -71,6 +68,18 @@
     <Reference Include="Picasso">
       <HintPath>lib\Picasso.dll</HintPath>
     </Reference>
+    <Reference Include="Xamarin.Android.Support.v4">
+      <HintPath>..\packages\Xamarin.Android.Support.v4.22.2.1.0\lib\MonoAndroid403\Xamarin.Android.Support.v4.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.v7.CardView">
+      <HintPath>..\packages\Xamarin.Android.Support.v7.CardView.22.2.1.0\lib\MonoAndroid403\Xamarin.Android.Support.v7.CardView.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.v7.AppCompat">
+      <HintPath>..\packages\Xamarin.Android.Support.v7.AppCompat.22.2.1.0\lib\MonoAndroid403\Xamarin.Android.Support.v7.AppCompat.dll</HintPath>
+    </Reference>
+    <Reference Include="TsaoMateraial">
+      <HintPath>lib\TsaoMateraial.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Resources\Resource.designer.cs" />
@@ -82,7 +91,6 @@
     <Compile Include="Class\SharedPreferenceSignal.cs" />
     <Compile Include="Activity\SelectCampusActivity.cs" />
     <Compile Include="Class\SPConstant.cs" />
-    <Compile Include="View\SegmentedRadioGroup.cs" />
     <Compile Include="Activity\StoreIndexActivity.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -198,11 +206,11 @@
     <AndroidResource Include="Resources\drawable-hdpi\segment_radio_white_right.9.png" />
     <AndroidResource Include="Resources\drawable-hdpi\segment_white_focus.9.png" />
     <AndroidResource Include="Resources\drawable-hdpi\segment_white.9.png" />
-    <AndroidResource Include="Resources\drawable\segment_button.xml" />
-    <AndroidResource Include="Resources\drawable\segment_radio_left.xml" />
-    <AndroidResource Include="Resources\drawable\segment_radio_middle.xml" />
-    <AndroidResource Include="Resources\drawable\segment_radio_right.xml" />
     <AndroidResource Include="Resources\layout\store_index_activity.axml" />
+    <AndroidResource Include="Resources\values\attrs.xml" />
+    <AndroidResource Include="Resources\drawable\button_text_color.xml" />
+    <AndroidResource Include="Resources\drawable\radio_checked.xml" />
+    <AndroidResource Include="Resources\drawable\radio_unchecked.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <ItemGroup>
@@ -210,15 +218,15 @@
     <Folder Include="Activity\" />
     <Folder Include="Resources\drawable\" />
     <Folder Include="View\" />
+    <Folder Include="Resources\xml\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\GuduCommon\GuduCommon.csproj">
       <Project>{E8BB48E8-F8EE-4697-A987-1505EFF779A5}</Project>
       <Name>GuduCommon</Name>
     </ProjectReference>
-    <ProjectReference Include="..\MaterialUI\MaterialUI.csproj">
-      <Project>{8EE1B57F-1556-4DF0-B3F4-849FFD32119E}</Project>
-      <Name>MaterialUI</Name>
-    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidJavaSource Include="View\SegmentedGroup.java" />
   </ItemGroup>
 </Project>

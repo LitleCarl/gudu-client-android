@@ -84,10 +84,13 @@ class MonoPackageManager_Resources {
 		"System.Reactive.Interfaces.dll",
 		"System.Reactive.Linq.dll",
 		"System.Reactive.PlatformServices.dll",
-		"Xamarin.Android.Support.v4.dll",
 		"VolleyCSharp.dll",
 		"Newtonsoft.Json.dll",
 		"Picasso.dll",
+		"Xamarin.Android.Support.v4.dll",
+		"Xamarin.Android.Support.v7.CardView.dll",
+		"Xamarin.Android.Support.v7.AppCompat.dll",
+		"TsaoMateraial.dll",
 		"GuduCommon.dll",
 		"System.Collections.Concurrent.dll",
 		"System.Collections.dll",
@@ -138,5 +141,5 @@ class MonoPackageManager_Resources {
 	};
 	public static final String[] Dependencies = new String[]{
 	};
-	public static final String ApiPackageName = "Mono.Android.Platform.ApiLevel_15";
+	public static final String ApiPackageName = "Mono.Android.Platform.ApiLevel_22";
 }

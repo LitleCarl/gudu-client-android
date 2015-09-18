@@ -6,13 +6,16 @@
 /Users/MAC/Projects/Gudu/Gudu/obj/Debug/assemblies/System.Reactive.Interfaces.dll
 /Users/MAC/Projects/Gudu/Gudu/obj/Debug/assemblies/System.Reactive.Linq.dll
 /Users/MAC/Projects/Gudu/Gudu/obj/Debug/assemblies/System.Reactive.PlatformServices.dll
-/Users/MAC/Projects/Gudu/Gudu/obj/Debug/assemblies/Xamarin.Android.Support.v4.dll
 /Users/MAC/Projects/Gudu/Gudu/obj/Debug/assemblies/System.ComponentModel.Composition.dll
 /Users/MAC/Projects/Gudu/Gudu/obj/Debug/assemblies/System.Json.dll
 /Users/MAC/Projects/Gudu/Gudu/obj/Debug/assemblies/VolleyCSharp.dll
 /Users/MAC/Projects/Gudu/Gudu/obj/Debug/assemblies/Newtonsoft.Json.dll
 /Users/MAC/Projects/Gudu/Gudu/obj/Debug/assemblies/Microsoft.CSharp.dll
 /Users/MAC/Projects/Gudu/Gudu/obj/Debug/assemblies/Picasso.dll
+/Users/MAC/Projects/Gudu/Gudu/obj/Debug/assemblies/Xamarin.Android.Support.v4.dll
+/Users/MAC/Projects/Gudu/Gudu/obj/Debug/assemblies/Xamarin.Android.Support.v7.CardView.dll
+/Users/MAC/Projects/Gudu/Gudu/obj/Debug/assemblies/Xamarin.Android.Support.v7.AppCompat.dll
+/Users/MAC/Projects/Gudu/Gudu/obj/Debug/assemblies/TsaoMateraial.dll
 /Users/MAC/Projects/Gudu/Gudu/obj/Debug/assemblies/System.Core.dll
 /Users/MAC/Projects/Gudu/Gudu/obj/Debug/assemblies/GuduCommon.dll
 /Users/MAC/Projects/Gudu/Gudu/obj/Debug/assemblies/mscorlib.dll

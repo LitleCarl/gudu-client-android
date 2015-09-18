@@ -1,4 +1,4 @@
-/Users/MAC/Projects/Gudu/Gudu/obj/Debug/MonoAndroid,Version=v4.0.3.AssemblyAttribute.cs
+/Users/MAC/Projects/Gudu/Gudu/obj/Debug/MonoAndroid,Version=v5.1.AssemblyAttribute.cs
 /Users/MAC/Projects/Gudu/Gudu/bin/Debug/Gudu.dll.mdb
 /Users/MAC/Projects/Gudu/Gudu/bin/Debug/Gudu.dll
 /Users/MAC/Projects/Gudu/Gudu/bin/Debug/com.gudu.morning.apk
@@ -63,7 +63,6 @@
 /Users/MAC/Projects/Gudu/Gudu/obj/Debug/res/layout/select_campus_activity.xml
 /Users/MAC/Projects/Gudu/Gudu/obj/Debug/res/layout/campuslistcell.xml
 /Users/MAC/Projects/Gudu/Gudu/obj/Debug/res/drawable-xxxhdpi/about_tab.png
-/Users/MAC/Projects/Gudu/Gudu/obj/Debug/res/drawable/radio_colors.xml
 /Users/MAC/Projects/Gudu/Gudu/obj/Debug/res/drawable-mdpi/segment_grey_focus.9.png
 /Users/MAC/Projects/Gudu/Gudu/obj/Debug/res/drawable-mdpi/segment_grey_press.9.png
 /Users/MAC/Projects/Gudu/Gudu/obj/Debug/res/drawable-mdpi/segment_grey.9.png
@@ -110,6 +109,11 @@
 /Users/MAC/Projects/Gudu/Gudu/obj/Debug/res/drawable-hdpi/segment_radio_white_right.9.png
 /Users/MAC/Projects/Gudu/Gudu/obj/Debug/res/drawable-hdpi/segment_white_focus.9.png
 /Users/MAC/Projects/Gudu/Gudu/obj/Debug/res/drawable-hdpi/segment_white.9.png
+/Users/MAC/Projects/Gudu/Gudu/obj/Debug/res/layout/store_index_activity.xml
+/Users/MAC/Projects/Gudu/Gudu/obj/Debug/res/values/attrs.xml
+/Users/MAC/Projects/Gudu/Gudu/obj/Debug/res/drawable/button_text_color.xml
+/Users/MAC/Projects/Gudu/Gudu/obj/Debug/res/drawable/radio_checked.xml
+/Users/MAC/Projects/Gudu/Gudu/obj/Debug/res/drawable/radio_unchecked.xml
 /Users/MAC/Projects/Gudu/Gudu/obj/Debug/R.cs.flag
 /Users/MAC/Projects/Gudu/Gudu/bin/Debug/com.gudu.morning-Signed.apk
 /Users/MAC/Projects/Gudu/Gudu/obj/Debug/uploadflags.txt
@@ -119,14 +123,13 @@
 /Users/MAC/Projects/Gudu/Gudu/bin/Debug/System.Reactive.Interfaces.dll
 /Users/MAC/Projects/Gudu/Gudu/bin/Debug/System.Reactive.Linq.dll
 /Users/MAC/Projects/Gudu/Gudu/bin/Debug/System.Reactive.PlatformServices.dll
-/Users/MAC/Projects/Gudu/Gudu/bin/Debug/Xamarin.Android.Support.v4.dll
 /Users/MAC/Projects/Gudu/Gudu/bin/Debug/VolleyCSharp.dll
 /Users/MAC/Projects/Gudu/Gudu/bin/Debug/Newtonsoft.Json.dll
 /Users/MAC/Projects/Gudu/Gudu/bin/Debug/Picasso.dll
+/Users/MAC/Projects/Gudu/Gudu/bin/Debug/TsaoMateraialc.dll
+/Users/MAC/Projects/Gudu/Gudu/bin/Debug/Xamarin.Android.Support.v4.dll
+/Users/MAC/Projects/Gudu/Gudu/bin/Debug/Xamarin.Android.Support.v7.CardView.dll
+/Users/MAC/Projects/Gudu/Gudu/bin/Debug/Xamarin.Android.Support.v7.AppCompat.dll
 /Users/MAC/Projects/Gudu/Gudu/bin/Debug/GuduCommon.dll
 /Users/MAC/Projects/Gudu/Gudu/bin/Debug/GuduCommon.dll.mdb
-/Users/MAC/Projects/Gudu/Gudu/obj/Debug/res/drawable/segment_button.xml
-/Users/MAC/Projects/Gudu/Gudu/obj/Debug/res/drawable/segment_radio_left.xml
-/Users/MAC/Projects/Gudu/Gudu/obj/Debug/res/drawable/segment_radio_middle.xml
-/Users/MAC/Projects/Gudu/Gudu/obj/Debug/res/drawable/segment_radio_right.xml
-/Users/MAC/Projects/Gudu/Gudu/obj/Debug/res/layout/store_index_activity.xml
+/Users/MAC/Projects/Gudu/Gudu/bin/Debug/TsaoMateraial.dll

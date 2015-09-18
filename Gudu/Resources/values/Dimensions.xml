@@ -9,4 +9,7 @@
     <dimen name="tab_space_plus1">3dp</dimen>
     <dimen name="tab_space_bottom_line">36sp</dimen>
     <dimen name="tab_space_unselected_top">6sp</dimen> 
+
+    <dimen name="radio_button_conner_radius">5dp</dimen>
+    <dimen name="radio_button_stroke_border">1dp</dimen>
 </resources>  

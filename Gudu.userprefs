@@ -2,8 +2,7 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.78b78fbf" />
   <MonoDevelop.Ide.Workbench>
     <Files>
-      <File FileName="Gudu/Activity/MainActivity.cs" Line="85" Column="61" />
-      <File FileName="Gudu/Activity/StoreIndexActivity.cs" Line="22" Column="48" />
+      <File FileName="Gudu/Activity/StoreIndexActivity.cs" Line="25" Column="22" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
@@ -14,6 +13,8 @@
     <String>Wheel/Wheel.csproj</String>
     <String>../../Documents/learn/Picasso/Picasso/PicassoDroid.csproj</String>
     <String>Picasso/Picasso.csproj</String>
+    <String>MaterialUI/MaterialUI.csproj</String>
+    <String>Mat/Mat.csproj</String>
   </DisabledProjects>
   <MonoDevelop.Ide.ItemProperties.Gudu AndroidDesignerPreferredDevice="Nexus 4" />
 </Properties>

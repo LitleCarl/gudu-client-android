@@ -7,3 +7,4 @@
 /Users/MAC/Projects/Gudu/GuduCommon/bin/Release/System.Reactive.Interfaces.dll
 /Users/MAC/Projects/Gudu/GuduCommon/bin/Release/System.Reactive.Linq.dll
 /Users/MAC/Projects/Gudu/GuduCommon/bin/Release/System.Reactive.PlatformServices.dll
+/Users/MAC/Projects/Gudu/GuduCommon/bin/Release/Newtonsoft.Json.dll

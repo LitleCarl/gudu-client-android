@@ -3,6 +3,7 @@
 	
 	
 		<color name="transparent">#00ffffff</color>
+			<color name="greenColor">#1abc9c</color>
 
 	<color name="tabMedium">#2B2B2B</color>
 	<color name="tabDark">#000000</color>
@@ -11,5 +12,7 @@
 
 	<color name="lineColor">#DEDEDE</color>
 	
-	
+	<color name="radio_button_selected_color">#ff33b5e5</color>
+    <color name="radio_button_unselected_color">@android:color/transparent</color>
+
 </resources>
