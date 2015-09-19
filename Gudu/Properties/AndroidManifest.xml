@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.gudu.morning" android:versionName="1.2" android:versionCode="2">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.gudu.morning" android:versionName="1.2" android:versionCode="2" android:installLocation="preferExternal">
 	<uses-sdk android:minSdkVersion="15" android:targetSdkVersion="15" />
-	<application android:label="咕嘟早餐">
+	<application android:label="咕嘟早餐" android:theme="@style/MyTheme" >
 	</application>
 	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 	<uses-permission android:name="android.permission.INTERNET" />

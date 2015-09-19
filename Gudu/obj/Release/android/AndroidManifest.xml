@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.gudu.morning" android:versionName="1.2" android:versionCode="2">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.gudu.morning" android:versionName="1.2" android:versionCode="2" android:installLocation="preferExternal">
   <uses-sdk android:minSdkVersion="15" android:targetSdkVersion="15" />
-  <application android:label="咕嘟早餐" android:name="mono.android.app.Application">
+  <application android:label="咕嘟早餐" android:theme="@style/MyTheme" android:name="mono.android.app.Application">
     <activity android:label="咕嘟早餐" android:name="md5353c6c1028b70dfa1d3e1b2a263308e7.MainActivity" />
     <activity android:icon="@drawable/icon" android:label="咕嘟早餐" android:name="md5353c6c1028b70dfa1d3e1b2a263308e7.TabSampleActivity">
       <intent-filter>

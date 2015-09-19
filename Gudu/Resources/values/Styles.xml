@@ -26,6 +26,15 @@
         <item name="android:paddingRight">5dp</item>
     </style>
 
+    <!-- Base application theme. -->
+     <style name="MyTheme" parent="MyTheme.Base">
+  </style>
+  <!-- Base theme applied no matter what API -->
+  <style name="MyTheme.Base" parent="Theme.AppCompat.Light.DarkActionBar">
+   
+    <item name="colorPrimary">#2196F3</item>
+   
+  </style>
 
 
 </resources>

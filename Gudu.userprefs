@@ -1,8 +1,8 @@
 ﻿<Properties StartupItem="Gudu/Gudu.csproj">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.78b78fbf" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" PreferredExecutionTarget="Android.cjx" />
   <MonoDevelop.Ide.Workbench>
     <Files>
-      <File FileName="Gudu/Activity/StoreIndexActivity.cs" Line="25" Column="22" />
+      <File FileName="Gudu/Activity/StoreIndexActivity.cs" Line="77" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

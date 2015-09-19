@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:background="@drawable/progress_hud_bg"
@@ -10,11 +11,18 @@
     android:paddingRight="30dp"
     android:paddingBottom="20dp"
     android:paddingTop="20dp">
-    <ImageView
+    <com.rey.material.widget.ProgressView
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        local:pv_autostart="true"
+        local:pv_circular="true"
+        local:pv_progressStyle="@style/Material.Drawable.CircularProgress"
+        local:pv_progressMode="indeterminate" />
+<!--            <ImageView
         android:id="@+id/spinnerImageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/spinner" />
+        android:background="@drawable/spinner" />-->
     <TextView
         android:id="@+id/message"
         android:layout_width="wrap_content"

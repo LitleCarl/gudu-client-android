@@ -35,8 +35,8 @@
             android:orientation="horizontal"
             android:baselineAligned="false"
             android:layout_centerHorizontal="true"
-            local:sc_border_width="2dp"
-            local:sc_corner_radius="10dp"
+            local:sc_border_width="0.5dp"
+            local:sc_corner_radius="4dp"
             local:sc_tint_color="#ffffff"
             local:sc_checked_text_color="@color/greenColor"
             android:layout_marginTop="12dp">
@@ -84,6 +84,7 @@
             style="@style/Material.Widget.TabPageIndicator"
             android:background="#47565E"
             android:layout_width="match_parent"
+            local:tpi_tabPadding="20dp"
             local:tpi_indicatorColor="@color/greenColor"
             local:tpi_mode="scroll"
             android:layout_height="48dp" />

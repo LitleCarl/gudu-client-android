@@ -5,7 +5,7 @@ using Android.Graphics;
 using Android.Views;
 using Android.Widget;
 using Android.Graphics.Drawables;
-
+using MaterialUI.Widget;
 
 namespace Gudu {
 	public class ProgressHUD : Dialog {
@@ -18,16 +18,15 @@ namespace Gudu {
 
 
 		public override void OnWindowFocusChanged(bool hasFocus){
-			ImageView imageView = (ImageView) FindViewById(Resource.Id.spinnerImageView);
-			AnimationDrawable spinner = (AnimationDrawable) imageView.Background;
-			spinner.Start();
+			//ProgressView progress = (ProgressView) FindViewById(Resource.Id.spinnerImageView);
+			//progress.Start();
 		}
 
 		public void SetMessage(string message) {
 			if(message != null && message.Length > 0) {
 
 				FindViewById(Resource.Id.message).Visibility = ViewStates.Visible;			
-				TextView txt = (TextView)FindViewById(Resource.Id.message);
+				Android.Widget.TextView txt = (Android.Widget.TextView)FindViewById(Resource.Id.message);
 				txt.Text = message;
 				txt.Invalidate();
 			}
@@ -41,7 +40,7 @@ namespace Gudu {
 			if(message == null || message.Length == 0) {
 				dialog.FindViewById(Resource.Id.message).Visibility = ViewStates.Gone;			
 			} else {
-				TextView txt = (TextView)dialog.FindViewById(Resource.Id.message);
+				Android.Widget.TextView txt = (Android.Widget.TextView)dialog.FindViewById(Resource.Id.message);
 				txt.Text = (message);
 			}
 			dialog.SetCancelable(cancelable);

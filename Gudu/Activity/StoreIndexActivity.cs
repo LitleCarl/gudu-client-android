@@ -73,7 +73,7 @@ namespace Gudu
 			);
 			this.FromMyEvent<List<ProductModel>> ("ModelList").Subscribe (
 				(productList) => {
-					viewPager.Adapter = new MenuPagerAdapter(SupportFragmentManager, this);
+					viewPager.Adapter.NotifyDataSetChanged();
 				}
 			);
 		}
@@ -149,26 +149,25 @@ namespace Gudu
 
 		public override int Count{
 			get{ 
-				var categories = (from product in activity.ModelList
-					select product.Category.ToString()).ToArray<String>();
-				return categories.Length;
+				var categories = activity.ModelList
+					.Select (model => model.Category)
+					.Distinct ().ToList<string>();
+				return categories.Count;
 			}
 		}
 
 		private string titleForPosition(int position){
-			var categories = (from product in activity.ModelList
-				select product.Category.ToString()).ToArray<String>();
-			if (categories.Length < 1)
+			var categories = activity.ModelList
+				.Select (model => model.Category)
+				.Distinct ().ToList<string>();
+			if (categories.Count < 1)
 				return "没有数据";
 			return categories[position];
 		}
 
 		public override Java.Lang.ICharSequence GetPageTitleFormatted (int position){
-			var categories = (from product in activity.ModelList
-				select product.Category).ToArray<String>();
-			if (categories.Length < 1)
-				return CharSequence.ArrayFromStringArray(new string[]{"没有数据"})[0];
-			return CharSequence.ArrayFromStringArray(categories)[position];
+			
+			return CharSequence.ArrayFromStringArray(new string[]{titleForPosition(position)})[0];
 		}
 
 	}
@@ -217,10 +216,8 @@ namespace Gudu
 			if (view == null) // otherwise create a new one
 				view = context.LayoutInflater.Inflate(Resource.Layout.StoreMenuListViewCell, null);
 			ProductModel product = this [position];
-
 			view.FindViewById<Android.Widget.TextView>(Resource.Id.product_name_textview).Text = product.Name;
-			view.FindViewById<Android.Widget.TextView>(Resource.Id.price_textview).Text = product.Max_price;
-
+			view.FindViewById<Android.Widget.TextView>(Resource.Id.price_textview).Text = String.Format("¥{0}~{1}",product.Min_price, product.Max_price) ;
 			Picasso.With(context).Load(product.Logo_filename).Into(view.FindViewById<ImageView>(Resource.Id.product_logo_image));
 			return view;
 		}

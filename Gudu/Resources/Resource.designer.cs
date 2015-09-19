@@ -73,6 +73,22 @@ namespace Gudu
 			}
 		}
 		
+		public partial class Array
+		{
+			
+			// aapt resource value: 0x7f0d0000
+			public const int rainbow = 2131558400;
+			
+			static Array()
+			{
+				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
+			}
+			
+			private Array()
+			{
+			}
+		}
+		
 		public partial class Attribute
 		{
 			
@@ -2637,9 +2653,6 @@ namespace Gudu
 			// aapt resource value: 0x7f0c004b
 			public const int activity_chooser_view_content = 2131492939;
 			
-			// aapt resource value: 0x7f0c009b
-			public const int add_button = 2131493019;
-			
 			// aapt resource value: 0x7f0c0041
 			public const int afterRelease = 2131492929;
 			
@@ -2676,8 +2689,8 @@ namespace Gudu
 			// aapt resource value: 0x7f0c0075
 			public const int campus_address_textview = 2131492981;
 			
-			// aapt resource value: 0x7f0c0089
-			public const int campus_listview = 2131493001;
+			// aapt resource value: 0x7f0c0088
+			public const int campus_listview = 2131493000;
 			
 			// aapt resource value: 0x7f0c0074
 			public const int campus_name_textview = 2131492980;
@@ -2700,8 +2713,8 @@ namespace Gudu
 			// aapt resource value: 0x7f0c0017
 			public const int collapseActionView = 2131492887;
 			
-			// aapt resource value: 0x7f0c008f
-			public const int container_view = 2131493007;
+			// aapt resource value: 0x7f0c008e
+			public const int container_view = 2131493006;
 			
 			// aapt resource value: 0x7f0c0056
 			public const int contentPanel = 2131492950;
@@ -2811,14 +2824,14 @@ namespace Gudu
 			// aapt resource value: 0x7f0c007b
 			public const int media_actions = 2131492987;
 			
+			// aapt resource value: 0x7f0c0090
+			public const int menuViewPager = 2131493008;
+			
 			// aapt resource value: 0x7f0c0091
-			public const int menuViewPager = 2131493009;
+			public const int menu_listview = 2131493009;
 			
-			// aapt resource value: 0x7f0c0092
-			public const int menu_listview = 2131493010;
-			
-			// aapt resource value: 0x7f0c0086
-			public const int message = 2131492998;
+			// aapt resource value: 0x7f0c0085
+			public const int message = 2131492997;
 			
 			// aapt resource value: 0x7f0c0015
 			public const int middle = 2131492885;
@@ -2829,8 +2842,8 @@ namespace Gudu
 			// aapt resource value: 0x7f0c0038
 			public const int miter = 2131492920;
 			
-			// aapt resource value: 0x7f0c0096
-			public const int month_sale_textview_id = 2131493014;
+			// aapt resource value: 0x7f0c0095
+			public const int month_sale_textview_id = 2131493013;
 			
 			// aapt resource value: 0x7f0c0032
 			public const int multi = 2131492914;
@@ -2853,14 +2866,14 @@ namespace Gudu
 			// aapt resource value: 0x7f0c0052
 			public const int parentPanel = 2131492946;
 			
-			// aapt resource value: 0x7f0c009a
-			public const int price_textview = 2131493018;
+			// aapt resource value: 0x7f0c0099
+			public const int price_textview = 2131493017;
+			
+			// aapt resource value: 0x7f0c0097
+			public const int product_logo_image = 2131493015;
 			
 			// aapt resource value: 0x7f0c0098
-			public const int product_logo_image = 2131493016;
-			
-			// aapt resource value: 0x7f0c0099
-			public const int product_name_textview = 2131493017;
+			public const int product_name_textview = 2131493016;
 			
 			// aapt resource value: 0x7f0c0005
 			public const int progress_circular = 2131492869;
@@ -2874,20 +2887,20 @@ namespace Gudu
 			// aapt resource value: 0x7f0c005f
 			public const int radio = 2131492959;
 			
-			// aapt resource value: 0x7f0c008e
-			public const int radio_comment = 2131493006;
-			
 			// aapt resource value: 0x7f0c008d
-			public const int radio_map = 2131493005;
+			public const int radio_comment = 2131493005;
 			
 			// aapt resource value: 0x7f0c008c
-			public const int radio_menu = 2131493004;
+			public const int radio_map = 2131493004;
+			
+			// aapt resource value: 0x7f0c008b
+			public const int radio_menu = 2131493003;
 			
 			// aapt resource value: 0x7f0c003e
 			public const int rectangle = 2131492926;
 			
-			// aapt resource value: 0x7f0c0087
-			public const int relativeLayout1 = 2131492999;
+			// aapt resource value: 0x7f0c0086
+			public const int relativeLayout1 = 2131492998;
 			
 			// aapt resource value: 0x7f0c0035
 			public const int round = 2131492917;
@@ -2952,9 +2965,6 @@ namespace Gudu
 			// aapt resource value: 0x7f0c0033
 			public const int single = 2131492915;
 			
-			// aapt resource value: 0x7f0c0085
-			public const int spinnerImageView = 2131492997;
-			
 			// aapt resource value: 0x7f0c0007
 			public const int split_action_bar = 2131492871;
 			
@@ -2976,23 +2986,23 @@ namespace Gudu
 			// aapt resource value: 0x7f0c007a
 			public const int status_bar_latest_event_content = 2131492986;
 			
-			// aapt resource value: 0x7f0c0097
-			public const int store_brief_textview_id = 2131493015;
+			// aapt resource value: 0x7f0c0096
+			public const int store_brief_textview_id = 2131493014;
 			
-			// aapt resource value: 0x7f0c0093
-			public const int store_list_cell = 2131493011;
+			// aapt resource value: 0x7f0c0092
+			public const int store_list_cell = 2131493010;
 			
 			// aapt resource value: 0x7f0c0077
 			public const int store_listview = 2131492983;
 			
+			// aapt resource value: 0x7f0c0093
+			public const int store_logo_image = 2131493011;
+			
+			// aapt resource value: 0x7f0c0089
+			public const int store_name_textview = 2131493001;
+			
 			// aapt resource value: 0x7f0c0094
-			public const int store_logo_image = 2131493012;
-			
-			// aapt resource value: 0x7f0c008a
-			public const int store_name_textview = 2131493002;
-			
-			// aapt resource value: 0x7f0c0095
-			public const int store_name_textview_id = 2131493013;
+			public const int store_name_textview_id = 2131493012;
 			
 			// aapt resource value: 0x7f0c0070
 			public const int submit_area = 2131492976;
@@ -3000,8 +3010,8 @@ namespace Gudu
 			// aapt resource value: 0x7f0c000b
 			public const int tabMode = 2131492875;
 			
-			// aapt resource value: 0x7f0c0090
-			public const int tab_indicator = 2131493008;
+			// aapt resource value: 0x7f0c008f
+			public const int tab_indicator = 2131493007;
 			
 			// aapt resource value: 0x7f0c0082
 			public const int text = 2131492994;
@@ -3012,8 +3022,8 @@ namespace Gudu
 			// aapt resource value: 0x7f0c0058
 			public const int textSpacerNoButtons = 2131492952;
 			
-			// aapt resource value: 0x7f0c0088
-			public const int textView1 = 2131493000;
+			// aapt resource value: 0x7f0c0087
+			public const int textView1 = 2131492999;
 			
 			// aapt resource value: 0x7f0c007e
 			public const int time = 2131492990;
@@ -3033,8 +3043,8 @@ namespace Gudu
 			// aapt resource value: 0x7f0c0076
 			public const int top_bar = 2131492982;
 			
-			// aapt resource value: 0x7f0c008b
-			public const int top_radio_button_group = 2131493003;
+			// aapt resource value: 0x7f0c008a
+			public const int top_radio_button_group = 2131493002;
 			
 			// aapt resource value: 0x7f0c003f
 			public const int touch = 2131492927;
@@ -3210,40 +3220,43 @@ namespace Gudu
 			public const int optionspage = 2130903076;
 			
 			// aapt resource value: 0x7f030025
-			public const int progress_hud = 2130903077;
+			public const int product_detail_activity = 2130903077;
 			
 			// aapt resource value: 0x7f030026
-			public const int select_campus_activity = 2130903078;
+			public const int progress_hud = 2130903078;
 			
 			// aapt resource value: 0x7f030027
-			public const int select_dialog_item_material = 2130903079;
+			public const int select_campus_activity = 2130903079;
 			
 			// aapt resource value: 0x7f030028
-			public const int select_dialog_multichoice_material = 2130903080;
+			public const int select_dialog_item_material = 2130903080;
 			
 			// aapt resource value: 0x7f030029
-			public const int select_dialog_singlechoice_material = 2130903081;
+			public const int select_dialog_multichoice_material = 2130903081;
 			
 			// aapt resource value: 0x7f03002a
-			public const int store_index_activity = 2130903082;
+			public const int select_dialog_singlechoice_material = 2130903082;
 			
 			// aapt resource value: 0x7f03002b
-			public const int store_menu_listview_fragment = 2130903083;
+			public const int store_index_activity = 2130903083;
 			
 			// aapt resource value: 0x7f03002c
-			public const int StoreListCell = 2130903084;
+			public const int store_menu_listview_fragment = 2130903084;
 			
 			// aapt resource value: 0x7f03002d
-			public const int StoreMenuListViewCell = 2130903085;
+			public const int StoreListCell = 2130903085;
 			
 			// aapt resource value: 0x7f03002e
-			public const int support_simple_spinner_dropdown_item = 2130903086;
+			public const int StoreMenuListViewCell = 2130903086;
 			
 			// aapt resource value: 0x7f03002f
-			public const int tab_indicator = 2130903087;
+			public const int support_simple_spinner_dropdown_item = 2130903087;
 			
 			// aapt resource value: 0x7f030030
-			public const int tab_main = 2130903088;
+			public const int tab_indicator = 2130903088;
+			
+			// aapt resource value: 0x7f030031
+			public const int tab_main = 2130903089;
 			
 			static Layout()
 			{
@@ -3969,6 +3982,12 @@ namespace Gudu
 			
 			// aapt resource value: 0x7f08016b
 			public const int Material_Widget_YearPicker_Light = 2131231083;
+			
+			// aapt resource value: 0x7f08016e
+			public const int MyTheme = 2131231086;
+			
+			// aapt resource value: 0x7f08016f
+			public const int MyTheme_Base = 2131231087;
 			
 			// aapt resource value: 0x7f080010
 			public const int Platform_AppCompat = 2131230736;

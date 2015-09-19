@@ -133,3 +133,8 @@
 /Users/MAC/Projects/Gudu/Gudu/bin/Release/Xamarin.Android.Support.v7.AppCompat.dll
 /Users/MAC/Projects/Gudu/Gudu/bin/Release/GuduCommon.dll
 /Users/MAC/Projects/Gudu/Gudu/bin/Release/GuduCommon.dll.mdb
+/Users/MAC/Projects/Gudu/Gudu/obj/Release/res/layout/store_menu_listview_fragment.xml
+/Users/MAC/Projects/Gudu/Gudu/obj/Release/res/layout/storemenulistviewcell.xml
+/Users/MAC/Projects/Gudu/Gudu/bin/Release/TsaoMateraial.dll
+/Users/MAC/Projects/Gudu/Gudu/bin/Release/Flurl.dll
+/Users/MAC/Projects/Gudu/Gudu/obj/Release/res/values-v21/styles.xml

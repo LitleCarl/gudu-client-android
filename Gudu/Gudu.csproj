@@ -38,6 +38,7 @@
     <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
     <ConsolePause>false</ConsolePause>
     <DebugType>full</DebugType>
+    <JavaMaximumHeapSize>2G</JavaMaximumHeapSize>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -217,6 +218,8 @@
     <AndroidResource Include="Resources\drawable\radio_unchecked.xml" />
     <AndroidResource Include="Resources\layout\store_menu_listview_fragment.axml" />
     <AndroidResource Include="Resources\layout\StoreMenuListViewCell.axml" />
+    <AndroidResource Include="Resources\values-v21\Styles.xml" />
+    <AndroidResource Include="Resources\layout\product_detail_activity.axml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <ItemGroup>
@@ -225,6 +228,7 @@
     <Folder Include="Resources\drawable\" />
     <Folder Include="View\" />
     <Folder Include="Resources\xml\" />
+    <Folder Include="Resources\values-v21\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\GuduCommon\GuduCommon.csproj">
