@@ -1702,28 +1702,31 @@ namespace Gudu
 		{
 			
 			// aapt resource value: 0x7f0b0040
-			public const int abc_background_cache_hint_selector_material_dark = 2131427392;
+			public const int Alizarin = 2131427392;
 			
 			// aapt resource value: 0x7f0b0041
-			public const int abc_background_cache_hint_selector_material_light = 2131427393;
+			public const int abc_background_cache_hint_selector_material_dark = 2131427393;
+			
+			// aapt resource value: 0x7f0b0042
+			public const int abc_background_cache_hint_selector_material_light = 2131427394;
 			
 			// aapt resource value: 0x7f0b0000
 			public const int abc_input_method_navigation_guard = 2131427328;
 			
-			// aapt resource value: 0x7f0b0042
-			public const int abc_primary_text_disable_only_material_dark = 2131427394;
-			
 			// aapt resource value: 0x7f0b0043
-			public const int abc_primary_text_disable_only_material_light = 2131427395;
+			public const int abc_primary_text_disable_only_material_dark = 2131427395;
 			
 			// aapt resource value: 0x7f0b0044
-			public const int abc_primary_text_material_dark = 2131427396;
+			public const int abc_primary_text_disable_only_material_light = 2131427396;
 			
 			// aapt resource value: 0x7f0b0045
-			public const int abc_primary_text_material_light = 2131427397;
+			public const int abc_primary_text_material_dark = 2131427397;
 			
 			// aapt resource value: 0x7f0b0046
-			public const int abc_search_url_text = 2131427398;
+			public const int abc_primary_text_material_light = 2131427398;
+			
+			// aapt resource value: 0x7f0b0047
+			public const int abc_search_url_text = 2131427399;
 			
 			// aapt resource value: 0x7f0b0001
 			public const int abc_search_url_text_normal = 2131427329;
@@ -1734,11 +1737,11 @@ namespace Gudu
 			// aapt resource value: 0x7f0b0003
 			public const int abc_search_url_text_selected = 2131427331;
 			
-			// aapt resource value: 0x7f0b0047
-			public const int abc_secondary_text_material_dark = 2131427399;
-			
 			// aapt resource value: 0x7f0b0048
-			public const int abc_secondary_text_material_light = 2131427400;
+			public const int abc_secondary_text_material_dark = 2131427400;
+			
+			// aapt resource value: 0x7f0b0049
+			public const int abc_secondary_text_material_light = 2131427401;
 			
 			// aapt resource value: 0x7f0b0004
 			public const int accent_material_dark = 2131427332;
@@ -1899,11 +1902,11 @@ namespace Gudu
 			// aapt resource value: 0x7f0b0030
 			public const int switch_thumb_disabled_material_light = 2131427376;
 			
-			// aapt resource value: 0x7f0b0049
-			public const int switch_thumb_material_dark = 2131427401;
-			
 			// aapt resource value: 0x7f0b004a
-			public const int switch_thumb_material_light = 2131427402;
+			public const int switch_thumb_material_dark = 2131427402;
+			
+			// aapt resource value: 0x7f0b004b
+			public const int switch_thumb_material_light = 2131427403;
 			
 			// aapt resource value: 0x7f0b0031
 			public const int switch_thumb_normal_material_dark = 2131427377;
@@ -2634,6 +2637,9 @@ namespace Gudu
 			// aapt resource value: 0x7f0c004b
 			public const int activity_chooser_view_content = 2131492939;
 			
+			// aapt resource value: 0x7f0c009b
+			public const int add_button = 2131493019;
+			
 			// aapt resource value: 0x7f0c0041
 			public const int afterRelease = 2131492929;
 			
@@ -2808,6 +2814,9 @@ namespace Gudu
 			// aapt resource value: 0x7f0c0091
 			public const int menuViewPager = 2131493009;
 			
+			// aapt resource value: 0x7f0c0092
+			public const int menu_listview = 2131493010;
+			
 			// aapt resource value: 0x7f0c0086
 			public const int message = 2131492998;
 			
@@ -2820,8 +2829,8 @@ namespace Gudu
 			// aapt resource value: 0x7f0c0038
 			public const int miter = 2131492920;
 			
-			// aapt resource value: 0x7f0c0095
-			public const int month_sale_textview_id = 2131493013;
+			// aapt resource value: 0x7f0c0096
+			public const int month_sale_textview_id = 2131493014;
 			
 			// aapt resource value: 0x7f0c0032
 			public const int multi = 2131492914;
@@ -2843,6 +2852,15 @@ namespace Gudu
 			
 			// aapt resource value: 0x7f0c0052
 			public const int parentPanel = 2131492946;
+			
+			// aapt resource value: 0x7f0c009a
+			public const int price_textview = 2131493018;
+			
+			// aapt resource value: 0x7f0c0098
+			public const int product_logo_image = 2131493016;
+			
+			// aapt resource value: 0x7f0c0099
+			public const int product_name_textview = 2131493017;
 			
 			// aapt resource value: 0x7f0c0005
 			public const int progress_circular = 2131492869;
@@ -2958,23 +2976,23 @@ namespace Gudu
 			// aapt resource value: 0x7f0c007a
 			public const int status_bar_latest_event_content = 2131492986;
 			
-			// aapt resource value: 0x7f0c0096
-			public const int store_brief_textview_id = 2131493014;
+			// aapt resource value: 0x7f0c0097
+			public const int store_brief_textview_id = 2131493015;
 			
-			// aapt resource value: 0x7f0c0092
-			public const int store_list_cell = 2131493010;
+			// aapt resource value: 0x7f0c0093
+			public const int store_list_cell = 2131493011;
 			
 			// aapt resource value: 0x7f0c0077
 			public const int store_listview = 2131492983;
 			
-			// aapt resource value: 0x7f0c0093
-			public const int store_logo_image = 2131493011;
+			// aapt resource value: 0x7f0c0094
+			public const int store_logo_image = 2131493012;
 			
 			// aapt resource value: 0x7f0c008a
 			public const int store_name_textview = 2131493002;
 			
-			// aapt resource value: 0x7f0c0094
-			public const int store_name_textview_id = 2131493012;
+			// aapt resource value: 0x7f0c0095
+			public const int store_name_textview_id = 2131493013;
 			
 			// aapt resource value: 0x7f0c0070
 			public const int submit_area = 2131492976;
@@ -3210,16 +3228,22 @@ namespace Gudu
 			public const int store_index_activity = 2130903082;
 			
 			// aapt resource value: 0x7f03002b
-			public const int StoreListCell = 2130903083;
+			public const int store_menu_listview_fragment = 2130903083;
 			
 			// aapt resource value: 0x7f03002c
-			public const int support_simple_spinner_dropdown_item = 2130903084;
+			public const int StoreListCell = 2130903084;
 			
 			// aapt resource value: 0x7f03002d
-			public const int tab_indicator = 2130903085;
+			public const int StoreMenuListViewCell = 2130903085;
 			
 			// aapt resource value: 0x7f03002e
-			public const int tab_main = 2130903086;
+			public const int support_simple_spinner_dropdown_item = 2130903086;
+			
+			// aapt resource value: 0x7f03002f
+			public const int tab_indicator = 2130903087;
+			
+			// aapt resource value: 0x7f030030
+			public const int tab_main = 2130903088;
 			
 			static Layout()
 			{

@@ -3620,19 +3620,20 @@ containing a value of this type.
         public static int abc_config_showMenuShortcutsWhenKeyboardPresent=0x7f090006;
     }
     public static final class color {
-        public static int abc_background_cache_hint_selector_material_dark=0x7f0b0040;
-        public static int abc_background_cache_hint_selector_material_light=0x7f0b0041;
+        public static int Alizarin=0x7f0b0040;
+        public static int abc_background_cache_hint_selector_material_dark=0x7f0b0041;
+        public static int abc_background_cache_hint_selector_material_light=0x7f0b0042;
         public static int abc_input_method_navigation_guard=0x7f0b0000;
-        public static int abc_primary_text_disable_only_material_dark=0x7f0b0042;
-        public static int abc_primary_text_disable_only_material_light=0x7f0b0043;
-        public static int abc_primary_text_material_dark=0x7f0b0044;
-        public static int abc_primary_text_material_light=0x7f0b0045;
-        public static int abc_search_url_text=0x7f0b0046;
+        public static int abc_primary_text_disable_only_material_dark=0x7f0b0043;
+        public static int abc_primary_text_disable_only_material_light=0x7f0b0044;
+        public static int abc_primary_text_material_dark=0x7f0b0045;
+        public static int abc_primary_text_material_light=0x7f0b0046;
+        public static int abc_search_url_text=0x7f0b0047;
         public static int abc_search_url_text_normal=0x7f0b0001;
         public static int abc_search_url_text_pressed=0x7f0b0002;
         public static int abc_search_url_text_selected=0x7f0b0003;
-        public static int abc_secondary_text_material_dark=0x7f0b0047;
-        public static int abc_secondary_text_material_light=0x7f0b0048;
+        public static int abc_secondary_text_material_dark=0x7f0b0048;
+        public static int abc_secondary_text_material_light=0x7f0b0049;
         public static int accent_material_dark=0x7f0b0004;
         public static int accent_material_light=0x7f0b0005;
         public static int background_floating_material_dark=0x7f0b0006;
@@ -3686,8 +3687,8 @@ containing a value of this type.
         public static int secondary_text_disabled_material_light=0x7f0b002e;
         public static int switch_thumb_disabled_material_dark=0x7f0b002f;
         public static int switch_thumb_disabled_material_light=0x7f0b0030;
-        public static int switch_thumb_material_dark=0x7f0b0049;
-        public static int switch_thumb_material_light=0x7f0b004a;
+        public static int switch_thumb_material_dark=0x7f0b004a;
+        public static int switch_thumb_material_light=0x7f0b004b;
         public static int switch_thumb_normal_material_dark=0x7f0b0031;
         public static int switch_thumb_normal_material_light=0x7f0b0032;
         public static int tabBackgroundColor=0x7f0b003c;
@@ -3924,6 +3925,7 @@ containing a value of this type.
         public static int action_mode_bar_stub=0x7f0c0061;
         public static int action_mode_close_button=0x7f0c004a;
         public static int activity_chooser_view_content=0x7f0c004b;
+        public static int add_button=0x7f0c009b;
         public static int afterRelease=0x7f0c0041;
         public static int alertTitle=0x7f0c0055;
         public static int always=0x7f0c0016;
@@ -3982,11 +3984,12 @@ containing a value of this type.
         public static int match_view=0x7f0c003c;
         public static int media_actions=0x7f0c007b;
         public static int menuViewPager=0x7f0c0091;
+        public static int menu_listview=0x7f0c0092;
         public static int message=0x7f0c0086;
         public static int middle=0x7f0c0015;
         public static int minute=0x7f0c0047;
         public static int miter=0x7f0c0038;
-        public static int month_sale_textview_id=0x7f0c0095;
+        public static int month_sale_textview_id=0x7f0c0096;
         public static int multi=0x7f0c0032;
         public static int multiply=0x7f0c001e;
         public static int never=0x7f0c0019;
@@ -3994,6 +3997,9 @@ containing a value of this type.
         public static int normal=0x7f0c000a;
         public static int oval=0x7f0c003d;
         public static int parentPanel=0x7f0c0052;
+        public static int price_textview=0x7f0c009a;
+        public static int product_logo_image=0x7f0c0098;
+        public static int product_name_textview=0x7f0c0099;
         public static int progress_circular=0x7f0c0005;
         public static int progress_horizontal=0x7f0c0006;
         public static int query=0x7f0c0029;
@@ -4032,12 +4038,12 @@ containing a value of this type.
         public static int src_over=0x7f0c0022;
         public static int start=0x7f0c002e;
         public static int status_bar_latest_event_content=0x7f0c007a;
-        public static int store_brief_textview_id=0x7f0c0096;
-        public static int store_list_cell=0x7f0c0092;
+        public static int store_brief_textview_id=0x7f0c0097;
+        public static int store_list_cell=0x7f0c0093;
         public static int store_listview=0x7f0c0077;
-        public static int store_logo_image=0x7f0c0093;
+        public static int store_logo_image=0x7f0c0094;
         public static int store_name_textview=0x7f0c008a;
-        public static int store_name_textview_id=0x7f0c0094;
+        public static int store_name_textview_id=0x7f0c0095;
         public static int submit_area=0x7f0c0070;
         public static int tabMode=0x7f0c000b;
         public static int tab_indicator=0x7f0c0090;
@@ -4111,10 +4117,12 @@ containing a value of this type.
         public static int select_dialog_multichoice_material=0x7f030028;
         public static int select_dialog_singlechoice_material=0x7f030029;
         public static int store_index_activity=0x7f03002a;
-        public static int storelistcell=0x7f03002b;
-        public static int support_simple_spinner_dropdown_item=0x7f03002c;
-        public static int tab_indicator=0x7f03002d;
-        public static int tab_main=0x7f03002e;
+        public static int store_menu_listview_fragment=0x7f03002b;
+        public static int storelistcell=0x7f03002c;
+        public static int storemenulistviewcell=0x7f03002d;
+        public static int support_simple_spinner_dropdown_item=0x7f03002e;
+        public static int tab_indicator=0x7f03002f;
+        public static int tab_main=0x7f030030;
     }
     public static final class string {
         public static int ApplicationName=0x7f060014;

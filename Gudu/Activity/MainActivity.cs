@@ -82,7 +82,10 @@ namespace Gudu
 			);
 
 			storeListView.ItemClick += (object sender, AdapterView.ItemClickEventArgs e) => {
-				StartActivity(new Intent(this, typeof(StoreIndexActivity)));
+				Intent intent = new Intent(this, typeof(StoreIndexActivity));
+				StoreModel model = ((StoreListViewAdapter)(storeListView.Adapter))[e.Position];
+				intent.PutExtra("store_id", model.Id);
+				StartActivity(intent);
 			};
 
 			//监听shared preference变化

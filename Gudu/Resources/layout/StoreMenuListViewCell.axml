@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="88dp"
+    android:id="@+id/store_list_cell"
+    android:background="#fff"
+    android:clipChildren="true">
+    <ImageView
+        android:src="@android:drawable/ic_menu_gallery"
+        android:id="@+id/product_logo_image"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
+        android:layout_marginLeft="4dp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop" />
+    <TextView
+        android:text="香菇菜包"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/product_name_textview"
+        android:layout_toRightOf="@+id/product_logo_image"
+        android:layout_alignTop="@+id/product_logo_image"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="20dp"
+        android:textColor="#000"
+        android:layout_marginTop="4dp" />
+    <TextView
+        android:text="店铺简介"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/month_sale_textview_id"
+        android:id="@+id/store_brief_textview_id"
+        android:layout_alignLeft="@id/month_sale_textview_id" />
+    <TextView
+        android:text="¥1.5～5.5"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/product_logo_image"
+        android:id="@+id/price_textview"
+        android:layout_alignBottom="@id/product_logo_image"
+        android:textColor="@color/Alizarin"
+        android:layout_marginBottom="10dp" />
+    <com.rey.material.widget.FloatingActionButton
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:text="BUTTON"
+        local:fab_backgroundColor="#57CCCC"
+        local:fab_radius="20dp"
+        local:fab_elevation="4dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:id="@+id/add_button" />
+</RelativeLayout>

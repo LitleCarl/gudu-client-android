@@ -16,6 +16,7 @@
 /Users/MAC/Projects/Gudu/Gudu/obj/Debug/assemblies/Xamarin.Android.Support.v7.CardView.dll
 /Users/MAC/Projects/Gudu/Gudu/obj/Debug/assemblies/Xamarin.Android.Support.v7.AppCompat.dll
 /Users/MAC/Projects/Gudu/Gudu/obj/Debug/assemblies/TsaoMateraial.dll
+/Users/MAC/Projects/Gudu/Gudu/obj/Debug/assemblies/Flurl.dll
 /Users/MAC/Projects/Gudu/Gudu/obj/Debug/assemblies/System.Core.dll
 /Users/MAC/Projects/Gudu/Gudu/obj/Debug/assemblies/GuduCommon.dll
 /Users/MAC/Projects/Gudu/Gudu/obj/Debug/assemblies/mscorlib.dll

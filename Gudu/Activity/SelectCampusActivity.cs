@@ -111,7 +111,12 @@ namespace Gudu
 		Activity context;
 		public CampusListViewAdapter(Activity context, List<CampusModel> items) : base() {
 			this.context = context;
-			this.campusList = items;
+			if (items == null) {
+				campusList = new List<CampusModel> ();
+			}
+			else {
+				this.campusList = items;
+			}
 		}
 		public override long GetItemId(int position)
 		{

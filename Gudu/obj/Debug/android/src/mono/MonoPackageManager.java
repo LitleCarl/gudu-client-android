@@ -91,6 +91,7 @@ class MonoPackageManager_Resources {
 		"Xamarin.Android.Support.v7.CardView.dll",
 		"Xamarin.Android.Support.v7.AppCompat.dll",
 		"TsaoMateraial.dll",
+		"Flurl.dll",
 		"GuduCommon.dll",
 		"System.Collections.Concurrent.dll",
 		"System.Collections.dll",

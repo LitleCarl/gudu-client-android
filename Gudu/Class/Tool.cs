@@ -12,6 +12,9 @@ using VolleyCSharp.MainCom;
 using Android.Content;
 using Newtonsoft.Json.Linq;
 using Android.Preferences;
+using System.Diagnostics;
+using System.Text;
+using Flurl;
 
 
 namespace Gudu
@@ -33,7 +36,7 @@ namespace Gudu
 						}
 
 					};
-					//obs.OnNext((T)(src.GetType().GetProperty(propertyName).GetValue(src, null)));
+					obs.OnNext((T)(src.GetType().GetProperty(propertyName).GetValue(src, null)));
 					Console.WriteLine("value:{0}1", src.GetType().GetProperty(propertyName));
 					src.PropertyChanged += handler;
 					return () => src.PropertyChanged -= handler;
@@ -71,11 +74,16 @@ namespace Gudu
 		public static bool CheckStatusCode (string responseObject) {
 
 			var statusCode = Tool.GetStatusCode (responseObject);
-			Console.WriteLine ("statusCode:{0},type:{1}", statusCode, statusCode.GetType());
 			bool valid = Tool.GetStatusCode (responseObject) == (int)ResponseStatusCode.Normal;
 			return valid;
 
 		}
+
+
+		public static String BuildUrl(string baseUrl, string path,Dictionary<string, string> queryParam){
+			return baseUrl.AppendPathSegment(path).SetQueryParams(queryParam);
+		}
+
 		/// <summary>
 		/// 发送Get请求
 		/// </summary>
@@ -85,7 +93,7 @@ namespace Gudu
 		/// <param name="completionBlock">Completion block.</param>
 		/// <param name="errorBlock">Error block.</param>
 		/// <param name="showHud">是否显示hud</param>
-		public static void Get (String url, Object param, Context context, Action<String> completionBlock, Action<Exception> errorBlock, bool showHud = true){
+		public static void Get (String url, Object param, Context context, Action<String> completionBlock, Action<VolleyError> errorBlock, bool showHud = true){
 			RequestQueue queue = Volley.NewRequestQueue(context);
 			queue.Start();
 			ProgressHUD hud = null;

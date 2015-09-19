@@ -80,6 +80,9 @@
     <Reference Include="TsaoMateraial">
       <HintPath>lib\TsaoMateraial.dll</HintPath>
     </Reference>
+    <Reference Include="Flurl">
+      <HintPath>..\packages\Flurl.1.0.10\lib\portable-net40+sl50+win+wpa81+wp80+MonoAndroid10+MonoTouch10\Flurl.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Resources\Resource.designer.cs" />
@@ -92,6 +95,7 @@
     <Compile Include="Activity\SelectCampusActivity.cs" />
     <Compile Include="Class\SPConstant.cs" />
     <Compile Include="Activity\StoreIndexActivity.cs" />
+    <Compile Include="Class\URLConstant.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -211,6 +215,8 @@
     <AndroidResource Include="Resources\drawable\button_text_color.xml" />
     <AndroidResource Include="Resources\drawable\radio_checked.xml" />
     <AndroidResource Include="Resources\drawable\radio_unchecked.xml" />
+    <AndroidResource Include="Resources\layout\store_menu_listview_fragment.axml" />
+    <AndroidResource Include="Resources\layout\StoreMenuListViewCell.axml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <ItemGroup>
