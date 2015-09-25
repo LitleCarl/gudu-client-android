@@ -80,7 +80,9 @@ namespace Gudu
 		}
 
 		void fetchData(){
-			Tool.Get ("https://gudu-sails.tunnel.mobi/campus", null, this,
+			string url = Tool.BuildUrl (URLConstant.kBaseUrl, URLConstant.kCampusUrl, null);
+
+			Tool.Get (url, null, this,
 				(responseObject) => {
 					if (Tool.CheckStatusCode(responseObject)){
 						var storePart = JObject.Parse(responseObject).SelectToken("data").ToString();

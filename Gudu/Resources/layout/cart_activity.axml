@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:minWidth="25px"
+    android:minHeight="25px">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:id="@+id/top_bar"
+        android:background="#ff1abc9c"
+        android:minWidth="25px"
+        android:minHeight="25px">
+        <TextView
+            android:text="购物车"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/campus_name_textview"
+            android:layout_alignParentLeft="false"
+            android:layout_centerVertical="true"
+            android:maxWidth="200dp"
+            android:textColor="#ffffffff"
+            android:layout_centerHorizontal="true"
+            android:textSize="16dp" />
+    </RelativeLayout>
+    <ListView
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/cart_listview"
+        android:layout_below="@id/top_bar"
+        android:layout_above="@+id/submit_area" />
+    <RelativeLayout
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:id="@id/submit_area"
+        android:layout_alignParentBottom="true"
+        android:background="#ffffffff">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:id="@+id/relativeLayout1"
+            android:background="#ffebebeb">
+            <TextView
+                android:text="总计:"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView1"
+                android:layout_centerVertical="true"
+                android:textColor="#000000"
+                android:layout_marginLeft="12dp"
+                android:textSize="14dp" />
+            <TextView
+                android:text="¥1.8"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/total_price_textview"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="12dp"
+                android:textColor="#000"
+                android:textSize="14dp" />
+        </RelativeLayout>
+        <Button
+            android:text="付款"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:id="@+id/button1"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="6dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/round_button"
+            android:textColor="#FFFFFF" />
+    </RelativeLayout>
+</RelativeLayout>

@@ -33,8 +33,8 @@ namespace Gudu
 		{
 
 			AddTab("首页", Resource.Drawable.tab_home, typeof(MainActivity));
-			AddTab("购物车", Resource.Drawable.tab_cart, typeof(MainActivity));
-			AddTab("我", Resource.Drawable.tab_mine, typeof(MainActivity));
+			AddTab("购物车", Resource.Drawable.tab_cart, typeof(CartActivity));
+			AddTab("我", Resource.Drawable.tab_mine, typeof(MineActivity));
 
 		}
 

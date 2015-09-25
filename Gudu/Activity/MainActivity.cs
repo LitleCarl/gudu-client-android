@@ -105,7 +105,9 @@ namespace Gudu
 		}
 
 		private void fetchData(string campus_id){
-			Tool.Get ("https://gudu-sails.tunnel.mobi/campus/"+campus_id, null, this,
+			string url = Tool.BuildUrl (URLConstant.kBaseUrl, URLConstant.kCampusFindOneUrl.Replace(":campus_id", campus_id) , null);
+
+			Tool.Get (url, null, this,
 				(responseObject) => {
 					if (Tool.CheckStatusCode(responseObject)){
 						var campusPart = JObject.Parse(responseObject).SelectToken("data");

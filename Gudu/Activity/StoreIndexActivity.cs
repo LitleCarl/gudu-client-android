@@ -189,6 +189,11 @@ namespace Gudu
 			View view = inflater.Inflate(Resource.Layout.store_menu_listview_fragment, container, false);
 			menuListView = view.FindViewById<Android.Widget.ListView> (Resource.Id.menu_listview);
 			menuListView.Adapter = new ProductListViewAdapter(this.Activity, productList);
+			menuListView.ItemClick += (sender, arg) => {
+				Intent intent = new Intent(this.Activity, typeof(ProductDetailActivity));
+				intent.PutExtra("product_id", ((ProductListViewAdapter)(menuListView.Adapter))[arg.Position].Id);
+				this.Activity.StartActivity(intent);
+			};
 			return view;
 		}
 	}

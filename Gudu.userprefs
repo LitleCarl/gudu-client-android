@@ -1,8 +1,10 @@
 ﻿<Properties StartupItem="Gudu/Gudu.csproj">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" PreferredExecutionTarget="Android.cjx" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.Nexus4" />
   <MonoDevelop.Ide.Workbench>
     <Files>
-      <File FileName="Gudu/Activity/StoreIndexActivity.cs" Line="77" Column="1" />
+      <File FileName="Gudu/Activity/ProductDetailActivity.cs" Line="99" Column="1" />
+      <File FileName="Gudu/Resources/menu/noicon.xml" Line="3" Column="1" />
+      <File FileName="Gudu/Activity/CartActivity.cs" Line="83" Column="48" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

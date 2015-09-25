@@ -138,3 +138,4 @@
 /Users/MAC/Projects/Gudu/Gudu/bin/Release/TsaoMateraial.dll
 /Users/MAC/Projects/Gudu/Gudu/bin/Release/Flurl.dll
 /Users/MAC/Projects/Gudu/Gudu/obj/Release/res/values-v21/styles.xml
+/Users/MAC/Projects/Gudu/Gudu/obj/Release/res/layout/product_detail_activity.xml

@@ -4,7 +4,7 @@ namespace Gudu
 {
 	public static class URLConstant
 	{
-		public static string kBaseUrl = "http://gudu-sails.tunnel.mobi";
+		public static string kBaseUrl = "http://gudu-sails.tunnel.mobi/";
 		public static string kCampusUrl = "campus";
 		public static string kCampusFindOneUrl = "campus/:campus_id";
 		public static string kUserFindOneWithTokenUrl = "user/getWithToken";

@@ -3,6 +3,8 @@
 	
 		<color name="transparent">#00ffffff</color>
 			<color name="greenColor">#1abc9c</color>
+						<color name="black">#000000</color>
+												<color name="selector">#DEDEDE</color>
 
 	<color name="tabMedium">#2B2B2B</color>
 	<color name="tabDark">#000000</color>

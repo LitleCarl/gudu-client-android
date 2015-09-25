@@ -11,6 +11,7 @@
     </activity>
     <activity android:label="选择学校" android:name="md5353c6c1028b70dfa1d3e1b2a263308e7.SelectCampusActivity" />
     <activity android:label="StoreIndexActivity" android:name="md5353c6c1028b70dfa1d3e1b2a263308e7.StoreIndexActivity" />
+    <activity android:label="ProductDetailActivity" android:name="md5353c6c1028b70dfa1d3e1b2a263308e7.ProductDetailActivity" />
     <provider android:name="mono.MonoRuntimeProvider" android:exported="false" android:initOrder="2147483647" android:authorities="com.gudu.morning.mono.MonoRuntimeProvider.__mono_init__" />
   </application>
   <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />

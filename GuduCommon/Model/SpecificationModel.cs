@@ -33,13 +33,13 @@ namespace GuduCommon
 			set { SetField(ref name, value); }
 		}
 
-		private String value;
+		private String specificationValue;
 		[JsonProperty("value")]
-		public String Value {
+		public String SpecificationValue {
 			get{
-				return value;
+				return specificationValue;
 			}
-			set { SetField(ref value, value); }
+			set { SetField(ref specificationValue, value); }
 		}
 
 		private Decimal price;
