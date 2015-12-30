@@ -22,6 +22,14 @@ namespace Gudu
 			float dpHeight = outMetrics.HeightPixels;
 			return dpHeight;
 		}
+		public static float dp2px(Activity activity, float dp){
+			Display display = activity.WindowManager.DefaultDisplay;
+			DisplayMetrics outMetrics = new DisplayMetrics ();
+			display.GetMetrics(outMetrics);
+			float density  = activity.Resources.DisplayMetrics.Density;
+
+			return dp * density;
+		}
 		public static float kScreenWidth (Activity activity){
 			Display display = activity.WindowManager.DefaultDisplay;
 			DisplayMetrics outMetrics = new DisplayMetrics ();

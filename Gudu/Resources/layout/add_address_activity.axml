@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#fff"
+    android:minWidth="25px"
+    android:minHeight="25px">
+    <com.zaocan84.zeng.BorderRelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:bottomBorderColor="@color/lineColor"
+        app:bottomBorderWidth="1dp"
+        android:id="@+id/relativeLayout1">
+        <TextView
+            android:text="姓名"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/receiver_name_textview"
+            android:textColor="#5D5D5D"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="12dp"
+            android:textSize="12dp" />
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_toRightOf="@id/receiver_name_textview"
+            android:id="@+id/receiver_name_edittext"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="12dp"
+            android:background="@color/transparent" />
+    </com.zaocan84.zeng.BorderRelativeLayout>
+    <com.zaocan84.zeng.BorderRelativeLayout
+        android:id="@+id/relativeLayout2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:bottomBorderColor="@color/lineColor"
+        app:bottomBorderWidth="1dp">
+        <TextView
+            android:text="手机"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/receiver_phone_textview"
+            android:textColor="#5D5D5D"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="12dp"
+            android:textSize="12dp" />
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_toRightOf="@id/receiver_phone_textview"
+            android:id="@+id/receiver_phone_edittext"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="12dp"
+            android:background="@color/transparent" />
+    </com.zaocan84.zeng.BorderRelativeLayout>
+    <com.zaocan84.zeng.BorderRelativeLayout
+        android:id="@+id/relativeLayout3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:bottomBorderColor="@color/lineColor"
+        app:bottomBorderWidth="1dp">
+        <TextView
+            android:text="地址"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/receiver_address_textview"
+            android:textColor="#5D5D5D"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="12dp"
+            android:textSize="12dp" />
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_toRightOf="@id/receiver_address_textview"
+            android:id="@+id/receiver_address_edittext"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="12dp"
+            android:layout_centerVertical="true"
+            android:background="@color/transparent" />
+    </com.zaocan84.zeng.BorderRelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp">
+        <Button
+            android:text="添加"
+            android:layout_width="80dp"
+            android:layout_height="30dp"
+            android:id="@+id/submit_add_address_button"
+            android:layout_marginBottom="10dp"
+            style="@style/MegaButton"
+            android:textSize="11dp"
+            android:background="@drawable/mega_button_selector"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:textColor="#000" />
+    </RelativeLayout>
+</LinearLayout>

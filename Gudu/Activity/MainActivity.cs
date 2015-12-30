@@ -20,14 +20,13 @@ using Android.Preferences;
 
 namespace Gudu
 {
-	[Activity (Label = "咕嘟早餐")]
+	[Activity (Label = "早餐巴士", ScreenOrientation=Android.Content.PM.ScreenOrientation.Portrait)]
 	public class MainActivity : Activity, INotifyPropertyChanged
 	{
 		// View Outlets
-		ListView storeListView;
+		PullToRefresharp.Android.Widget.ListView storeListView;
 		TextView campusNameTextView;
-
-		List<StoreModel> storeList;
+ 		List<StoreModel> storeList;
 		public List<StoreModel> StoreList{
 			get{ return storeList;}
 			set { SetField(ref storeList, value); }
@@ -55,6 +54,8 @@ namespace Gudu
 		{
 			base.OnCreate (bundle);
 			// Set our view from the "main" layout resource
+//			RequestWindowFeature (WindowFeatures.ActionBar);
+
 			SetContentView (Resource.Layout.Main);
 			initUI ();
 			setUpTrigger ();
@@ -64,7 +65,7 @@ namespace Gudu
 		/// 初始化ui
 		/// </summary>
 		private void initUI() {
-			storeListView = FindViewById<ListView> (Resource.Id.store_listview);
+			storeListView = FindViewById<PullToRefresharp.Android.Widget.ListView> (Resource.Id.store_listview);
 			campusNameTextView = FindViewById<TextView> (Resource.Id.campus_name_textview);
 		}
 
@@ -72,12 +73,19 @@ namespace Gudu
 
 		private void setUpTrigger(){
 			StoreList = new List<StoreModel> ();
-
+			this.FindViewById<ImageButton> (Resource.Id.search_button).Click += (object sender, EventArgs e) => {
+				StartActivity(new Intent(this, typeof(SearchActivity)));
+			};;
 			// 监听StoreList变化
 			this.FromMyEvent<object>("StoreList").Subscribe (
 				(args) => {
-					storeListView.Adapter = new StoreListViewAdapter(this, (List<StoreModel>)args);
-					storeListView.DeferNotifyDataSetChanged();
+					this.RunOnUiThread(
+						() => {
+							Console.WriteLine("list:count{0}", args);
+							storeListView.Adapter = new StoreListViewAdapter(this, (List<StoreModel>)args);
+						}
+					);
+
 				}
 			);
 
@@ -94,44 +102,150 @@ namespace Gudu
 				(campus_id) =>
 				{
 					if (campus_id == null){
-						StartActivity(new Intent(this, typeof(SelectCampusActivity)));
+						new Handler ().PostDelayed (
+							() => {
+								StartActivity(new Intent(this, typeof(SelectCampusActivity)));
+							}, 500
+						);
 					}
 					else{
 						fetchData(campus_id);
 					}
 				}
 			);
-				
-		}
 
-		private void fetchData(string campus_id){
-			string url = Tool.BuildUrl (URLConstant.kBaseUrl, URLConstant.kCampusFindOneUrl.Replace(":campus_id", campus_id) , null);
+			storeListView.RefreshActivated += (object sender, EventArgs e) => {
+				this.fetchData(Tool.StringForKey(SPConstant.SelectCampusIdKeyInSharedPreference));
+			};
 
-			Tool.Get (url, null, this,
-				(responseObject) => {
-					if (Tool.CheckStatusCode(responseObject)){
-						var campusPart = JObject.Parse(responseObject).SelectToken("data");
-						campusNameTextView.Text = campusPart.SelectToken("name").Value<String>();
+			// 切换学校
+			FindViewById<Button>(Resource.Id.toggle_campus_button).Click += (object sender, EventArgs e) => {
+				StartActivity(new Intent(this, typeof(SelectCampusActivity)));
+			};
 
-						var storePart = campusPart.SelectToken("stores").ToString();
-						StoreList = JsonConvert.DeserializeObject<List<StoreModel>>(storePart, new JsonSerializerSettings
-							{
-								Error = (sender,errorArgs) =>
-								{
-									var currentError = errorArgs.ErrorContext.Error.Message;
-									errorArgs.ErrorContext.Handled = true;
+			FindViewById<ImageButton> (Resource.Id.random_recommend_button).Click += (object sender, EventArgs e) => {
+				var param = new Dictionary<string, object> ();
+				param.Add ("campus_id", Tool.StringForKey(SPConstant.SelectCampusIdKeyInSharedPreference));
+
+
+				Tool.Get (URLConstant.kBaseUrl, URLConstant.kRandomRecommendUrl, param, this,
+					(responseObject) => {
+						this.RunOnUiThread(
+							() => {
+								var rootView = FindViewById<ViewGroup>(Android.Resource.Id.Content);
+								View contentView = this.LayoutInflater.Inflate (Resource.Layout.cardview_activity, rootView, false);
+								AlertDialog.Builder builder = new AlertDialog.Builder(this);
+								builder.SetView(contentView);
+								Dialog alertDialog = builder.Create();
+								alertDialog.RequestWindowFeature((int)(WindowFeatures.NoTitle));
+								alertDialog.Show();
+								alertDialog.Window.SetLayout((int)DeviceInfo.dp2px(this, DeviceInfo.kScreenWidth(this) * 0.8f), (int)DeviceInfo.dp2px(this, DeviceInfo.kScreenHeight(this) * 0.7f)); //Controlling width and height.
+								alertDialog.SetCanceledOnTouchOutside(true);
+
+								if (Tool.CheckStatusCode(responseObject)){
+									var storePart = JObject.Parse(responseObject).SelectToken("data").SelectToken("store").ToString();
+
+
+									var store = JsonConvert.DeserializeObject<StoreModel>(storePart, new JsonSerializerSettings
+										{
+											Error = (sender_clone,errorArgs) =>
+											{
+												var currentError = errorArgs.ErrorContext.Error.Message;
+												errorArgs.ErrorContext.Handled = true;
+											}}
+									);
+									contentView.FindViewById<TextView>(Resource.Id.store_signature_textview).Text = store.Signature;
+									contentView.FindViewById<TextView>(Resource.Id.back_ratio_textview).Text = String.Format("{0}%", (int)(store.Back_ratio * 100));
+									contentView.FindViewById<TextView>(Resource.Id.month_sale_textview).Text = store.Month_sale;
+									contentView.FindViewById<TextView>(Resource.Id.store_name_textview).Text = store.Name;
+									contentView.FindViewById<TextView>(Resource.Id.store_signature_textview).Text = store.Signature;
+									Picasso.With(this).Load(store.Logo_filename).Into(contentView.FindViewById<ImageView>(Resource.Id.logo_imageview));
+									contentView.FindViewById<Button>(Resource.Id.enter_store_button).Click += (object obj, EventArgs evt) => {
+										Intent intent = new Intent(this, typeof(StoreIndexActivity));
+										intent.PutExtra("store_id", store.Id);
+										StartActivity(intent);
+									};
+
 								}
-							});
-					}
-					else
-					{
-						Console.WriteLine("状态码出错");
-					}
+							}
+						);
+
+					},
+					(exception) => {
+
+					});
+			};
+		}
+			
+		private void fetchData(string campus_id){
+			Tool.Get (URLConstant.kBaseUrl, URLConstant.kStoresInCampusUrl.Replace(":campus_id", campus_id), null, this, 
+				(responseObject) => {
+					this.RunOnUiThread(
+						() => {
+							storeListView.OnRefreshCompleted();
+							if (Tool.CheckStatusCode(responseObject)){
+								var storesPart = JObject.Parse(responseObject).SelectToken("data").SelectToken("stores").ToString();
+
+								StoreList = JsonConvert.DeserializeObject<List<StoreModel>>(storesPart, new JsonSerializerSettings
+									{
+										Error = (sender,errorArgs) =>
+										{
+											var currentError = errorArgs.ErrorContext.Error.Message;
+											errorArgs.ErrorContext.Handled = true;
+										}}
+								);
+
+							}
+							else
+							{
+								Console.WriteLine("状态码出错");
+							}
+						}
+					);
 				},
 				(exception) => {
 					Console.WriteLine("请求错误:{0}", exception.Message);
 				}
 			);
+			Tool.Get (URLConstant.kBaseUrl, URLConstant.kCampusFindOneUrl.Replace(":campus_id", campus_id), null, this,
+				(responseObject) => {
+					this.RunOnUiThread(
+						() => {
+							if (Tool.CheckStatusCode(responseObject)){
+								var campusPart = JObject.Parse(responseObject).SelectToken("data").SelectToken("campus");
+								campusNameTextView.Text = campusPart.SelectToken("name").Value<String>();
+
+							}
+							else
+							{
+								Console.WriteLine("状态码出错");
+							}
+						}
+					);
+
+				},
+				(exception) => {
+					Console.WriteLine("请求错误:{0}", exception.Message);
+				}
+			);
+		}
+
+		bool doubleBackToExitPressedOnce = false;
+		public override void OnBackPressed ()
+		{
+			if (doubleBackToExitPressedOnce) {
+				base.OnBackPressed ();
+				Java.Lang.JavaSystem.Exit(0);
+				return;
+			} 
+
+
+			this.doubleBackToExitPressedOnce = true;
+			Toast.MakeText(this, "再点一次退出",ToastLength.Short).Show();
+
+			new Handler().PostDelayed(()=>{
+				doubleBackToExitPressedOnce=false;
+			},2000);
 		}
 
 	}
@@ -160,11 +274,11 @@ namespace Gudu
 			if (view == null) // otherwise create a new one
 				view = context.LayoutInflater.Inflate(Resource.Layout.StoreListCell, null);
 			StoreModel store = this [position];
+			StoreListViewCell cell = view as StoreListViewCell;
+			if (cell != null) {
+				cell.Store = store;
+			}
 
-			view.FindViewById<TextView>(Resource.Id.store_name_textview_id).Text = store.Name;
-			view.FindViewById<TextView>(Resource.Id.store_brief_textview_id).Text = store.Brief;
-
-			Picasso.With(context).Load(store.Logo_filename).Into(view.FindViewById<ImageView>(Resource.Id.store_logo_image));
 			return view;
 		}
 	}

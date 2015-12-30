@@ -12,7 +12,7 @@ public class Picasso_ListenerImplementor
 		__md_methods = 
 			"n_onImageLoadFailed:(Lcom/squareup/picasso/Picasso;Landroid/net/Uri;Ljava/lang/Exception;)V:GetOnImageLoadFailed_Lcom_squareup_picasso_Picasso_Landroid_net_Uri_Ljava_lang_Exception_Handler:Squareup.Picasso.Picasso/IListenerInvoker, Picasso\n" +
 			"";
-		mono.android.Runtime.register ("Squareup.Picasso.Picasso/IListenerImplementor, Picasso, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", Picasso_ListenerImplementor.class, __md_methods);
+		mono.android.Runtime.register ("Squareup.Picasso.Picasso+IListenerImplementor, Picasso, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", Picasso_ListenerImplementor.class, __md_methods);
 	}
 
 
@@ -20,7 +20,7 @@ public class Picasso_ListenerImplementor
 	{
 		super ();
 		if (getClass () == Picasso_ListenerImplementor.class)
-			mono.android.TypeManager.Activate ("Squareup.Picasso.Picasso/IListenerImplementor, Picasso, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", "", this, new java.lang.Object[] {  });
+			mono.android.TypeManager.Activate ("Squareup.Picasso.Picasso+IListenerImplementor, Picasso, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", "", this, new java.lang.Object[] {  });
 	}
 
 

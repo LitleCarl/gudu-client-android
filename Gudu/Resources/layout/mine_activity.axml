@@ -11,7 +11,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
         android:id="@+id/top_bar"
-        android:background="#ff1abc9c"
+        android:background="#ff3498db"
         android:minWidth="25px"
         android:minHeight="25px">
         <TextView
@@ -26,8 +26,18 @@
             android:textColor="#ffffffff"
             android:layout_centerHorizontal="true"
             android:textSize="16dp" />
+        <Button
+            android:text="切换账号"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/log_out_button"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:background="@null"
+            android:textSize="14dp"
+            android:textColor="#fff" />
     </RelativeLayout>
-    <com.gudu.morning.BorderRelativeLayout
+    <com.zaocan84.zeng.BorderRelativeLayout
         android:minWidth="25px"
         android:minHeight="25px"
         android:layout_width="match_parent"
@@ -35,33 +45,36 @@
         android:id="@+id/relativeLayout1"
         android:background="@drawable/bg_login"
         app:topBorderWidth="1dp"
-        app:topBorderColor="@color/lineColor"
-        app:bottomBorderColor="@color/lineColor"
-        app:bottomBorderWidth="1dp">
+        app:topBorderColor="@color/lineColor">
         <com.github.siyamed.shapeimageview.CircularImageView
             android:src="@drawable/avatar"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:id="@+id/imageView1"
+            android:id="@+id/avatar"
             android:layout_centerVertical="true"
             android:layout_marginLeft="12dp" />
         <TextView
-            android:text="13122898910"
+            android:text=""
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/imageView1"
+            android:layout_toRightOf="@id/avatar"
             android:id="@+id/user_name_textview"
             android:layout_centerVertical="true"
             android:textStyle="normal"
             android:typeface="sans"
             android:textSize="18dp"
             android:textColor="#000" />
-    </com.gudu.morning.BorderRelativeLayout>
+    </com.zaocan84.zeng.BorderRelativeLayout>
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:id="@+id/relativeLayout2"
         android:background="#FFF">
+        <Button
+            android:id="@+id/show_all_address_button"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/transparent" />
         <TextView
             android:text="收货地址管理"
             android:layout_width="wrap_content"
@@ -79,16 +92,19 @@
             android:layout_alignParentRight="true"
             android:layout_marginRight="12dp" />
     </RelativeLayout>
-    <com.gudu.morning.BorderRelativeLayout
+    <com.zaocan84.zeng.BorderRelativeLayout
         android:id="@+id/all_order"
         android:background="#FFF"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_marginTop="10dp"
         app:topBorderWidth="1dp"
-        app:topBorderColor="@color/lineColor"
-        app:bottomBorderColor="@color/lineColor"
-        app:bottomBorderWidth="1dp">
+        app:topBorderColor="@color/lineColor">
+        <Button
+            android:id="@+id/show_all_order"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/transparent" />
         <TextView
             android:text="全部订单"
             android:layout_width="wrap_content"
@@ -105,18 +121,21 @@
             android:layout_centerVertical="true"
             android:layout_alignParentRight="true"
             android:layout_marginRight="12dp" />
-    </com.gudu.morning.BorderRelativeLayout>
-    <com.gudu.morning.BorderRelativeLayout
+    </com.zaocan84.zeng.BorderRelativeLayout>
+    <com.zaocan84.zeng.BorderRelativeLayout
         android:id="@+id/not_paid_order"
         android:background="#FFF"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         app:topBorderWidth="1dp"
-        app:topBorderColor="@color/lineColor"
-        app:bottomBorderColor="@color/lineColor"
-        app:bottomBorderWidth="1dp">
+        app:topBorderColor="@color/lineColor">
+        <Button
+            android:id="@+id/show_not_paid_order"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/transparent" />
         <TextView
-            android:text="代付订单"
+            android:text="待付订单"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/textView1"
@@ -131,18 +150,21 @@
             android:layout_centerVertical="true"
             android:layout_alignParentRight="true"
             android:layout_marginRight="12dp" />
-    </com.gudu.morning.BorderRelativeLayout>
-    <com.gudu.morning.BorderRelativeLayout
+    </com.zaocan84.zeng.BorderRelativeLayout>
+    <com.zaocan84.zeng.BorderRelativeLayout
         android:id="@+id/not_rated_order"
         android:background="#FFF"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         app:topBorderWidth="1dp"
-        app:topBorderColor="@color/lineColor"
-        app:bottomBorderColor="@color/lineColor"
-        app:bottomBorderWidth="1dp">
+        app:topBorderColor="@color/lineColor">
+        <Button
+            android:id="@+id/show_not_delivered_order"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/transparent" />
         <TextView
-            android:text="已完成订单"
+            android:text="待发货订单"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/textView1"
@@ -157,16 +179,19 @@
             android:layout_centerVertical="true"
             android:layout_alignParentRight="true"
             android:layout_marginRight="12dp" />
-    </com.gudu.morning.BorderRelativeLayout>
-    <com.gudu.morning.BorderRelativeLayout
+    </com.zaocan84.zeng.BorderRelativeLayout>
+    <com.zaocan84.zeng.BorderRelativeLayout
         android:id="@+id/done_order"
         android:background="#FFF"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         app:topBorderWidth="1dp"
-        app:topBorderColor="@color/lineColor"
-        app:bottomBorderColor="@color/lineColor"
-        app:bottomBorderWidth="1dp">
+        app:topBorderColor="@color/lineColor">
+        <Button
+            android:id="@+id/show_coupons"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/transparent" />
         <TextView
             android:text="我的折扣券"
             android:layout_width="wrap_content"
@@ -183,5 +208,5 @@
             android:layout_centerVertical="true"
             android:layout_alignParentRight="true"
             android:layout_marginRight="12dp" />
-    </com.gudu.morning.BorderRelativeLayout>
+    </com.zaocan84.zeng.BorderRelativeLayout>
 </LinearLayout>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:minWidth="25px"
+    android:minHeight="25px">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:id="@+id/top_bar"
+        android:background="#ff3498db"
+        android:minWidth="25px"
+        android:minHeight="25px">
+        <TextView
+            android:text="地址管理"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/campus_name_textview"
+            android:layout_alignParentLeft="false"
+            android:layout_centerVertical="true"
+            android:maxWidth="200dp"
+            android:textColor="#ffffffff"
+            android:layout_centerHorizontal="true"
+            android:textSize="16dp" />
+    </RelativeLayout>
+    <ListView
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/address_listview"
+        android:layout_above="@+id/add_address_bar"
+        android:background="#ffffff"
+        android:layout_below="@id/top_bar" />
+    <RelativeLayout
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:id="@id/add_address_bar"
+        android:background="#FF2231"
+        android:layout_alignParentBottom="true">
+        <Button
+            android:text="添加地址"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/add_address_button"
+            android:background="@color/transparent"
+            android:textColor="#fff" />
+    </RelativeLayout>
+</RelativeLayout>

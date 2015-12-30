@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:background="#fff">
+    <RelativeLayout
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:id="@+id/top_backgroud"
+        android:background="#3498DB">
+        <TextView
+            android:text="有了肯打鸡,生活好滋味"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:id="@+id/store_signature_textview"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:ellipsize="marquee"
+            android:gravity="center"
+            android:textColor="#fff"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp" />
+    </RelativeLayout>
+    <com.github.siyamed.shapeimageview.CircularImageView
+        android:src="@drawable/dice"
+        android:id="@+id/logo_imageview"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_below="@id/top_backgroud"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="-40dp"
+        local:siBorderWidth="2dp"
+        local:siBorderColor="#eeeeee" />
+    <View
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:layout_below="@id/logo_imageview"
+        android:id="@+id/middleView"
+        android:layout_centerHorizontal="true" />
+    <TextView
+        android:text="名称:"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/logo_imageview"
+        android:id="@+id/name_tag"
+        android:textColor="#BCC8C3"
+        android:layout_toLeftOf="@+id/middleView"
+        android:layout_marginRight="4dp"
+        android:layout_marginTop="14dp" />
+    <TextView
+        android:text=""
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/middleView"
+        android:id="@+id/store_name_textview"
+        android:layout_alignBaseline="@id/name_tag"
+        android:layout_marginLeft="2dp"
+        android:textColor="#5E7B79" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/name_tag"
+        android:id="@+id/view1"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:background="#D8D8D6"
+        android:layout_marginTop="12dp" />
+    <TextView
+        android:text="月销售量:"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/view1"
+        android:id="@+id/month_sale_tag"
+        android:textColor="#BCC8C3"
+        android:layout_toLeftOf="@+id/middleView"
+        android:layout_marginRight="4dp"
+        android:layout_marginTop="12dp" />
+    <TextView
+        android:text="123"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/middleView"
+        android:id="@+id/month_sale_textview"
+        android:layout_alignBaseline="@id/month_sale_tag"
+        android:layout_marginLeft="2dp"
+        android:textColor="#5E7B79" />
+    <TextView
+        android:text="回头率:"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/month_sale_tag"
+        android:id="@+id/back_ratio_tag"
+        android:textColor="#BCC8C3"
+        android:layout_toLeftOf="@+id/middleView"
+        android:layout_marginRight="4dp"
+        android:layout_marginTop="12dp"
+        android:layout_centerHorizontal="true" />
+    <TextView
+        android:text="59%"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/middleView"
+        android:id="@+id/back_ratio_textview"
+        android:layout_alignBaseline="@id/back_ratio_tag"
+        android:layout_marginLeft="2dp"
+        android:textColor="#5E7B79" />
+    <Button
+        android:text="进入店铺"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:id="@+id/enter_store_button"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="40dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:background="@drawable/login_button_background_selector"
+        android:textColor="#FFFFFF"
+        android:layout_below="@id/back_ratio_tag"
+        android:layout_marginTop="40dp" />
+</RelativeLayout>

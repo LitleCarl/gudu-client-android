@@ -22,13 +22,27 @@ using System.Reactive;
 using System.Reactive.Linq;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json;
+using Gudu.CustomView;
+using Android.Content.PM;
 
 namespace Gudu
 {
-	[Activity (Label = "StoreIndexActivity")]			
+	[Activity (Label = "StoreIndexActivity", ScreenOrientation = ScreenOrientation.Portrait)]			
 	public class StoreIndexActivity : FragmentActivity, INotifyPropertyChanged
 	{
 		private ViewPager viewPager;
+
+		private RelativeLayout _menuContainer;
+		private RelativeLayout _cardContainer;
+
+		// CardView部分
+		private Android.Widget.TextView _signatureTextView;
+		private ImageView _logoImageView;
+		private Android.Widget.TextView _storeNameTextView;
+		private Android.Widget.TextView _monthSaleTextView;
+		private Android.Widget.TextView _backRatioTextView;
+		private Android.Widget.TextView _mainFoodListTextView;
+		private Android.Widget.TextView _storeNameInCardViewTextView;
 
 		private String store_id;
 		public String Store_id {
@@ -38,18 +52,18 @@ namespace Gudu
 			set { SetField(ref store_id, value); }
 		}
 
-		private List<ProductModel> modelList;
-		public List<ProductModel> ModelList {
+		private StoreModel store;
+		public StoreModel Store {
 			get{
-				return modelList;
+				return store;
 			}
-			set { SetField(ref modelList, value); }
+			set { SetField(ref store, value); }
 		}
 
 		protected override void OnCreate (Bundle bundle)
 		{
 			base.OnCreate (bundle);
-			RequestWindowFeature (WindowFeatures.NoTitle);
+			//RequestWindowFeature (WindowFeatures.NoTitle);
 			SetContentView (Resource.Layout.store_index_activity);
 			if (this.Intent.Extras != null && this.Intent.Extras.GetString ("store_id") != null) {
 				this.Store_id = this.Intent.Extras.GetString ("store_id");
@@ -57,12 +71,28 @@ namespace Gudu
 			initUI ();
 			setUpTrigger ();
 		}	
+
 		void initUI(){
-			this.ModelList = new List<ProductModel>();
-			TabPageIndicator tab_indicator = FindViewById<TabPageIndicator>(Resource.Id.tab_indicator);
+			this.Store = new StoreModel{
+				Products =  new List<ProductModel> ()
+			};
+			MaterialUI.Widget.TabPageIndicator tab_indicator = FindViewById<MaterialUI.Widget.TabPageIndicator>(Resource.Id.tab_indicator);
 			viewPager = FindViewById<Android.Support.V4.View.ViewPager> (Resource.Id.menuViewPager);
 			viewPager.Adapter = new MenuPagerAdapter(SupportFragmentManager, this);
 			tab_indicator.SetViewPager (viewPager);
+			//viewPager.SetCurrentItem()
+			_menuContainer = FindViewById<RelativeLayout> (Resource.Id.container_view);
+			_cardContainer = FindViewById<RelativeLayout> (Resource.Id.container_view_for_cardview);
+
+			_signatureTextView = FindViewById<Android.Widget.TextView> (Resource.Id.store_signature_textview);
+			_logoImageView = FindViewById<ImageView> (Resource.Id.logo_imageview);
+			_monthSaleTextView = FindViewById<Android.Widget.TextView>(Resource.Id.month_sale_textview);
+			_backRatioTextView = FindViewById<Android.Widget.TextView> (Resource.Id.back_ratio_textview);
+			_mainFoodListTextView = FindViewById<Android.Widget.TextView> (Resource.Id.main_food_list_textview);
+			_storeNameTextView = FindViewById<Android.Widget.TextView> (Resource.Id.store_name_textview);
+			_storeNameInCardViewTextView = FindViewById<Android.Widget.TextView> (Resource.Id.store_name_textview_in_cardview);
+
+
 		}
 
 		void setUpTrigger (){
@@ -71,23 +101,50 @@ namespace Gudu
 					fetchData ();
 				}
 			);
-			this.FromMyEvent<List<ProductModel>> ("ModelList").Subscribe (
-				(productList) => {
+			this.FromMyEvent<StoreModel> ("Store").Subscribe (
+				(store) => {
 					viewPager.Adapter.NotifyDataSetChanged();
+					if (store != null){
+						_signatureTextView.Text = store.Signature;
+						_monthSaleTextView.Text = store.Month_sale;
+						_backRatioTextView.Text = String.Format("{0}%", (int)(store.Back_ratio * 100));
+						_mainFoodListTextView.Text = store.Main_food_list;
+						_storeNameTextView.Text = store.Name;
+						_storeNameInCardViewTextView.Text = store.Name;
+						Picasso.With(this).Load(store.Logo_filename).Into(_logoImageView);
+					}
 				}
 			);
+
+			FindViewById<Android.Widget.RadioButton>(Resource.Id.radio_card).CheckedChange += (object sender, Android.Widget.CompoundButton.CheckedChangeEventArgs e) => {
+				if (e.IsChecked){
+					_cardContainer.Visibility = ViewStates.Visible;
+				}
+				else{
+					_cardContainer.Visibility = ViewStates.Invisible;
+				}
+			};
+			FindViewById<Android.Widget.RadioButton>(Resource.Id.radio_menu).CheckedChange += (object sender, Android.Widget.CompoundButton.CheckedChangeEventArgs e) => {
+				if (e.IsChecked){
+					_menuContainer.Visibility = ViewStates.Visible;
+				}
+				else{
+					_menuContainer.Visibility = ViewStates.Invisible;
+				}
+			};
+
 		}
 
 		void fetchData (){
 			if (this.Store_id != null) {
-				string url = Tool.BuildUrl (URLConstant.kBaseUrl, URLConstant.kStoreFindOneUrl.Replace(":store_id",this.Store_id), null);
 				Tool.Get (
-					url,
+					URLConstant.kBaseUrl,
+					URLConstant.kStoreFindOneUrl.Replace(":store_id",this.Store_id),
 					null,
 					this,
 					(string responseObject) => {
-						var productsPart = JObject.Parse(responseObject).SelectToken("data").SelectToken("products").ToString();
-						List<ProductModel> list = JsonConvert.DeserializeObject<List<ProductModel>>(productsPart, new JsonSerializerSettings
+						var storePart = JObject.Parse(responseObject).SelectToken("data").SelectToken("store").ToString();
+						StoreModel store = JsonConvert.DeserializeObject<StoreModel>(storePart, new JsonSerializerSettings
 							{
 								Error = (sender,errorArgs) =>
 								{
@@ -96,7 +153,7 @@ namespace Gudu
 								}
 							});
 
-						this.ModelList = list;
+						this.Store = store;
 					},
 					(message) =>{},
 					showHud:true
@@ -136,7 +193,7 @@ namespace Gudu
 
 		public override Android.Support.V4.App.Fragment GetItem (int position){
 			FragmentForMenuListView fragment = new FragmentForMenuListView();
-			fragment.productList = (from product in activity.ModelList
+			fragment.menuList = (from product in activity.Store.Products
 					where product.Category.Equals(this.titleForPosition(position))
 				select product).ToList<ProductModel>();
 			return fragment;
@@ -149,7 +206,7 @@ namespace Gudu
 
 		public override int Count{
 			get{ 
-				var categories = activity.ModelList
+				var categories = activity.Store.Products
 					.Select (model => model.Category)
 					.Distinct ().ToList<string>();
 				return categories.Count;
@@ -157,7 +214,7 @@ namespace Gudu
 		}
 
 		private string titleForPosition(int position){
-			var categories = activity.ModelList
+			var categories = activity.Store.Products
 				.Select (model => model.Category)
 				.Distinct ().ToList<string>();
 			if (categories.Count < 1)
@@ -177,7 +234,7 @@ namespace Gudu
 	/// </summary>
 	public class FragmentForMenuListView: Android.Support.V4.App.Fragment{
 
-		public List<ProductModel> productList;
+		public List<ProductModel> menuList;
 
 		private Android.Widget.ListView menuListView;
 
@@ -188,7 +245,7 @@ namespace Gudu
 		{
 			View view = inflater.Inflate(Resource.Layout.store_menu_listview_fragment, container, false);
 			menuListView = view.FindViewById<Android.Widget.ListView> (Resource.Id.menu_listview);
-			menuListView.Adapter = new ProductListViewAdapter(this.Activity, productList);
+			menuListView.Adapter = new ProductListViewAdapter(this.Activity, menuList);
 			menuListView.ItemClick += (sender, arg) => {
 				Intent intent = new Intent(this.Activity, typeof(ProductDetailActivity));
 				intent.PutExtra("product_id", ((ProductListViewAdapter)(menuListView.Adapter))[arg.Position].Id);
@@ -221,9 +278,10 @@ namespace Gudu
 			if (view == null) // otherwise create a new one
 				view = context.LayoutInflater.Inflate(Resource.Layout.StoreMenuListViewCell, null);
 			ProductModel product = this [position];
-			view.FindViewById<Android.Widget.TextView>(Resource.Id.product_name_textview).Text = product.Name;
-			view.FindViewById<Android.Widget.TextView>(Resource.Id.price_textview).Text = String.Format("¥{0}~{1}",product.Min_price, product.Max_price) ;
-			Picasso.With(context).Load(product.Logo_filename).Into(view.FindViewById<ImageView>(Resource.Id.product_logo_image));
+			StoreMenuListViewCell cell = view as StoreMenuListViewCell;
+			if (cell != null) {
+				cell.Product = product;
+			}
 			return view;
 		}
 	}

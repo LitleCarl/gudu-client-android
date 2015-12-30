@@ -112,6 +112,42 @@ namespace GuduCommon
 			set { SetField(ref pinyin, value); }
 		}
 
+		private String month_sale;
+		[JsonProperty("month_sale")]
+		public String Month_sale {
+			get{
+				return month_sale;
+			}
+			set { SetField(ref month_sale, value); }
+		}
+
+		private float back_ratio;
+		[JsonProperty("back_ratio")]
+		public float Back_ratio {
+			get{
+				return back_ratio;
+			}
+			set { SetField(ref back_ratio, value); }
+		}
+
+		private String signature;
+		[JsonProperty("signature")]
+		public String Signature {
+			get{
+				return signature;
+			}
+			set { SetField(ref signature, value); }
+		}
+
+		private String main_food_list;
+		[JsonProperty("main_food_list")]
+		public String Main_food_list {
+			get{
+				return main_food_list;
+			}
+			set { SetField(ref main_food_list, value); }
+		}
+
 		public event PropertyChangedEventHandler PropertyChanged;
 		// 添加一个触发 PropertyChanged 事件的通用方法
 		protected virtual void NotifyPropertyChanged(string propertyName)

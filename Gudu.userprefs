@@ -1,10 +1,16 @@
-﻿<Properties StartupItem="Gudu/Gudu.csproj">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.Nexus4" />
-  <MonoDevelop.Ide.Workbench>
+﻿<Properties StartupItem="Gudu/ZaoCanBus.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.750BBLM227DA" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Gudu/Activity/SplashScreen.cs">
     <Files>
-      <File FileName="Gudu/Activity/ProductDetailActivity.cs" Line="99" Column="1" />
-      <File FileName="Gudu/Resources/menu/noicon.xml" Line="3" Column="1" />
-      <File FileName="Gudu/Activity/CartActivity.cs" Line="83" Column="48" />
+      <File FileName="Gudu/Class/Tool.cs" Line="1" Column="1" />
+      <File FileName="Gudu/Activity/OrderViewPagerActivity.cs" Line="1" Column="1" />
+      <File FileName="Gudu/View/OrderCellView.cs" Line="1" Column="1" />
+      <File FileName="Gudu/Activity/PayResultActivity.cs" Line="1" Column="1" />
+      <File FileName="Gudu/Properties/AndroidManifest.xml" Line="19" Column="12" />
+      <File FileName="Gudu/Class/BasicConfigManager.cs" Line="1" Column="1" />
+      <File FileName="Gudu/Activity/StoreIndexActivity.cs" Line="1" Column="1" />
+      <File FileName="../../../../../../Library/Frameworks/Xamarin.Android.framework/Versions/6.0.0-34/lib/xbuild/Xamarin/Android/Xamarin.Android.Common.targets" Line="1" Column="1" />
+      <File FileName="Gudu/Activity/SplashScreen.cs" Line="25" Column="42" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
@@ -18,5 +24,5 @@
     <String>MaterialUI/MaterialUI.csproj</String>
     <String>Mat/Mat.csproj</String>
   </DisabledProjects>
-  <MonoDevelop.Ide.ItemProperties.Gudu AndroidDesignerPreferredDevice="Nexus 4" />
+  <MonoDevelop.Ide.ItemProperties.ZaoCanBus AndroidDesignerPreferredDevice="Nexus 4" />
 </Properties>

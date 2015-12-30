@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#fff">
+    <RelativeLayout xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:id="@+id/top_bar"
+        android:background="#ff3498db"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        tools:visibility="visible">
+        <TextView
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/campus_name_textview"
+            android:layout_alignParentLeft="false"
+            android:layout_centerVertical="true"
+            android:maxWidth="200dp"
+            android:textColor="#ffffffff"
+            android:layout_centerHorizontal="true"
+            android:textSize="16dp" />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:id="@+id/search_edittext"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="20dp"
+            android:hint="(｡◕ˇ∀ˇ◕）吃包子"
+            android:textColor="#ffffff"
+            android:textColorHint="#eeeeee" />
+        <ImageButton
+            android:src="@drawable/ic_keyboard_arrow_left_white_48dp"
+            android:layout_width="46dp"
+            android:layout_height="46dp"
+            android:id="@+id/back_button"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="false"
+            android:background="@color/transparent" />
+    </RelativeLayout>
+    <gudu.morning.sectionlistview.PinnedSectionListView
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/section_listview" />
+</LinearLayout>

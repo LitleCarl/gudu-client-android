@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Gudu.CustomView.SelectCouponViewCell xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:minWidth="25px"
+    android:minHeight="25px"
+    android:clipChildren="true"
+    android:background="@color/transparent">
+    <RelativeLayout
+        android:id="@+id/color_background"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@drawable/coupon_cell_background">
+        <TextView
+            android:text="￥5.2毛"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/discount_textview"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:textSize="30dp"
+            android:textColor="#ffffff" />
+        <TextView
+            android:text="(最低消费:3元)"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/discount_textview"
+            android:id="@+id/least_pirce_textview"
+            android:layout_centerHorizontal="true" />
+        <TextView
+            android:text="还剩:3天"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/remaining_time_textview"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="20dp"
+            android:textSize="16dp" />
+    </RelativeLayout>
+</Gudu.CustomView.SelectCouponViewCell>

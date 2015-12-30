@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<Gudu.CustomView.StoreMenuListViewCell xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:local="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="88dp"
@@ -40,4 +40,16 @@
         android:textColor="@color/Alizarin"
         android:layout_marginBottom="0dp"
         android:layout_marginLeft="8dp" />
-</RelativeLayout>
+    <TextView
+        android:text="月售:"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/product_logo_image"
+        android:id="@+id/month_sale_textview"
+        android:layout_alignLeft="@id/product_name_textview"
+        android:textColor="#333"
+        android:textSize="13dp"
+        android:layout_above="@+id/price_textview"
+        android:layout_marginBottom="5dp" />
+</Gudu.CustomView.StoreMenuListViewCell>

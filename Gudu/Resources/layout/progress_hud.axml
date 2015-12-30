@@ -17,6 +17,7 @@
         local:pv_autostart="true"
         local:pv_circular="true"
         local:pv_progressStyle="@style/Material.Drawable.CircularProgress"
+        local:cpd_strokeColor="#fff"
         local:pv_progressMode="indeterminate" />
 <!--            <ImageView
         android:id="@+id/spinnerImageView"

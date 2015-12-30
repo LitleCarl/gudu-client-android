@@ -13,7 +13,7 @@
         android:id="@+id/relativeLayout1"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:background="#ff1abc9c">
+        android:background="#ff3498db">
         <TextView
             android:text="选择学校"
             android:layout_width="wrap_content"

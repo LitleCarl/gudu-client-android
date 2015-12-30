@@ -21,12 +21,17 @@ using Newtonsoft.Json.Linq;
 using Newtonsoft.Json;
 using Com.Cocosw.Bottomsheet;
 using MaterialUI;
+using Android.Content.PM;
+using AndroidHUD;
+
+
 namespace Gudu
 {
-	[Activity (Label = "ProductDetailActivity")]			
-	public class ProductDetailActivity : Activity, INotifyPropertyChanged, IMenuItemOnMenuItemClickListener, MaterialUI.Widget.SnackBar.IOnActionClickListener
+	[Activity (Label = "ProductDetailActivity", ScreenOrientation = ScreenOrientation.Portrait)]			
+	public class ProductDetailActivity : BackButtonActivity, INotifyPropertyChanged, IMenuItemOnMenuItemClickListener, MaterialUI.Widget.SnackBar.IOnActionClickListener
 	{
-
+		private ProgressBar _energyProgress;
+		private TextView _energyText;
 		private LinearLayout imagesLinearLayout;
 		private TextView titleTextView;
 		private TextView productNameTextView;
@@ -83,6 +88,8 @@ namespace Gudu
 			productBriefTextView = FindViewById<TextView> (Resource.Id.product_brief);
 			productPriceTextView = FindViewById<TextView> (Resource.Id.product_price_textview);
 			addCartButton = FindViewById<Button> (Resource.Id.addCartButton);
+			_energyProgress = FindViewById<ProgressBar> (Resource.Id.energy_progress);
+			_energyText = FindViewById<TextView> (Resource.Id.progress_textview);
 		}
 		void setUpTrigger(){
 			FindViewById<Button>(Resource.Id.select_specification_button).Click += (object sender, EventArgs e) => {
@@ -90,12 +97,17 @@ namespace Gudu
 				for(int i = 0; i < this.Product.Specifications.Count; i++){
 					builder.Menu.Add(0, i, Menu.None, this.Product.Specifications[i].SpecificationValue);
 				}
-
-
 				builder.Show();
 			};
 
 			addCartButton.Click += (object sender, EventArgs e) => {
+				
+				// 库存不够
+				if (this.currentSelectSpecification.Stock < 1){
+					AndHUD.Shared.ShowToast (this, "库存不够请挑查看其他规格", MaskType.Clear, TimeSpan.FromSeconds (1.5));
+					return;
+				}
+
 				CartItem.AddToCart(this.Product, this.CurrentSelectSpecification, 1, true);
 				MaterialUI.Widget.SnackBar snack = MaterialUI.Widget.SnackBar.Make(this).ApplyStyle(Resource.Style.Material_Widget_SnackBar_Mobile_MultiLine);
 				snack.Text("成功添加一个:"+this.Product.Name)
@@ -125,20 +137,19 @@ namespace Gudu
 						specificationNameTextview.Text = specification.Name;
 						stockTextView.Text = specification.Stock.ToString();
 						productPriceTextView.Text = string.Format("¥{0}", specification.Price.ToString());
-						addCartButton.Enabled = specification.Stock > 0;
+						//addCartButton.Enabled = specification.Stock > 0;
 					}
-					else{
-						addCartButton.Enabled = false;
-					}
+//					else{
+//						addCartButton.Enabled = false;
+//					}
 				}
 			);
 		}
 
 		void FetchData(){
-			string url = Tool.BuildUrl (URLConstant.kBaseUrl, URLConstant.kProductFindOneUrl.Replace (":product_id", this.product_id), null);
-			Tool.Get(url, null, this, (responseObject) =>{
+			Tool.Get(URLConstant.kBaseUrl, URLConstant.kProductFindOneUrl.Replace (":product_id", this.product_id), null, this, (responseObject) =>{
 				if (Tool.CheckStatusCode(responseObject)){
-					var productPart = JObject.Parse(responseObject).SelectToken("data").ToString();
+					var productPart = JObject.Parse(responseObject).SelectToken("data").SelectToken("product").ToString();
 					this.Product = JsonConvert.DeserializeObject<ProductModel>(productPart, new JsonSerializerSettings
 						{
 							Error = (sender,errorArgs) =>
@@ -153,7 +164,7 @@ namespace Gudu
 					Console.WriteLine("状态码出错");
 				}
 			},
-				(VolleyCSharp.VolleyError error) =>{
+				(exception) =>{
 					
 				});
 			
@@ -163,14 +174,17 @@ namespace Gudu
 		/// </summary>
 		void PopulateData(){
 			imagesLinearLayout.RemoveAllViews ();
-			foreach (var imageModel in this.Product.Product_images) {
-				LayoutInflater inflater = (LayoutInflater)this.BaseContext.GetSystemService(Context.LayoutInflaterService);
-				RelativeLayout relaView = (RelativeLayout) inflater.Inflate(Resource.Layout.RoundImageView, null);
+			if (this.product.Product_images != null) {
+				foreach (var imageModel in this.Product.Product_images) {
+					LayoutInflater inflater = (LayoutInflater)this.BaseContext.GetSystemService(Context.LayoutInflaterService);
+					RelativeLayout relaView = (RelativeLayout) inflater.Inflate(Resource.Layout.RoundImageView, null);
 
-				Picasso.With (this).Load (imageModel.Image_name).Into (relaView.FindViewById<ImageView>(Resource.Id.image_view));
-				ViewGroup.LayoutParams layoutParams = new ViewGroup.LayoutParams((int)DeviceInfo.kScreenWidthInPixel(this),(int)DeviceInfo.kScreenWidthInPixel(this));
-				imagesLinearLayout.AddView(relaView, 0, layoutParams);
+					Picasso.With (this).Load (imageModel.Image_name).Into (relaView.FindViewById<ImageView>(Resource.Id.image_view));
+					ViewGroup.LayoutParams layoutParams = new ViewGroup.LayoutParams((int)DeviceInfo.kScreenWidthInPixel(this),(int)DeviceInfo.kScreenWidthInPixel(this));
+					imagesLinearLayout.AddView(relaView, 0, layoutParams);
+				}
 			}
+
 
 			productNameTextView.Text = this.Product.Name;
 			titleTextView.Text = this.Product.Name;
@@ -179,10 +193,21 @@ namespace Gudu
 			}
 			productBriefTextView.Text = this.Product.Brief;
 			categoryTextView.Text = String.Format ("分类:{0}", this.Product.Category);
+
+			if (this.Product.Nutrition != null) {
+				_energyText.Text = String.Format ("热量:{0}KJ", (int)(product.Nutrition.Energy));
+				_energyProgress.Progress = (int)(Math.Min(product.Nutrition.Energy / 550.0, 0.96) * 100);
+			} else {
+				_energyText.Text = "热量不明";
+			}
 		}
 
 		public void OnActionClick (MaterialUI.Widget.SnackBar p0, int p1){
 			//TODO 去购物车
+			var intent = new Intent(this, typeof(CartActivity));
+			intent.PutExtra("show_method", ActivityShowMethod.PRESENT);
+
+			StartActivity(intent);
 		}
 		public bool OnMenuItemClick (IMenuItem item){
 			

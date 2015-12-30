@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:minWidth="25px"
+    android:minHeight="25px">
+    <RelativeLayout
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:id="@+id/relativeLayout1"
+        android:background="@drawable/address_cell_view_selector">
+        <TextView
+            android:text="曹佳鑫"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/name_textview"
+            android:layout_marginTop="12dp"
+            android:layout_marginLeft="8dp"
+            android:textColor="@drawable/address_cell_font_color"
+            android:textSize="12dp" />
+        <TextView
+            android:text="三公寓一号楼三单元606"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/name_textview"
+            android:id="@+id/address_textview"
+            android:layout_alignLeft="@id/name_textview"
+            android:textColor="@drawable/address_cell_font_color"
+            android:textSize="10dp"
+            android:layout_marginTop="8dp" />
+        <TextView
+            android:text="13122898910"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/phone_textview"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@id/name_textview"
+            android:layout_marginRight="12dp"
+            android:textColor="@drawable/address_cell_font_color"
+            android:textSize="12dp"
+            android:layout_marginTop="-4dp" />
+        <ImageView
+            android:src="@drawable/tick"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:id="@+id/accessory_indicator"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="4dp" />
+        <TextView
+            android:text="默认"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/default_address_indicator"
+            android:textColor="@color/Alizarin"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:textSize="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="4dp"
+            android:background="@drawable/default_address_indicator"
+            xmlns:tools="http://schemas.android.com/tools"
+            tools:visibility="gone" />
+    </RelativeLayout>
+</LinearLayout>

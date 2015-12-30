@@ -21,7 +21,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-package com.gudu.morning;
+package com.zaocan84.zeng;
 
 import android.annotation.TargetApi;
 import android.content.Context;

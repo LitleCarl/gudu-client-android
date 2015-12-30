@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <resources>
-	
+	<color name="redColor">#FF2231</color>
 		<color name="transparent">#00ffffff</color>
-			<color name="greenColor">#1abc9c</color>
+			<color name="greenColor">#3498db</color>
 						<color name="black">#000000</color>
 												<color name="selector">#DEDEDE</color>
 
@@ -16,7 +16,7 @@
 	<color name="radio_button_selected_color">#ff33b5e5</color>
     <color name="radio_button_unselected_color">@android:color/transparent</color>
 
-    <color name="Alizarin">#e74d3d</color>
+    <color name="Alizarin">#e74d3c</color>
     <array name="rainbow">
 	    <item>@color/tabDark</item>
         <item>@color/greenColor</item>

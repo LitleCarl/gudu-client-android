@@ -10,7 +10,7 @@
     <AssemblyName>GuduCommon</AssemblyName>
     <TargetFrameworkProfile>Profile78</TargetFrameworkProfile>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-    <ReleaseVersion>0.2</ReleaseVersion>
+    <ReleaseVersion>0.3</ReleaseVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -40,6 +40,12 @@
     <Compile Include="Model\NutritionModel.cs" />
     <Compile Include="Model\SpecificationModel.cs" />
     <Compile Include="Model\ProductImageModel.cs" />
+    <Compile Include="Model\UserModel.cs" />
+    <Compile Include="Model\AddressModel.cs" />
+    <Compile Include="Model\OrderModel.cs" />
+    <Compile Include="Model\PaymentModel.cs" />
+    <Compile Include="Model\OrderItemModel.cs" />
+    <Compile Include="Model\CouponModel.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <ItemGroup>

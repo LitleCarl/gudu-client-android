@@ -131,7 +131,14 @@ namespace GuduCommon
 			set { SetField(ref pinyin, value); }
 		}
 
-
+		private int month_sale;
+		[JsonProperty("month_sale")]
+		public int Month_sale {
+			get{
+				return month_sale;
+			}
+			set { SetField(ref month_sale, value); }
+		}
 
 		public event PropertyChangedEventHandler PropertyChanged;
 		// 添加一个触发 PropertyChanged 事件的通用方法

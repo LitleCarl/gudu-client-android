@@ -1,20 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:ProgressWheel="http://schemas.android.com/apk/res-auto"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:minWidth="25px"
     android:minHeight="25px">
-    <RelativeLayout
+    <RelativeLayout xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="64dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
         android:id="@+id/top_bar"
-        android:background="#ff1abc9c"
+        android:background="#ff3498db"
         android:minWidth="25px"
-        android:minHeight="25px">
+        android:minHeight="25px"
+        tools:visibility="visible">
+        <Button
+            android:textColor="#ffffff"
+            android:text="切换"
+            android:textSize="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/toggle_campus_button"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="0dp"
+            android:background="@color/transparent" />
+        <ImageButton
+            android:src="@drawable/icon_toolbar_search"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:id="@+id/search_button"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:scaleType="fitCenter"
+            android:layout_marginRight="8dp"
+            android:background="@color/transparent" />
         <TextView
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:layout_width="wrap_content"
@@ -27,15 +49,40 @@
             android:layout_centerHorizontal="true"
             android:textSize="16dp" />
     </RelativeLayout>
-    <ListView
-        android:minWidth="25px"
-        android:minHeight="25px"
+    <pulltorefresharp.android.views.ViewWrapper
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/store_listview"
+        android:layout_below="@id/top_bar"
+        android:id="@+id/pull_to_refrsh_pager">
+        <pulltorefresharp.android.widget.ListView
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/store_listview"
+            android:background="#ffffffff" />
+    </pulltorefresharp.android.views.ViewWrapper>
+    <com.getbase.floatingactionbutton.FloatingActionsMenu
+        android:id="@+id/right_labels"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:background="#ffffffff"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@id/top_bar" />
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        ProgressWheel:fab_addButtonColorNormal="#ffffff"
+        ProgressWheel:fab_addButtonColorPressed="#eee"
+        ProgressWheel:fab_addButtonPlusIconColor="#ddd"
+        ProgressWheel:fab_addButtonSize="mini"
+        ProgressWheel:fab_labelsPosition="right">
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/random_recommend_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            ProgressWheel:fab_icon="@drawable/ic_fab_star"
+            ProgressWheel:fab_colorPressed="#c0392b"
+            ProgressWheel:fab_colorNormal="#e74c3c"
+            ProgressWheel:fab_size="mini"
+            ProgressWheel:fab_title="Another one on the right" />
+    </com.getbase.floatingactionbutton.FloatingActionsMenu>
 </RelativeLayout>

@@ -1,4 +1,4 @@
-package com.gudu.morning;
+package com.zaocan84.zeng;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -7,8 +7,8 @@ import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 import android.widget.RelativeLayout;
 
-import com.gudu.morning.R;
-import com.gudu.morning.drawable.BorderDrawable;
+import com.zaocan84.zeng.R;
+import com.zaocan84.zeng.drawable.BorderDrawable;
 
 public class BorderRelativeLayout extends RelativeLayout {
 

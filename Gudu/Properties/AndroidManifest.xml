@@ -1,8 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.gudu.morning" android:versionName="1.2" android:versionCode="2" android:installLocation="preferExternal">
-	<uses-sdk android:minSdkVersion="15" android:targetSdkVersion="15" />
-	<application android:label="咕嘟早餐" android:theme="@style/MyTheme" >
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.zaocan84.zeng" android:installLocation="internalOnly" android:versionName="2.0.1" android:versionCode="2">
+	<uses-sdk android:minSdkVersion="15" android:targetSdkVersion="21" />
+	<application android:theme="@style/MyTheme" android:label="早餐巴士">
+		<activity android:name="com.pingplusplus.android.PaymentActivity" android:launchMode="singleTop" android:configChanges="orientation|screenSize" android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+		<!-- 微信支付注册 -->
+		<activity-alias android:name=".wxapi.WXPayEntryActivity" android:exported="true" android:targetActivity="com.pingplusplus.android.PaymentActivity" />
+		<activity-alias android:name=".wxapi.WXEntryActivity" android:exported="true" android:targetActivity="gudu.wxapi.WXEntryActivity" />
+		<!-- 支付宝注册 -->
+		<activity android:name="com.alipay.sdk.app.H5PayActivity" android:configChanges="orientation|keyboardHidden|navigation" android:exported="false" android:screenOrientation="behind" />
+		<activity android:name="com.alipay.sdk.auth.AuthActivity" android:configChanges="orientation|keyboardHidden|navigation" android:exported="false" android:screenOrientation="behind" />
 	</application>
 	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 	<uses-permission android:name="android.permission.INTERNET" />
+	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+	<uses-permission android:name="android.permission.READ_PHONE_STATE" />
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+	<uses-permission android:name="android.permission.CALL_PHONE" />
 </manifest>

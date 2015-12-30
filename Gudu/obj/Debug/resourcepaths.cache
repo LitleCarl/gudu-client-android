@@ -1,6 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Paths>
-  <AdditionalAndroidResourcePaths>/Users/MAC/.local/share/Xamarin/Android.Support.v4/22.2.1/embedded;/Users/MAC/.local/share/Xamarin/Android.Support.v7.CardView/22.2.1/embedded;/Users/MAC/.local/share/Xamarin/Android.Support.v7.AppCompat/22.2.1/embedded</AdditionalAndroidResourcePaths>
-  <AdditionalJavaLibraryReferences>/Users/MAC/.local/share/Xamarin/Android.Support.v4/22.2.1/embedded/classes.jar;/Users/MAC/.local/share/Xamarin/Android.Support.v4/22.2.1/embedded/libs/internal_impl-22.2.1.jar;/Users/MAC/.local/share/Xamarin/Android.Support.v7.CardView/22.2.1/embedded/classes.jar;/Users/MAC/.local/share/Xamarin/Android.Support.v7.AppCompat/22.2.1/embedded/classes.jar</AdditionalJavaLibraryReferences>
-  <AdditionalNativeLibraryReferences></AdditionalNativeLibraryReferences>
+  <AdditionalAndroidResourcePaths>
+    <AdditionalAndroidResourcePath>/Users/tsaojiaxin/.local/share/Xamarin/Android.Support.v4/23.1.1.0/embedded</AdditionalAndroidResourcePath>
+    <AdditionalAndroidResourcePath>/Users/tsaojiaxin/.local/share/Xamarin/Android.Support.v7.AppCompat/23.1.1.0/embedded</AdditionalAndroidResourcePath>
+    <AdditionalAndroidResourcePath>/Users/tsaojiaxin/.local/share/Xamarin/Android.Support.v7.CardView/23.1.1.0/embedded</AdditionalAndroidResourcePath>
+  </AdditionalAndroidResourcePaths>
+  <AdditionalJavaLibraryReferences>
+    <AdditionalJavaLibraryReference>/Users/tsaojiaxin/.local/share/Xamarin/Android.Support.v4/23.1.1.0/embedded/classes.jar</AdditionalJavaLibraryReference>
+    <AdditionalJavaLibraryReference>/Users/tsaojiaxin/.local/share/Xamarin/Android.Support.v4/23.1.1.0/embedded/libs/internal_impl-23.1.1.jar</AdditionalJavaLibraryReference>
+    <AdditionalJavaLibraryReference>/Users/tsaojiaxin/.local/share/Xamarin/Android.Support.v7.AppCompat/23.1.1.0/embedded/classes.jar</AdditionalJavaLibraryReference>
+    <AdditionalJavaLibraryReference>/Users/tsaojiaxin/.local/share/Xamarin/Android.Support.v7.CardView/23.1.1.0/embedded/classes.jar</AdditionalJavaLibraryReference>
+  </AdditionalJavaLibraryReferences>
+  <AdditionalNativeLibraryReferences />
 </Paths>

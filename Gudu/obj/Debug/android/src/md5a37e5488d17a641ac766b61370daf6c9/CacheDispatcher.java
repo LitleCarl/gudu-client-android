@@ -23,62 +23,6 @@ public class CacheDispatcher
 	}
 
 
-	public CacheDispatcher (java.lang.Runnable p0) throws java.lang.Throwable
-	{
-		super (p0);
-		if (getClass () == CacheDispatcher.class)
-			mono.android.TypeManager.Activate ("VolleyCSharp.CacheCom.CacheDispatcher, VolleyCSharp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", "Java.Lang.IRunnable, Mono.Android, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065", this, new java.lang.Object[] { p0 });
-	}
-
-
-	public CacheDispatcher (java.lang.Runnable p0, java.lang.String p1) throws java.lang.Throwable
-	{
-		super (p0, p1);
-		if (getClass () == CacheDispatcher.class)
-			mono.android.TypeManager.Activate ("VolleyCSharp.CacheCom.CacheDispatcher, VolleyCSharp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", "Java.Lang.IRunnable, Mono.Android, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065:System.String, mscorlib, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e", this, new java.lang.Object[] { p0, p1 });
-	}
-
-
-	public CacheDispatcher (java.lang.String p0) throws java.lang.Throwable
-	{
-		super (p0);
-		if (getClass () == CacheDispatcher.class)
-			mono.android.TypeManager.Activate ("VolleyCSharp.CacheCom.CacheDispatcher, VolleyCSharp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", "System.String, mscorlib, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e", this, new java.lang.Object[] { p0 });
-	}
-
-
-	public CacheDispatcher (java.lang.ThreadGroup p0, java.lang.Runnable p1) throws java.lang.Throwable
-	{
-		super (p0, p1);
-		if (getClass () == CacheDispatcher.class)
-			mono.android.TypeManager.Activate ("VolleyCSharp.CacheCom.CacheDispatcher, VolleyCSharp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", "Java.Lang.ThreadGroup, Mono.Android, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065:Java.Lang.IRunnable, Mono.Android, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065", this, new java.lang.Object[] { p0, p1 });
-	}
-
-
-	public CacheDispatcher (java.lang.ThreadGroup p0, java.lang.Runnable p1, java.lang.String p2) throws java.lang.Throwable
-	{
-		super (p0, p1, p2);
-		if (getClass () == CacheDispatcher.class)
-			mono.android.TypeManager.Activate ("VolleyCSharp.CacheCom.CacheDispatcher, VolleyCSharp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", "Java.Lang.ThreadGroup, Mono.Android, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065:Java.Lang.IRunnable, Mono.Android, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065:System.String, mscorlib, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e", this, new java.lang.Object[] { p0, p1, p2 });
-	}
-
-
-	public CacheDispatcher (java.lang.ThreadGroup p0, java.lang.Runnable p1, java.lang.String p2, long p3) throws java.lang.Throwable
-	{
-		super (p0, p1, p2, p3);
-		if (getClass () == CacheDispatcher.class)
-			mono.android.TypeManager.Activate ("VolleyCSharp.CacheCom.CacheDispatcher, VolleyCSharp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", "Java.Lang.ThreadGroup, Mono.Android, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065:Java.Lang.IRunnable, Mono.Android, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065:System.String, mscorlib, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e:System.Int64, mscorlib, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e", this, new java.lang.Object[] { p0, p1, p2, p3 });
-	}
-
-
-	public CacheDispatcher (java.lang.ThreadGroup p0, java.lang.String p1) throws java.lang.Throwable
-	{
-		super (p0, p1);
-		if (getClass () == CacheDispatcher.class)
-			mono.android.TypeManager.Activate ("VolleyCSharp.CacheCom.CacheDispatcher, VolleyCSharp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", "Java.Lang.ThreadGroup, Mono.Android, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065:System.String, mscorlib, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e", this, new java.lang.Object[] { p0, p1 });
-	}
-
-
 	public void run ()
 	{
 		n_run ();

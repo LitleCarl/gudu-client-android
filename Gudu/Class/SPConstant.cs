@@ -6,6 +6,8 @@ namespace Gudu
 	{			
 		
 		public static string SelectCampusIdKeyInSharedPreference = "SelectCampusIdKeyInSharedPreference";
+		public static string LoginToken = "SoginToken";
+
 		 static SPConstant ()
 		{
 		}

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:p1="http://schemas.android.com/apk/res/android"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
     p1:layout_width="match_parent"
     p1:layout_height="90dp"
     p1:id="@+id/store_list_cell"
@@ -14,6 +15,7 @@
         p1:layout_marginBottom="14dp"
         p1:layout_marginLeft="14dp"
         p1:adjustViewBounds="true"
+        p1:focusable="false"
         p1:scaleType="centerCrop" />
     <TextView
         p1:text=""
@@ -27,6 +29,7 @@
         p1:layout_marginRight="20dp"
         p1:textColor="#000"
         p1:layout_marginTop="4dp"
+        p1:focusable="false"
         p1:layout_marginLeft="12dp" />
     <TextView
         p1:text="规格:小"
@@ -38,6 +41,7 @@
         p1:layout_alignLeft="@id/product_name_textview"
         p1:textSize="12dp"
         p1:textColor="#888"
+        p1:focusable="false"
         p1:layout_marginTop="4dp" />
     <TextView
         p1:text="单价:¥1.6"
@@ -49,28 +53,22 @@
         p1:layout_alignLeft="@id/specification_textview"
         p1:textColor="#ff1931e1"
         p1:textSize="12dp"
+        p1:focusable="false"
         p1:layout_marginTop="4dp" />
-    <EditText
-        p1:layout_width="33dp"
-        p1:layout_height="33dp"
-        p1:layout_below="@id/product_name_textview"
-        p1:background="@drawable/cart_cell_background"
-        p1:id="@+id/editText1"
-        p1:layout_centerVertical="true"
-        p1:layout_alignParentRight="true"
-        p1:text="123"
-        p1:textColor="#ff666666"
-        p1:layout_marginRight="25dp"
-        p1:inputType="number" />
-    <TextView
-        p1:text="份"
-        p1:textAppearance="?android:attr/textAppearanceSmall"
+    <himanshusoni.me.quantityview.QuantityView
+        p1:id="@+id/quantityView_default"
         p1:layout_width="wrap_content"
         p1:layout_height="wrap_content"
-        p1:id="@+id/textView1"
-        p1:textColor="#666"
+        p1:layout_marginTop="10dp"
         p1:layout_centerVertical="true"
         p1:layout_alignParentRight="true"
-        p1:layout_marginRight="6dp"
-        p1:layout_marginBottom="2dp" />
+        p1:focusable="false"
+        p1:layout_marginRight="40dp" />
+    <Button
+        p1:layout_width="36dp"
+        p1:layout_height="36dp"
+        p1:id="@+id/delete_cart_image_button"
+        p1:background="@drawable/ic_delete_grey600_48dp"
+        p1:layout_centerVertical="true"
+        p1:layout_alignParentRight="true" />
 </RelativeLayout>

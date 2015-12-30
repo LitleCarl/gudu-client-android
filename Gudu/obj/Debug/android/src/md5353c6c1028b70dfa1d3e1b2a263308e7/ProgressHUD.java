@@ -23,14 +23,6 @@ public class ProgressHUD
 	}
 
 
-	public ProgressHUD (android.content.Context p0, boolean p1, android.content.DialogInterface.OnCancelListener p2) throws java.lang.Throwable
-	{
-		super (p0, p1, p2);
-		if (getClass () == ProgressHUD.class)
-			mono.android.TypeManager.Activate ("Gudu.ProgressHUD, Gudu, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", "Android.Content.Context, Mono.Android, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065:System.Boolean, mscorlib, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e:Android.Content.IDialogInterfaceOnCancelListener, Mono.Android, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065", this, new java.lang.Object[] { p0, p1, p2 });
-	}
-
-
 	public ProgressHUD (android.content.Context p0, int p1) throws java.lang.Throwable
 	{
 		super (p0, p1);

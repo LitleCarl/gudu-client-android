@@ -28,7 +28,16 @@ namespace GuduCommon
 			}
 			set { SetField(ref name, value); }
 		}
+		private String first_letter;
 
+		[JsonProperty("first_letter")]
+		public String First_letter {
+			get{ 
+
+				return first_letter;
+			}
+			set { SetField(ref first_letter, value); }
+		}
 		private String address;
 
 		[JsonProperty("address")]

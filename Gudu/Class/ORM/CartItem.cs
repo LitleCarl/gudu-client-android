@@ -3,6 +3,7 @@ using SQLite;
 using GuduCommon;
 using System.IO;
 using DSoft.Messaging;
+using Newtonsoft.Json;
 
 namespace Gudu
 {	[Table("CartItem")]
@@ -10,12 +11,19 @@ namespace Gudu
 	{
 		[PrimaryKey]
 		public string ProductAndSpecification { get; set; }
+		[JsonProperty("product_id")]
 		public string Product_id { get; set; }
+		[JsonProperty("specification_id")]
 		public string Specification_id { get; set; }
+		[JsonProperty("logo_filename")]
 		public string Logo_filename { get; set; }
+		[JsonProperty("quantity")]
 		public int Quantity { get; set; }
+		[JsonProperty("name")]
 		public string Name { get; set; }
+		[JsonProperty("specification_brief")]
 		public string SpecificationBrief { get; set; }
+		[JsonProperty("price")]
 		public string Price { get; set; }
 
 
@@ -25,6 +33,15 @@ namespace Gudu
 				                Environment.GetFolderPath (Environment.SpecialFolder.Personal), "Normal.db3");
 			dbInstance = new SQLiteConnection (dbPath);
 			dbInstance.CreateTable<CartItem> ();
+		}
+
+		public static void clearCart(){
+		
+			CartItem.dbInstance.DeleteAll<CartItem> ();
+			MessageBus.Default.Post (new CartItemChangedEvent (){
+				Sender = null,
+				Data = new object[]{"购物车商品变化"},
+			});
 		}
 
 		public static void AddToCart(ProductModel product, SpecificationModel specification, int mount, bool increase){

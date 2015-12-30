@@ -8,7 +8,7 @@
     <RootNamespace>Gudu.UITests</RootNamespace>
     <AssemblyName>Gudu.UITests</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-    <ReleaseVersion>0.2</ReleaseVersion>
+    <ReleaseVersion>0.3</ReleaseVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -38,9 +38,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Gudu\Gudu.csproj">
+    <ProjectReference Include="..\Gudu\ZaoCanBus.csproj">
       <Project>{99EE5C58-12F9-429E-B0C2-4CA2ED5CD439}</Project>
-      <Name>Gudu</Name>
+      <Name>ZaoCanBus</Name>
       <ReferenceOutputAssembly>False</ReferenceOutputAssembly>
       <Private>False</Private>
     </ProjectReference>

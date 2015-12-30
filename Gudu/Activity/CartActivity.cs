@@ -14,22 +14,36 @@ using DSoft.Messaging;
 using SQLite;
 using Squareup.Picasso;
 using Android.Views.InputMethods;
+using Himanshusoni.ME.Quantityview;
+using Android.Content.PM;
+using Gudu.Morning.Alertview;
 
 namespace Gudu
 {
-	[Activity (Label = "CartActivity")]			
+	[Activity (Label = "CartActivity", ScreenOrientation = ScreenOrientation.Portrait)]			
 	public class CartActivity : Activity
 	{
+		private bool isPresented; //表明是否是由下至上弹出
+
 		private ListView cartListView;
 		public RelativeLayout submitArea;
 		private TextView totalPriceTextview;
+		private Button checkButton;
 
 		protected override void OnCreate (Bundle bundle)
 		{
 			base.OnCreate (bundle);
-			RequestWindowFeature (WindowFeatures.NoTitle);
+			//RequestWindowFeature (WindowFeatures.NoTitle);
 			SetContentView (Resource.Layout.cart_activity);
+
+			var showMethod = this.Intent.GetStringExtra ("show_method");
+
+			if (showMethod == ActivityShowMethod.PRESENT) {
+				SetupWindowAnimations ();
+				isPresented = true;
+			}
 			// Create your application here
+			SetupWindowAnimations();
 			initUI();
 			setUpTrigger();
 		}
@@ -44,51 +58,96 @@ namespace Gudu
 			cartListView.EmptyView = emptyView;
 			cartListView.Adapter = new CartListViewAdapter (this);
 
-		}
-		void setUpTrigger(){
-			MessageBus.Default.Register<CartEmptyEvent> ((obj, messageBusEvent) => {
-				this.RunOnUiThread (new Action(()=> { 
-					bool empty = CartItem.dbInstance.Table<CartItem>().Count() < 1;
-					Console.WriteLine("购物车空了:{0}?", empty);
-					submitArea.Visibility = empty? ViewStates.Gone : ViewStates.Visible;
-				}));
+			checkButton = FindViewById<Button> (Resource.Id.check_button);
 
-			});
+		}
+
+		private void SetupWindowAnimations() {
+			OverridePendingTransition(Resource.Animation.abc_slide_in_bottom, Resource.Animation.abc_slide_out_bottom);
+		}
+
+		void setUpTrigger(){
+
+			checkButton.Click += (object sender, EventArgs e) => {
+				if (UserSession.sharedInstance().IsLogin == false) {
+					Intent login = new Intent(this, typeof(LoginActivity));
+					login.PutExtra("show_method", ActivityShowMethod.PRESENT);
+					StartActivity(login);
+					return;
+				} 
+				StartActivity(new Intent(this, typeof(SelectAddressAndPayMethodActivity)));
+			};
+
 			MessageBus.Default.Register<CartItemChangedEvent> ((obj, messageBusEvent) => {
 				ReCalculatePrice();
 			});
+			MessageBus.Default.Register<NeedReCalculatePriceEvent> ((obj, messageBusEvent) => {
+				ReCalculatePrice();
+			});
+
 			ReCalculatePrice ();
 			CartListViewAdapter myAdapter = (CartListViewAdapter) cartListView.Adapter;
 			myAdapter.RefetchData();
+
 		}
 		/// <summary>
 		/// 计算价格
 		/// </summary>
 		void ReCalculatePrice(){
-			decimal totalPrice = decimal.Parse ("0.00");
-			var items = CartItem.dbInstance.Table<CartItem> ().ToList ();
-			items.ForEach (
-				(item) => 
-				{
-					var tempPrice = Decimal.Multiply(Decimal.Parse(item.Price), new Decimal(item.Quantity));
-					totalPrice = Decimal.Add(totalPrice, tempPrice);
+			this.RunOnUiThread (
+				() => {
+					decimal totalPrice = decimal.Parse ("0.00");
+					var items = CartItem.dbInstance.Table<CartItem> ().ToList ();
+						bool empty =items.Count < 1;
+						Console.WriteLine("购物车空了:{0}?", empty);
+						submitArea.Visibility = empty? ViewStates.Invisible : ViewStates.Visible;
+					items.ForEach (
+						(item) => 
+						{
+							var tempPrice = Decimal.Multiply(Decimal.Parse(item.Price), new Decimal(item.Quantity));
+							totalPrice = Decimal.Add(totalPrice, tempPrice);
+						}
+					);
+					totalPriceTextview.Text = string.Format ("¥{0:0.00}", totalPrice);	
 				}
 			);
-			totalPriceTextview.Text = string.Format ("¥{0:0.00}", totalPrice);
+
 		}
 
+		bool doubleBackToExitPressedOnce = false;
+		public override void OnBackPressed ()
+		{
+			if (this.isPresented) {
+				base.OnBackPressed ();
+				return;
+			}
+
+			if (doubleBackToExitPressedOnce) {
+				base.OnBackPressed ();
+				Java.Lang.JavaSystem.Exit(0);
+				return;
+			} 
+
+
+			this.doubleBackToExitPressedOnce = true;
+			Toast.MakeText(this, "再点一次退出",ToastLength.Short).Show();
+
+			new Handler().PostDelayed(()=>{
+				doubleBackToExitPressedOnce=false;
+			},2000);
+		}
 
 
 	}
 
-	public class CartListViewAdapter : BaseAdapter<CartItem>, TextView.IOnEditorActionListener{
+	public class CartListViewAdapter : BaseAdapter<CartItem>, View.IOnClickListener, Gudu.Morning.Alertview.IOnItemClickListener{
 		List<CartItem> CartList;
 		Activity context;
+		int deletePosition = -1;
 		public CartListViewAdapter(Activity context) : base() {
 			this.context = context;
 			this.RefetchData ();
 			MessageBus.Default.Register<CartItemChangedEvent> ((obj, messageBusEvent) => {
-				Console.WriteLine("购物车发生变化");
 				RefetchData();
 			});
 		}
@@ -97,12 +156,12 @@ namespace Gudu
 			context.RunOnUiThread (new Action(()=> { 
 				var db = CartItem.dbInstance;
 				this.CartList = db.Table<CartItem> ().ToList<CartItem> ();
-				MessageBus.Default.Post (
-					new CartEmptyEvent(){
-						Sender = null,
-						Data = new object[]{"购物车数量变化"},
-					}
-				);
+//				MessageBus.Default.Post (
+//					new CartEmptyEvent(){
+//						Sender = null,
+//						Data = new object[]{"购物车数量变化"},
+//					}
+//				);
 				this.NotifyDataSetChanged ();
 			}));
 
@@ -124,44 +183,72 @@ namespace Gudu
 		public override View GetView(int position, View convertView, ViewGroup parent)
 		{
 			View view = convertView; // re-use an existing view, if one is available
-			if (view == null) // otherwise create a new one
-				view = context.LayoutInflater.Inflate(Resource.Layout.cart_cell, null);
 			CartItem cart = this [position];
 
+			if (view == null) // otherwise create a new one
+			{
+				view = context.LayoutInflater.Inflate(Resource.Layout.cart_cell, null);
+				QuantityView quantityView = view.FindViewById<QuantityView> (Resource.Id.quantityView_default);
+				quantityView.SetQuantityClickListener (this);
+				quantityView.MinQuantity = 1;
+				quantityView.Tag = position;
+				quantityView.Quantity = cart.Quantity;
+
+				view.FindViewById<Button> (Resource.Id.delete_cart_image_button).Click += (object sender, EventArgs e) => {
+					AlertView alertview = new AlertView("确定删除?", "", "取消", new String[]{"确定"}, null, context, 
+						AlertView.Style.Alert, this);
+					int temPosition = (int)(quantityView.Tag.JavaCast<Java.Lang.Integer>());
+					deletePosition = temPosition;
+					alertview.Show();
+				};
+
+				quantityView.QuantityChanged += (object sender, QuantityView.QuantityChangedEventArgs e) => {
+					Console.WriteLine("QuantityChanged:{0}", quantityView.Quantity);
+					int temPosition = (int)(quantityView.Tag.JavaCast<Java.Lang.Integer>());
+					CartItem temp = this[temPosition];
+					var item = CartItem.dbInstance.Table<CartItem>().Where((_item) => _item.ProductAndSpecification == temp.ProductAndSpecification).FirstOrDefault();
+									if (item != null) {
+						item.Quantity = quantityView.Quantity;
+										
+						CartItem.dbInstance.Update(item);
+
+						MessageBus.Default.Post (new NeedReCalculatePriceEvent (){
+							Sender = null,
+							Data = new object[]{"需要重新计算价格"},
+						});
+										
+									}
+				};
+			}
+			
+			QuantityView quantityView2 = view.FindViewById<QuantityView> (Resource.Id.quantityView_default);
+			quantityView2.Tag = position;
 			view.FindViewById<TextView>(Resource.Id.product_name_textview).Text = cart.Name;
 			view.FindViewById<TextView>(Resource.Id.specification_textview).Text = cart.SpecificationBrief;
 			view.FindViewById<TextView>(Resource.Id.per_price_textview).Text = cart.Price;
-			view.FindViewById<EditText>(Resource.Id.editText1).Text = cart.Quantity.ToString();
-			view.FindViewById<EditText> (Resource.Id.editText1).ImeOptions = ImeAction.Done;
-			view.FindViewById<EditText> (Resource.Id.editText1).Tag = cart.ProductAndSpecification;
-			view.FindViewById<EditText> (Resource.Id.editText1).SetOnEditorActionListener (this);
-
+			quantityView2.Quantity = cart.Quantity;
 			Picasso.With(context).Load(cart.Logo_filename).Into(view.FindViewById<ImageView>(Resource.Id.product_imageview));
 			return view;
 		}
+		/// <summary>
+		/// quantity点击事件
+		/// </summary>
+		/// <param name="v">V.</param>
+		public void OnClick (View v){
 
-		public bool OnEditorAction (TextView v, [GeneratedEnum] ImeAction actionId, KeyEvent e){
-			if (actionId == ImeAction.Done)
-			{
-				string primaryKey = (string)v.Tag;
-				var item = CartItem.dbInstance.Table<CartItem>().Where((_item) => _item.ProductAndSpecification == primaryKey).FirstOrDefault();
-				if (item != null) {
-					item.Quantity = int.Parse(((EditText)v).Text);
-					if (item.Quantity < 1){
-						CartItem.dbInstance.Delete(item);
-					}
-					else{
-						CartItem.dbInstance.Update(item);
-					}
-					MessageBus.Default.Post (new CartItemChangedEvent (){
-						Sender = null,
-						Data = new object[]{"购物车商品变化"},
-					});
-					return true;
-				}
+		}
 
+		public void OnItemClick (Java.Lang.Object p0, int p1){
+			if (p1 != AlertView.Cancelposition) {
+				CartItem temp = this[deletePosition];
+				this.CartList.Remove(temp);
+				CartItem.dbInstance.Delete(temp);
+				MessageBus.Default.Post (new CartItemChangedEvent (){
+					Sender = null,
+					Data = new object[]{"删除了一件商品"},
+				});
 			}
-			return false;
+			Console.WriteLine ("点击了alertview");
 		}
 
 

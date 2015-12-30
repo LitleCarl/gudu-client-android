@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:minWidth="25px"
+    android:minHeight="25px"
+    android:background="#fff">
+    <com.github.siyamed.shapeimageview.CircularImageView
+        android:src="@drawable/Icon"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/imageView1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        app:siBorderWidth="2dp"
+        app:siBorderColor="#ffffff" />
+    <TextView
+        android:text="为了外卖小哥能联系到你,请用手机验证登录"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imageView1"
+        android:id="@+id/textView1"
+        android:layout_centerHorizontal="true"
+        android:textColor="#B8B8B8"
+        android:layout_marginTop="20dp" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/textView1"
+        android:id="@+id/view1"
+        android:background="#EFEFEF"
+        android:layout_marginTop="20dp" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:id="@+id/relativeLayout1"
+        android:layout_below="@id/view1"
+        android:layout_alignParentBottom="true"
+        android:layout_height="wrap_content">
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="手机号"
+            android:id="@+id/phone_field"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="12dp"
+            android:numeric="integer"
+            android:singleLine="true" />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="验证码"
+            android:singleLine="true"
+            android:imeOptions="actionDone"
+            android:layout_below="@id/phone_field"
+            android:id="@+id/sms_code_field"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="120dp"
+            android:layout_marginTop="20dp"
+            android:numeric="integer" />
+        <com.rey.material.widget.Button
+            style="Material.Drawable.Ripple.Wave"
+            android:text="验证码"
+            android:textColor="#fff"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/send_sms_button"
+            android:layout_alignParentRight="true"
+            android:layout_alignBottom="@id/sms_code_field"
+            android:layout_marginRight="12dp"
+            android:background="@drawable/red_button_selector"
+            app:rd_delayClick="afterRelease"
+            app:rd_backgroundColor="#33333333"
+            app:rd_enable="true"
+            app:rd_cornerRadius="4dp" />
+        <com.rey.material.widget.Button
+            style="Material.Drawable.Ripple.Wave"
+            android:text="登录"
+            android:textColor="#fff"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/login_button"
+            android:background="@drawable/login_button_background_selector"
+            app:rd_delayClick="afterRelease"
+            app:rd_backgroundColor="#33333333"
+            app:rd_enable="true"
+            app:rd_cornerRadius="4dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/sms_code_field"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp" />
+        <ImageButton
+            android:src="@drawable/pay_weixin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/login_button"
+            android:id="@+id/bind_role_button"
+            android:layout_centerHorizontal="true"
+            android:background="@null" />
+    </RelativeLayout>
+</RelativeLayout>

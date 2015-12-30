@@ -1,29 +1,54 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.gudu.morning" android:versionName="1.2" android:versionCode="2" android:installLocation="preferExternal">
-  <uses-sdk android:minSdkVersion="15" android:targetSdkVersion="15" />
-  <application android:label="咕嘟早餐" android:theme="@style/MyTheme" android:name="mono.android.app.Application" android:debuggable="true">
-    <activity android:label="咕嘟早餐" android:name="md5353c6c1028b70dfa1d3e1b2a263308e7.MainActivity" />
-    <activity android:icon="@drawable/icon" android:label="咕嘟早餐" android:name="md5353c6c1028b70dfa1d3e1b2a263308e7.TabSampleActivity">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.zaocan84.zeng" android:installLocation="internalOnly" android:versionName="2.0.1" android:versionCode="2">
+  <uses-sdk android:minSdkVersion="15" android:targetSdkVersion="21" />
+  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+  <uses-permission android:name="android.permission.INTERNET" />
+  <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+  <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+  <uses-permission android:name="android.permission.CALL_PHONE" />
+  <application android:theme="@style/MyTheme" android:label="早餐巴士" android:name="mono.android.app.Application" android:allowBackup="true" android:debuggable="true">
+    <activity android:name="com.pingplusplus.android.PaymentActivity" android:launchMode="singleTop" android:configChanges="orientation|screenSize" android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+    <activity-alias android:name=".wxapi.WXPayEntryActivity" android:exported="true" android:targetActivity="com.pingplusplus.android.PaymentActivity" />
+    <!-- 微信支付注册 -->
+    <!-- 支付宝注册 -->
+    <activity android:name="com.alipay.sdk.app.H5PayActivity" android:configChanges="orientation|keyboardHidden|navigation" android:exported="false" android:screenOrientation="behind" />
+    <activity android:name="com.alipay.sdk.auth.AuthActivity" android:configChanges="orientation|keyboardHidden|navigation" android:exported="false" android:screenOrientation="behind" />
+    <activity android:label="早餐巴士" android:screenOrientation="portrait" android:name="md5353c6c1028b70dfa1d3e1b2a263308e7.MainActivity" />
+    <activity android:icon="@drawable/icon" android:label="早餐巴士" android:screenOrientation="portrait" android:name="md5353c6c1028b70dfa1d3e1b2a263308e7.TabSampleActivity" />
+    <activity android:label="选择学校" android:screenOrientation="portrait" android:name="md5353c6c1028b70dfa1d3e1b2a263308e7.SelectCampusActivity" />
+    <activity android:label="StoreIndexActivity" android:screenOrientation="portrait" android:name="md5353c6c1028b70dfa1d3e1b2a263308e7.StoreIndexActivity" />
+    <activity android:label="ProductDetailActivity" android:screenOrientation="portrait" android:name="md5353c6c1028b70dfa1d3e1b2a263308e7.ProductDetailActivity" />
+    <activity android:label="CartActivity" android:screenOrientation="portrait" android:name="md5353c6c1028b70dfa1d3e1b2a263308e7.CartActivity" />
+    <activity android:label="MineActivity" android:screenOrientation="portrait" android:name="md5353c6c1028b70dfa1d3e1b2a263308e7.MineActivity" />
+    <activity android:label="LoginActivity" android:screenOrientation="portrait" android:name="md5353c6c1028b70dfa1d3e1b2a263308e7.LoginActivity" />
+    <activity android:label="SelectAddressAndPayMethodActivity" android:screenOrientation="portrait" android:name="md5353c6c1028b70dfa1d3e1b2a263308e7.SelectAddressAndPayMethodActivity" />
+    <activity android:label="OrderViewPagerActivity" android:screenOrientation="portrait" android:name="md5353c6c1028b70dfa1d3e1b2a263308e7.OrderViewPagerActivity" />
+    <activity android:label="AddressManagementActivity" android:screenOrientation="portrait" android:name="md5353c6c1028b70dfa1d3e1b2a263308e7.AddressManagementActivity" />
+    <activity android:label="AddAddressActivity" android:screenOrientation="portrait" android:name="md5353c6c1028b70dfa1d3e1b2a263308e7.AddAddressActivity" />
+    <activity android:label="EditAddressActivity" android:screenOrientation="portrait" android:name="md5353c6c1028b70dfa1d3e1b2a263308e7.EditAddressActivity" />
+    <activity android:label="SearchActivity" android:screenOrientation="portrait" android:name="md5353c6c1028b70dfa1d3e1b2a263308e7.SearchActivity" />
+    <activity android:label="StoreCardViewController" android:name="md5353c6c1028b70dfa1d3e1b2a263308e7.StoreCardViewController" />
+    <activity android:label="CouponGridViewActivity" android:name="md5353c6c1028b70dfa1d3e1b2a263308e7.CouponGridViewActivity" />
+    <activity android:label="SelectCouponActivity" android:name="md5353c6c1028b70dfa1d3e1b2a263308e7.SelectCouponActivity" />
+    <activity android:label="BackButtonActivity" android:name="md5353c6c1028b70dfa1d3e1b2a263308e7.BackButtonActivity" />
+    <activity android:label="WXEntryActivity" android:name="gudu.wxapi.WXEntryActivity" />
+    <activity-alias android:name=".wxapi.WXEntryActivity" android:exported="true" android:targetActivity="gudu.wxapi.WXEntryActivity" />
+    <activity android:label="BindUserActivity" android:name="md5353c6c1028b70dfa1d3e1b2a263308e7.BindUserActivity" />
+    <activity android:label="PayResultActivity" android:name="md5353c6c1028b70dfa1d3e1b2a263308e7.PayResultActivity" />
+    <activity android:icon="@drawable/icon" android:label="早餐巴士" android:screenOrientation="portrait" android:name="md5353c6c1028b70dfa1d3e1b2a263308e7.SplashScreen">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
         <category android:name="android.intent.category.LAUNCHER" />
       </intent-filter>
     </activity>
-    <activity android:label="选择学校" android:name="md5353c6c1028b70dfa1d3e1b2a263308e7.SelectCampusActivity" />
-    <activity android:label="StoreIndexActivity" android:name="md5353c6c1028b70dfa1d3e1b2a263308e7.StoreIndexActivity" />
-    <activity android:label="ProductDetailActivity" android:name="md5353c6c1028b70dfa1d3e1b2a263308e7.ProductDetailActivity" />
-    <activity android:label="CartActivity" android:name="md5353c6c1028b70dfa1d3e1b2a263308e7.CartActivity" />
-    <activity android:label="MineActivity" android:name="md5353c6c1028b70dfa1d3e1b2a263308e7.MineActivity" />
-    <provider android:name="mono.MonoRuntimeProvider" android:exported="false" android:initOrder="2147483647" android:authorities="com.gudu.morning.mono.MonoRuntimeProvider.__mono_init__" />
+    <provider android:name="mono.MonoRuntimeProvider" android:exported="false" android:initOrder="2147483647" android:authorities="com.zaocan84.zeng.mono.MonoRuntimeProvider.__mono_init__" />
+    <!--suppress ExportedReceiver-->
     <receiver android:name="mono.android.Seppuku">
       <intent-filter>
         <action android:name="mono.android.intent.action.SEPPUKU" />
-        <category android:name="mono.android.intent.category.SEPPUKU.com.gudu.morning" />
+        <category android:name="mono.android.intent.category.SEPPUKU.com.zaocan84.zeng" />
       </intent-filter>
     </receiver>
   </application>
-  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-  <uses-permission android:name="android.permission.INTERNET" />
-  <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 </manifest>

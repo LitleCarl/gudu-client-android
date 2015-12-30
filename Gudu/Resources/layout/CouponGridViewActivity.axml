@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:minWidth="25px"
+    android:minHeight="25px">
+    <RelativeLayout
+        android:id="@+id/top_bar"
+        android:background="#ff3498db"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="64dp">
+        <TextView
+            android:text="优惠券"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/campus_name_textview"
+            android:layout_alignParentLeft="false"
+            android:layout_centerVertical="true"
+            android:maxWidth="200dp"
+            android:textColor="#ffffffff"
+            android:layout_centerHorizontal="true"
+            android:textSize="16dp" />
+    </RelativeLayout>
+    <GridView
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/coupon_gridview"
+        android:verticalSpacing="0dp"
+        android:horizontalSpacing="0dp"
+        android:stretchMode="columnWidth"
+        android:numColumns="2" />
+</LinearLayout>
