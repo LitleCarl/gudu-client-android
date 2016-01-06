@@ -105,6 +105,10 @@ namespace Gudu
 				(responseObject) => {
 					if (Tool.CheckStatusCode(responseObject)){
 						var storePart = JObject.Parse(responseObject).SelectToken("data").SelectToken("campuses").ToString();
+						var unKnownPart = JObject.Parse(responseObject).SelectToken("dataaa");
+						Console.WriteLine("-------未知part{0}--------", unKnownPart);
+						Console.WriteLine("-------未知part = null{0}--------", unKnownPart == null);
+
 						CampusList = JsonConvert.DeserializeObject<List<CampusModel>>(storePart, new JsonSerializerSettings
 							{
 								Error = (sender,errorArgs) =>

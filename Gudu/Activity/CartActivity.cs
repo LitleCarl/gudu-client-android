@@ -197,6 +197,7 @@ namespace Gudu
 				view.FindViewById<Button> (Resource.Id.delete_cart_image_button).Click += (object sender, EventArgs e) => {
 					AlertView alertview = new AlertView("确定删除?", "", "取消", new String[]{"确定"}, null, context, 
 						AlertView.Style.Alert, this);
+					
 					int temPosition = (int)(quantityView.Tag.JavaCast<Java.Lang.Integer>());
 					deletePosition = temPosition;
 					alertview.Show();

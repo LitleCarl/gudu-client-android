@@ -39,7 +39,6 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
-    <DebugType>full</DebugType>
     <JavaMaximumHeapSize>2G</JavaMaximumHeapSize>
     <AndroidSupportedAbis>armeabi-v7a;x86</AndroidSupportedAbis>
     <RunCodeAnalysis>false</RunCodeAnalysis>
@@ -198,6 +197,8 @@
     <Compile Include="Class\WXApiManager.cs" />
     <Compile Include="View\OrderItemCellForPayResultActivity.cs" />
     <Compile Include="Activity\SplashScreen.cs" />
+    <Compile Include="Class\CurrentApp.cs" />
+    <Compile Include="Class\IAlertViewActivity.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />

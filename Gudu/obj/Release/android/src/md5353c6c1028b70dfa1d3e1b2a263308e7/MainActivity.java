@@ -2,7 +2,7 @@ package md5353c6c1028b70dfa1d3e1b2a263308e7;
 
 
 public class MainActivity
-	extends android.app.Activity
+	extends md5353c6c1028b70dfa1d3e1b2a263308e7.IAlertViewActivity
 	implements
 		mono.android.IGCUserPeer
 {

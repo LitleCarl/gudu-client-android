@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.zaocan84.zeng" android:installLocation="internalOnly" android:versionName="2.0.1" android:versionCode="2">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.zaocan84.zeng" android:installLocation="internalOnly" android:versionName="2.0.2" android:versionCode="2">
 	<uses-sdk android:minSdkVersion="15" android:targetSdkVersion="21" />
 	<application android:theme="@style/MyTheme" android:label="早餐巴士">
 		<activity android:name="com.pingplusplus.android.PaymentActivity" android:launchMode="singleTop" android:configChanges="orientation|screenSize" android:theme="@android:style/Theme.Translucent.NoTitleBar" />

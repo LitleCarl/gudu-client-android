@@ -15,6 +15,7 @@ using Com.Tencent.MM.Sdk.Openapi;
 using Com.Tencent.MM.Sdk.Modelmsg;
 using Newtonsoft.Json.Linq;
 using AndroidHUD;
+using System.Reactive.Linq;
 
 namespace Gudu.Wxapi
 {
@@ -53,7 +54,11 @@ namespace Gudu.Wxapi
 							if (Tool.CheckStatusCode(responseObject)){
 
 								var data = JObject.Parse(responseObject).SelectToken("data"); 
-								var tokenPart = data.SelectToken("token").ToString();
+								string tokenPart = "";
+								var tokenPartJson = data.SelectToken("token");
+								if (tokenPartJson != null){
+									tokenPart = tokenPartJson.ToString();
+								}
 								var authPart = data.SelectToken("auth").ToString();
 
 								Console.WriteLine("tokenPart:{0}, authPart:{1}", tokenPart, authPart);
@@ -79,8 +84,12 @@ namespace Gudu.Wxapi
 								if (message == null){
 									message = "系统异常,请稍后重试";
 								}
-								AndHUD.Shared.ShowToast (this, message, MaskType.Clear, TimeSpan.FromSeconds (2.5));
-								this.Finish();
+								AndHUD.Shared.ShowToast (this, message, MaskType.Clear, TimeSpan.FromSeconds (2.0));
+								Observable.Timer(TimeSpan.FromSeconds(2.1)).Subscribe(
+									(time) => {
+										this.Finish();
+									}
+								);
 							}
 						},
 						(exception) =>{

@@ -19,6 +19,7 @@ namespace Gudu
 		public static string kRandomRecommendUrl = "services/random_recommend_store_in_campus";
 
 		public static string kBasicConfig = "services/basic_config";
+		public static string kCheckUpdateUrl = "services/check_update";
 
 		public static string kLoginUrl = "users/login_with_sms_code";
 

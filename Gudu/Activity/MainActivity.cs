@@ -21,7 +21,7 @@ using Android.Preferences;
 namespace Gudu
 {
 	[Activity (Label = "早餐巴士", ScreenOrientation=Android.Content.PM.ScreenOrientation.Portrait)]
-	public class MainActivity : Activity, INotifyPropertyChanged
+	public class MainActivity : IAlertViewActivity, INotifyPropertyChanged
 	{
 		// View Outlets
 		PullToRefresharp.Android.Widget.ListView storeListView;
@@ -59,6 +59,34 @@ namespace Gudu
 			SetContentView (Resource.Layout.Main);
 			initUI ();
 			setUpTrigger ();
+
+			//检查更新
+			checkUpdate();
+		}
+
+		void checkUpdate(){
+			Random rnd = new Random();
+			int num = rnd.Next(1, 13); // creates a number between 1 and 12
+			if (num > 6){
+				var self = new WeakReference<MainActivity> (this);
+
+
+				Observable.Timer(TimeSpan.FromSeconds(1.0)).Subscribe(
+					(time) => {
+						MainActivity act = null;
+						var stillExist = self.TryGetTarget(out act);
+						if (stillExist && act != null){
+							act.RunOnUiThread(
+								()=>{
+									CurrentApp.sharedApp().CheckAppUpdate(act);
+								}
+							);
+						}
+					}
+				);
+
+
+			}
 		}
 
 		/// <summary>

@@ -9,7 +9,7 @@ namespace Gudu
 			 
 		}
 		public static bool isMobileNO(String mobiles) {  
-			return System.Text.RegularExpressions.Regex.IsMatch(mobiles, @"^[1]+[3,5,7,8]+\d{9}$");
+			return System.Text.RegularExpressions.Regex.IsMatch(mobiles, @"^[1]+[2,3,4,5,6,7,8,9]+\d{9}$");
 		} 
 	}
 }

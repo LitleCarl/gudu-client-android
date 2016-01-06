@@ -214,6 +214,10 @@ Gudu.SplashScreen, Gudu;md5353c6c1028b70dfa1d3e1b2a263308e7.SplashScreen
 Gudu.SplashScreen, Gudu, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5353c6c1028b70dfa1d3e1b2a263308e7.SplashScreen
 Gudu.SplashScreen;md5353c6c1028b70dfa1d3e1b2a263308e7.SplashScreen
 gudu.SplashScreen;md5353c6c1028b70dfa1d3e1b2a263308e7.SplashScreen
+Gudu.IAlertViewActivity, Gudu;md5353c6c1028b70dfa1d3e1b2a263308e7.IAlertViewActivity
+Gudu.IAlertViewActivity, Gudu, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5353c6c1028b70dfa1d3e1b2a263308e7.IAlertViewActivity
+Gudu.IAlertViewActivity;md5353c6c1028b70dfa1d3e1b2a263308e7.IAlertViewActivity
+gudu.IAlertViewActivity;md5353c6c1028b70dfa1d3e1b2a263308e7.IAlertViewActivity
 VolleyCSharp.CacheCom.CacheDispatcher, VolleyCSharp;md5a37e5488d17a641ac766b61370daf6c9.CacheDispatcher
 VolleyCSharp.CacheCom.CacheDispatcher, VolleyCSharp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5a37e5488d17a641ac766b61370daf6c9.CacheDispatcher
 VolleyCSharp.CacheCom.CacheDispatcher;md5a37e5488d17a641ac766b61370daf6c9.CacheDispatcher

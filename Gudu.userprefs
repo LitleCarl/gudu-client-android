@@ -1,16 +1,10 @@
 ﻿<Properties StartupItem="Gudu/ZaoCanBus.csproj">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.750BBLM227DA" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Gudu/Activity/SplashScreen.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" PreferredExecutionTarget="Android.DU2SSE159R119472" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Gudu/Activity/WXEntryActivity.cs">
     <Files>
-      <File FileName="Gudu/Class/Tool.cs" Line="1" Column="1" />
-      <File FileName="Gudu/Activity/OrderViewPagerActivity.cs" Line="1" Column="1" />
-      <File FileName="Gudu/View/OrderCellView.cs" Line="1" Column="1" />
-      <File FileName="Gudu/Activity/PayResultActivity.cs" Line="1" Column="1" />
-      <File FileName="Gudu/Properties/AndroidManifest.xml" Line="19" Column="12" />
-      <File FileName="Gudu/Class/BasicConfigManager.cs" Line="1" Column="1" />
-      <File FileName="Gudu/Activity/StoreIndexActivity.cs" Line="1" Column="1" />
-      <File FileName="../../../../../../Library/Frameworks/Xamarin.Android.framework/Versions/6.0.0-34/lib/xbuild/Xamarin/Android/Xamarin.Android.Common.targets" Line="1" Column="1" />
-      <File FileName="Gudu/Activity/SplashScreen.cs" Line="25" Column="42" />
+      <File FileName="Gudu/Class/Tool.cs" Line="90" Column="82" />
+      <File FileName="Gudu/Activity/WXEntryActivity.cs" Line="88" Column="16" />
+      <File FileName="Gudu/Activity/AddAddressActivity.cs" Line="95" Column="10" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

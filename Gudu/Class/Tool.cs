@@ -114,12 +114,16 @@ namespace Gudu
 							var client = new RestClient(baseUrl);
 							var request = new RestRequest(resourceUrl, Method.GET);
 
+							request.AddParameter("platform", "Android");
+
 							if (param != null) {
 								foreach(KeyValuePair<string, object> entry in param)
 								{
 									request.AddParameter(entry.Key, entry.Value);
 								}
 							}
+
+
 
 							ProgressHUD hud = null;
 							if (showHud) {
@@ -166,6 +170,8 @@ namespace Gudu
 			// client.Authenticator = new HttpBasicAuthenticator(username, password);
 
 			var request = new RestRequest(resourceUrl, Method.POST);
+			request.AddParameter("platform", "Android", ParameterType.QueryString);
+
 			//request.AddJsonBody (body);
 			request.AddHeader("header", "application/json");
 			if (body == null) {
@@ -213,6 +219,8 @@ namespace Gudu
 			// client.Authenticator = new HttpBasicAuthenticator(username, password);
 
 			var request = new RestRequest(resourceUrl, Method.PUT);
+			request.AddParameter("platform", "Android", ParameterType.QueryString);
+
 			//request.AddJsonBody (body);
 			request.AddHeader("header", "application/json");
 			if (body.GetType() == typeof(String)) {
