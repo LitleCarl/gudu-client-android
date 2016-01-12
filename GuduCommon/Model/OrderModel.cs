@@ -26,6 +26,15 @@ namespace GuduCommon
 			set { SetField(ref id, value); }
 		}
 
+		private String status_desc;
+		[JsonProperty("status_desc")]
+		public String Status_desc {
+			get{
+				return status_desc;
+			}
+			set { SetField(ref status_desc, value); }
+		}
+
 		private OrderStatus status;
 		[JsonProperty("status")]
 		public OrderStatus Status {

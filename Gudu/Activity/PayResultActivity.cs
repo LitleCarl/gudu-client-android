@@ -160,7 +160,7 @@ namespace Gudu
 						this.RunOnUiThread(
 							() =>{
 								this._listView.Adapter = new OrderItemListViewAdapter(this, this.Order.Order_items);
-								this._listView.LayoutParameters.Height = Math.Max((int)DeviceInfo.dp2px(this, 30) * this.Order.Order_items.Count, (int)DeviceInfo.dp2px(this, 80));
+								this._listView.LayoutParameters.Height = Math.Max((int)DeviceInfo.dp2px(this, 30) * this.Order.Order_items.Count + 30, (int)DeviceInfo.dp2px(this, 80));
 								this._addressTextView.Text = this.Order.Receiver_address;
 								this._phoneTextView.Text = this.Order.Receiver_phone;
 								this._deliveryTimeTextView.Text = this.Order.Delivery_time;

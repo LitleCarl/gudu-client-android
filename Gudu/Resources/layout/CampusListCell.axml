@@ -7,7 +7,7 @@
     android:minHeight="50dp"
     android:background="#ffffff">
     <TextView
-        android:text="Medium Text"
+        android:text="-----"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -15,8 +15,9 @@
         android:textColor="#000"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="4dp"
-        android:layout_marginTop="4dp" />
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="6dp"
+        android:textSize="14dp" />
     <TextView
         android:text="Small Text"
         android:textAppearance="?android:attr/textAppearanceSmall"
@@ -24,5 +25,6 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/campus_name_textview"
         android:id="@+id/campus_address_textview"
-        android:layout_alignLeft="@id/campus_name_textview" />
+        android:layout_alignLeft="@id/campus_name_textview"
+        android:textSize="12dp" />
 </RelativeLayout>

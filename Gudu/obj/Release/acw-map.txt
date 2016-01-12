@@ -214,6 +214,10 @@ Gudu.SplashScreen, Gudu;md5353c6c1028b70dfa1d3e1b2a263308e7.SplashScreen
 Gudu.SplashScreen, Gudu, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5353c6c1028b70dfa1d3e1b2a263308e7.SplashScreen
 Gudu.SplashScreen;md5353c6c1028b70dfa1d3e1b2a263308e7.SplashScreen
 gudu.SplashScreen;md5353c6c1028b70dfa1d3e1b2a263308e7.SplashScreen
+Gudu.CurrentApp, Gudu;md5353c6c1028b70dfa1d3e1b2a263308e7.CurrentApp
+Gudu.CurrentApp, Gudu, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5353c6c1028b70dfa1d3e1b2a263308e7.CurrentApp
+Gudu.CurrentApp;md5353c6c1028b70dfa1d3e1b2a263308e7.CurrentApp
+gudu.CurrentApp;md5353c6c1028b70dfa1d3e1b2a263308e7.CurrentApp
 Gudu.IAlertViewActivity, Gudu;md5353c6c1028b70dfa1d3e1b2a263308e7.IAlertViewActivity
 Gudu.IAlertViewActivity, Gudu, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5353c6c1028b70dfa1d3e1b2a263308e7.IAlertViewActivity
 Gudu.IAlertViewActivity;md5353c6c1028b70dfa1d3e1b2a263308e7.IAlertViewActivity

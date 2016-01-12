@@ -226,7 +226,7 @@ namespace Gudu
 			quantityView2.Tag = position;
 			view.FindViewById<TextView>(Resource.Id.product_name_textview).Text = cart.Name;
 			view.FindViewById<TextView>(Resource.Id.specification_textview).Text = cart.SpecificationBrief;
-			view.FindViewById<TextView>(Resource.Id.per_price_textview).Text = cart.Price;
+			view.FindViewById<TextView>(Resource.Id.per_price_textview).Text = string.Format("单价:¥{0}元",cart.Price);
 			quantityView2.Quantity = cart.Quantity;
 			Picasso.With(context).Load(cart.Logo_filename).Into(view.FindViewById<ImageView>(Resource.Id.product_imageview));
 			return view;

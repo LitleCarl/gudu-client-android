@@ -101,6 +101,12 @@ namespace Gudu
 					fetchData ();
 				}
 			);
+
+			// 返回按钮点击
+			this.FindViewById<Android.Widget.ImageButton>(Resource.Id.back_button).Click += (object sender, EventArgs e) => {
+				this.Finish();
+			};
+
 			this.FromMyEvent<StoreModel> ("Store").Subscribe (
 				(store) => {
 					viewPager.Adapter.NotifyDataSetChanged();

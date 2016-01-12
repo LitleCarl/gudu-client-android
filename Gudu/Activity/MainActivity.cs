@@ -67,17 +67,18 @@ namespace Gudu
 		void checkUpdate(){
 			Random rnd = new Random();
 			int num = rnd.Next(1, 13); // creates a number between 1 and 12
-			if (num > 6){
+			if (num > 5){
 				var self = new WeakReference<MainActivity> (this);
-
 
 				Observable.Timer(TimeSpan.FromSeconds(1.0)).Subscribe(
 					(time) => {
 						MainActivity act = null;
+
 						var stillExist = self.TryGetTarget(out act);
 						if (stillExist && act != null){
 							act.RunOnUiThread(
 								()=>{
+
 									CurrentApp.sharedApp().CheckAppUpdate(act);
 								}
 							);

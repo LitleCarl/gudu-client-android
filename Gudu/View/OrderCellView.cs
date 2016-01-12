@@ -149,25 +149,26 @@ namespace Gudu.CustomView
 									if (orderModel.Campus != null){
 										this._campusNameTextView.Text = orderModel.Campus.Name;
 									}
-									string statusMessage = null;
-									if (orderModel.Status == OrderStatus.Dead){
-										statusMessage = @"已取消";
-									}
-									else if (orderModel.Status == OrderStatus.notPaid) {
-										statusMessage = @"待付款";
-									}
-									else if (orderModel.Status == OrderStatus.notDelivered){
-										statusMessage = @"待发货";
-									}
-									else if (orderModel.Status == OrderStatus.notReceived){
-										statusMessage = @"待收货";
-									}
-									else if (orderModel.Status == OrderStatus.notCommented){
-										statusMessage = @"未评价";
-									}
-									else {
-										statusMessage = @"交易成功";
-									}
+//									string statusMessage = null;
+//									if (orderModel.Status == OrderStatus.Dead){
+//										statusMessage = @"已取消";
+//									}
+//									else if (orderModel.Status == OrderStatus.notPaid) {
+//										statusMessage = @"待付款";
+//									}
+//									else if (orderModel.Status == OrderStatus.notDelivered){
+//										statusMessage = @"待发货";
+//									}
+//									else if (orderModel.Status == OrderStatus.notReceived){
+//										statusMessage = @"待收货";
+//									}
+//									else if (orderModel.Status == OrderStatus.notCommented){
+//										statusMessage = @"未评价";
+//									}
+//									else {
+//										statusMessage = @"交易成功";
+//									}
+
 
 									if (orderModel.Status == OrderStatus.notPaid){
 										_payButton.Visibility = ViewStates.Visible;
@@ -211,7 +212,7 @@ namespace Gudu.CustomView
 									_totalItemCountTextView.SetText(totalCountString, TextView.BufferType.Spannable);
 									//_campus_name_textview.Text = this.order.Campus.Name;
 
-									this._orderStatusTextView.Text = statusMessage;
+									this._orderStatusTextView.Text = order.Status_desc;
 
 									_orderListView.Adapter = new OrderItemListViewAdapter(_myContext, this.Order.Order_items);
 

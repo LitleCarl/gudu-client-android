@@ -64,7 +64,7 @@ namespace Gudu
 
 
 
-	public class CurrentApp: IOnItemClickListener, IOnDismissListener
+	public class CurrentApp:Java.Lang.Object, IOnItemClickListener, IOnDismissListener
 	{
 		public static string APP_VERSION = "2.0.2";
 
@@ -81,7 +81,7 @@ namespace Gudu
 
 		public void CheckAppUpdate(IAlertViewActivity activity){
 			var param = new Dictionary<string, object>();
-			param.Add ("APP_VERSION", APP_VERSION);
+			param.Add ("current_version", APP_VERSION);
 
 			Tool.Get (URLConstant.kBaseUrl, URLConstant.kCheckUpdateUrl, param, activity,
 				(responseObject) => {
@@ -104,7 +104,9 @@ namespace Gudu
 									if (activity.AlertIsShown){
 									}
 									else {
+
 										if (updateModel.Need_update){
+
 											activity.AlertIsShown = true;
 											AlertView alertview = new AlertView("赏脸更新下呗", updateModel.Update_message, "下次", new String[]{"更新"}, null, activity,AlertView.Style.Alert, this);
 											alertview.SetOnDismissListener(this);
@@ -131,7 +133,7 @@ namespace Gudu
 			}
 		}
 
-		public void OnDismiss (Object p0){
+		public void OnDismiss (Java.Lang.Object p0){
 			activity.AlertIsShown = false;
 		}
 
