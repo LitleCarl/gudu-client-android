@@ -17,14 +17,16 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Squareup.Picasso;
 using Android.Preferences;
+using Pull2refresh.Zaocan84.Com.Pulltorefresh;
 
 namespace Gudu
 {
 	[Activity (Label = "早餐巴士", ScreenOrientation=Android.Content.PM.ScreenOrientation.Portrait)]
-	public class MainActivity : IAlertViewActivity, INotifyPropertyChanged
+	public class MainActivity :IAlertViewActivity, INotifyPropertyChanged, Pull2refresh.Zaocan84.Com.Pulltorefresh.PullToRefreshBase.IOnRefreshListener2
 	{
 		// View Outlets
-		PullToRefresharp.Android.Widget.ListView storeListView;
+		Pull2refresh.Zaocan84.Com.Pulltorefresh.PullToRefreshListView storeListView;
+		ListView refreshableListView;
 		TextView campusNameTextView;
  		List<StoreModel> storeList;
 		public List<StoreModel> StoreList{
@@ -94,7 +96,8 @@ namespace Gudu
 		/// 初始化ui
 		/// </summary>
 		private void initUI() {
-			storeListView = FindViewById<PullToRefresharp.Android.Widget.ListView> (Resource.Id.store_listview);
+			storeListView = FindViewById<Pull2refresh.Zaocan84.Com.Pulltorefresh.PullToRefreshListView> (Resource.Id.store_listview);
+			refreshableListView = storeListView.RefreshableView as ListView;
 			campusNameTextView = FindViewById<TextView> (Resource.Id.campus_name_textview);
 		}
 
@@ -111,19 +114,27 @@ namespace Gudu
 					this.RunOnUiThread(
 						() => {
 							Console.WriteLine("list:count{0}", args);
-							storeListView.Adapter = new StoreListViewAdapter(this, (List<StoreModel>)args);
+							storeListView.SetAdapter(new StoreListViewAdapter(this, (List<StoreModel>)args));
 						}
 					);
 
 				}
 			);
 
-			storeListView.ItemClick += (object sender, AdapterView.ItemClickEventArgs e) => {
-				Intent intent = new Intent(this, typeof(StoreIndexActivity));
-				StoreModel model = ((StoreListViewAdapter)(storeListView.Adapter))[e.Position];
-				intent.PutExtra("store_id", model.Id);
-				StartActivity(intent);
-			};
+			if (refreshableListView != null) {
+				refreshableListView.ItemClick += (object sender, AdapterView.ItemClickEventArgs e) => {
+					Intent intent = new Intent(this, typeof(StoreIndexActivity));
+					var adapter = GetUnwrappedAdapter();
+					if (adapter != null){
+						
+						StoreModel model = adapter[e.Position - 1];
+						intent.PutExtra("store_id", model.Id);
+						StartActivity(intent);
+					}
+
+				};
+			}
+
 
 			//监听shared preference变化
 			var signal = SharedPreferenceSignal<String>.rac_listen_for_key<String>(SPConstant.SelectCampusIdKeyInSharedPreference);
@@ -143,9 +154,9 @@ namespace Gudu
 				}
 			);
 
-			storeListView.RefreshActivated += (object sender, EventArgs e) => {
-				this.fetchData(Tool.StringForKey(SPConstant.SelectCampusIdKeyInSharedPreference));
-			};
+			storeListView.SetOnRefreshListener (this);//.RefreshActivated += (object sender, EventArgs e) => {
+//				this.fetchData(Tool.StringForKey(SPConstant.SelectCampusIdKeyInSharedPreference));
+//			};
 
 			// 切换学校
 			FindViewById<Button>(Resource.Id.toggle_campus_button).Click += (object sender, EventArgs e) => {
@@ -205,13 +216,23 @@ namespace Gudu
 					});
 			};
 		}
+
+		// get UnWrapped Adapter
+		StoreListViewAdapter GetUnwrappedAdapter(){
+			StoreListViewAdapter adapter = null;
+			if (refreshableListView != null && refreshableListView.Adapter is HeaderViewListAdapter){
+				var headerAdapter = (refreshableListView.Adapter as HeaderViewListAdapter);
+				adapter = headerAdapter.WrappedAdapter as StoreListViewAdapter;
+			}
+			return adapter;
+		}
 			
 		private void fetchData(string campus_id){
 			Tool.Get (URLConstant.kBaseUrl, URLConstant.kStoresInCampusUrl.Replace(":campus_id", campus_id), null, this, 
 				(responseObject) => {
 					this.RunOnUiThread(
 						() => {
-							storeListView.OnRefreshCompleted();
+							storeListView.OnRefreshComplete();
 							if (Tool.CheckStatusCode(responseObject)){
 								var storesPart = JObject.Parse(responseObject).SelectToken("data").SelectToken("stores").ToString();
 
@@ -275,6 +296,16 @@ namespace Gudu
 			new Handler().PostDelayed(()=>{
 				doubleBackToExitPressedOnce=false;
 			},2000);
+		}
+
+		// 下拉刷新
+		public void OnPullDownToRefresh (PullToRefreshBase p0){
+			this.fetchData(Tool.StringForKey(SPConstant.SelectCampusIdKeyInSharedPreference));
+		}
+
+		// 上拉刷新
+		public void OnPullUpToRefresh (PullToRefreshBase p0){
+			
 		}
 
 	}

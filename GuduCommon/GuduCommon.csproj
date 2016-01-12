@@ -8,7 +8,7 @@
     <OutputType>Library</OutputType>
     <RootNamespace>GuduCommon</RootNamespace>
     <AssemblyName>GuduCommon</AssemblyName>
-    <TargetFrameworkProfile>Profile78</TargetFrameworkProfile>
+    <TargetFrameworkProfile>Profile7</TargetFrameworkProfile>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <ReleaseVersion>0.3</ReleaseVersion>
   </PropertyGroup>

@@ -19,7 +19,6 @@ namespace GuduCommon
 		[JsonProperty("id")]
 		public String Id {
 			get{ 
-
 				return id;
 			}
 			set { SetField(ref id, value); }

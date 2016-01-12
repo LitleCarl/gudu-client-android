@@ -49,19 +49,12 @@
             android:layout_centerHorizontal="true"
             android:textSize="16dp" />
     </RelativeLayout>
-    <pulltorefresharp.android.views.ViewWrapper
+    <pull2refresh.zaocan84.com.pulltorefresh.PullToRefreshListView
+        android:layout_below="@id/top_bar"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/top_bar"
-        android:id="@+id/pull_to_refrsh_pager">
-        <pulltorefresharp.android.widget.ListView
-            android:minWidth="25px"
-            android:minHeight="25px"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/store_listview"
-            android:background="#ffffffff" />
-    </pulltorefresharp.android.views.ViewWrapper>
+        android:id="@+id/store_listview"
+        android:background="#ffffffff" />
     <com.getbase.floatingactionbutton.FloatingActionsMenu
         android:id="@+id/right_labels"
         android:layout_width="wrap_content"

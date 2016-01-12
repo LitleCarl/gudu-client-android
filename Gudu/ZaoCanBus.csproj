@@ -100,9 +100,6 @@
     <Reference Include="QuantityView">
       <HintPath>lib\QuantityView.dll</HintPath>
     </Reference>
-    <Reference Include="PullToRefresharp">
-      <HintPath>lib\PullToRefresharp.dll</HintPath>
-    </Reference>
     <Reference Include="TransitionKit">
       <HintPath>lib\TransitionKit.dll</HintPath>
     </Reference>

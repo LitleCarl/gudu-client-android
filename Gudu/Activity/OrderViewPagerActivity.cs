@@ -20,20 +20,20 @@ using Gudu.CustomView;
 using System.Reactive.Linq;
 using Newtonsoft.Json.Linq;
 using DSoft.Messaging;
-using Com.Costum.Android.Widget;
 using AndroidHUD;
 using Android.Content.PM;
+using Pull2refresh.Zaocan84.Com.Pulltorefresh;
 
 
 namespace Gudu
 {
 	[Activity (Label = "OrderViewPagerActivity", ScreenOrientation = ScreenOrientation.Portrait)]			
-	public class OrderViewPagerActivity : FragmentActivity, ViewPager.IOnPageChangeListener
+	public class OrderViewPagerActivity : FragmentActivity, ViewPager.IOnPageChangeListener, Pull2refresh.Zaocan84.Com.Pulltorefresh.PullToRefreshBase.IOnRefreshListener2
 	{
 		private int REQUEST_CODE_PAYMENT = 23145;
 
 		private OrderStatus initOrderStatus;
-		private PullAndLoadListView _orderListView;
+		private PullToRefreshListView _orderListView;
 		private OrderListViewAdapter _orderListViewAdapter;
 		private MaterialUI.Widget.TabPageIndicator _pageIndicator;
 		private ViewPager _virtualViewPager;
@@ -48,12 +48,16 @@ namespace Gudu
 		}
 
 		void initUI(){
-			_orderListView = FindViewById<PullAndLoadListView> (Resource.Id.order_listview);
+			_orderListView = FindViewById<PullToRefreshListView> (Resource.Id.order_listview);
+			var emptyView = this.LayoutInflater.Inflate (Resource.Layout.OrderListViewEmptyView, null);
+			AddContentView(emptyView, _orderListView.LayoutParameters); 
+			_orderListView.SetEmptyView(emptyView);
+
 			_pageIndicator = FindViewById<MaterialUI.Widget.TabPageIndicator> (Resource.Id.tab_indicator);
 			_virtualViewPager = FindViewById<ViewPager> (Resource.Id.menuViewPager);
 
 			_orderListViewAdapter = new OrderListViewAdapter(this, initOrderStatus);
-			_orderListView.Adapter = _orderListViewAdapter;
+			_orderListView.SetAdapter(_orderListViewAdapter);
 
 			RelativeLayout top_bar = FindViewById<RelativeLayout> (Resource.Id.top_bar);
 			ImageButton imgButton = new ImageButton(this);
@@ -73,19 +77,8 @@ namespace Gudu
 			_virtualViewPager.Adapter = new VirtualPagerAdapter (SupportFragmentManager);
 			_pageIndicator.SetViewPager (_virtualViewPager);
 			_pageIndicator.SetOnPageChangeListener (this);
-			var emptyView = this.LayoutInflater.Inflate (Resource.Layout.OrderListViewEmptyView, null);
-			AddContentView(emptyView, _orderListView.LayoutParameters); 
-			_orderListView.EmptyView = emptyView;
-
-			_orderListView.Refresh += (object sender, EventArgs e) => {
-				OrderListViewAdapter adapter = this._orderListViewAdapter;
-				adapter.page = 0;
-				adapter.fetchData(adapter.Status);
-			};
-			_orderListView.LoadMore += (object sender, EventArgs e) => {
-				OrderListViewAdapter adapter = this._orderListViewAdapter;
-				adapter.fetchData(adapter.Status ,loadMore: true);
-			};
+			_orderListView.SetOnRefreshListener (this);
+			_orderListView.Mode = Pull2refresh.Zaocan84.Com.Pulltorefresh.PullToRefreshBase.CustomMode.Both;
 
 			MessageBus.Default.Register<OrderRefreshOverEvent> (
 				(sender, theEvent) => {
@@ -100,14 +93,17 @@ namespace Gudu
 				(sender, theEvent) => {
 					this.RunOnUiThread(
 						() => {
-							this._orderListView.OnLoadMoreComplete();
+							this._orderListView.OnRefreshComplete();
 						}
 					);
 				}
 			);
-			_orderListView.ChoiceMode = ChoiceMode.Single;
-			_orderListView.ItemClick += (object sender, AdapterView.ItemClickEventArgs e) => {
+			var refreshableView = _orderListView.RefreshableView as ListView;
+			refreshableView.ChoiceMode = ChoiceMode.Single;
+
+			refreshableView.ItemClick += (object sender, AdapterView.ItemClickEventArgs e) => {
 				OrderListViewAdapter adapter = this._orderListViewAdapter;
+//				Console.WriteLine("dadasdsadsat--------,{0}", refreshableView.Adapter);
 				adapter.seeOrderDetail(e.Position);
 			};
 
@@ -174,6 +170,20 @@ namespace Gudu
 			adapter.Status = status;
 		}
 
+
+		// 下拉刷新
+		public void OnPullDownToRefresh (PullToRefreshBase p0){
+			OrderListViewAdapter adapter = this._orderListViewAdapter;
+			adapter.page = 0;
+			adapter.fetchData(adapter.Status);
+		}
+
+		// 上拉刷新
+		public void OnPullUpToRefresh (PullToRefreshBase p0){
+			OrderListViewAdapter adapter = this._orderListViewAdapter;
+			adapter.fetchData(adapter.Status ,loadMore: true);
+		}
+
 	}
 
 	/// <summary>
@@ -219,7 +229,7 @@ namespace Gudu
 
 		public override Java.Lang.ICharSequence GetPageTitleFormatted (int position){
 
-			return CharSequence.ArrayFromStringArray(new string[]{titleForPosition(position)})[0];
+			return CharSequence.ArrayFromStringArray (new string[]{ titleForPosition (position) }) [0];
 		}
 
 	}
