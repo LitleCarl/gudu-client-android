@@ -138,7 +138,8 @@ namespace Gudu
 					this.Kefu_phone = data.SelectToken("kefu_phone").Value<String>();
 				}
 				else {
-					MaterialUI.Widget.SnackBar snack = MaterialUI.Widget.SnackBar.Make(context).ApplyStyle(Resource.Style.Material_Widget_SnackBar_Mobile_MultiLine);
+					MaterialUI.Widget.SnackBar snack = MaterialUI.Widget.SnackBar.Make(context);
+					snack.ApplyStyle(Resource.Style.Material_Widget_SnackBar_Mobile_MultiLine);
 					snack.Text("与服务器断开连接,请联系客服")
 						.ActionText("确定")
 						.Duration(1000);

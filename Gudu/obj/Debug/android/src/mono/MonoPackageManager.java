@@ -107,6 +107,7 @@ class MonoPackageManager_Resources {
 		"Xamarin.Android.Support.v7.AppCompat.dll",
 		"Xamarin.Android.Support.v7.CardView.dll",
 		"TsaoPullToRefresh.dll",
+		"Xamarin.Android.Support.v7.RecyclerView.dll",
 		"GuduCommon.dll",
 		"System.Reflection.Emit.ILGeneration.dll",
 		"System.Reflection.Emit.Lightweight.dll",

@@ -7,6 +7,8 @@ using Gudu.Morning.Alertview;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using Android.Content;
+using MaterialUI.App;
+using Android.Views;
 
 namespace Gudu
 {
@@ -64,9 +66,9 @@ namespace Gudu
 
 
 
-	public class CurrentApp:Java.Lang.Object, IOnItemClickListener, IOnDismissListener
+	public class CurrentApp:Java.Lang.Object, IOnItemClickListener, IOnDismissListener, Android.Views.View.IOnClickListener
 	{
-		public static string APP_VERSION = "2.0.2";
+		public static string APP_VERSION = "2.0.1";
 
 		private static CurrentApp app;
 		public static CurrentApp sharedApp(){
@@ -108,9 +110,22 @@ namespace Gudu
 										if (updateModel.Need_update){
 
 											activity.AlertIsShown = true;
-											AlertView alertview = new AlertView("赏脸更新下呗", updateModel.Update_message, "下次", new String[]{"更新"}, null, activity,AlertView.Style.Alert, this);
-											alertview.SetOnDismissListener(this);
-											alertview.Show();
+											var alertBuilder = new MaterialUI.App.SimpleDialog.Builder().Message(updateModel.Update_message).Title("赏脸更新下呗").PositiveAction("好的").NegativeAction("下次");
+											var alert = alertBuilder.Build(activity);
+											alert.MPositiveAction.Click += (object sender, EventArgs e) => {
+												Intent browserIntent = new Intent(Intent.ActionView, Android.Net.Uri.Parse(updateModel.Download_url));
+												activity.StartActivity(browserIntent);
+												alert.Dismiss();
+											};
+											alert.MNegativeAction.Click += (object sender, EventArgs e) => {
+												alert.Dismiss();
+											};
+											alert.DismissEvent += (object sender, EventArgs e) => {
+												activity.AlertIsShown = false;
+											};
+											alert.SetCancelable(false);
+											alert.Show();
+
 										}
 									}
 
@@ -135,6 +150,11 @@ namespace Gudu
 
 		public void OnDismiss (Java.Lang.Object p0){
 			activity.AlertIsShown = false;
+		}
+
+		// 按钮点击
+		public void OnClick (View v){
+			Console.WriteLine ("button click:{0}", v);
 		}
 
 		public CurrentApp ()

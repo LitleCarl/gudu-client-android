@@ -69,7 +69,7 @@ namespace Gudu
 		void checkUpdate(){
 			Random rnd = new Random();
 			int num = rnd.Next(1, 13); // creates a number between 1 and 12
-			if (num > 5){
+			if (num > 0){
 				var self = new WeakReference<MainActivity> (this);
 
 				Observable.Timer(TimeSpan.FromSeconds(1.0)).Subscribe(

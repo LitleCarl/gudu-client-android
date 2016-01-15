@@ -3,7 +3,6 @@
     xmlns:local="http://schemas.android.com/apk/res-auto"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:background="@drawable/progress_hud_bg"
     android:layout_gravity="center"
     android:orientation="vertical"
     android:gravity="center_horizontal"
@@ -12,11 +11,10 @@
     android:paddingBottom="20dp"
     android:paddingTop="20dp">
     <com.rey.material.widget.ProgressView
-        android:layout_width="48dp"
-        android:layout_height="48dp"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
         local:pv_autostart="true"
         local:pv_circular="true"
-        local:pv_progressStyle="@style/Material.Drawable.CircularProgress"
         local:cpd_strokeColor="#fff"
         local:pv_progressMode="indeterminate" />
 <!--            <ImageView
@@ -30,5 +28,6 @@
         android:layout_height="wrap_content"
         android:text="Message"
         android:layout_marginTop="15dp"
+        android:visibility="invisible"
         android:textColor="#FFFFFF" />
 </LinearLayout>

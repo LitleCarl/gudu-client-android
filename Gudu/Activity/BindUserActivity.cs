@@ -167,7 +167,8 @@ namespace Gudu
 							this.Finish();
 					}
 					else {
-						MaterialUI.Widget.SnackBar snack = MaterialUI.Widget.SnackBar.Make(this).ApplyStyle(Resource.Style.Material_Widget_SnackBar_Mobile_MultiLine);
+						MaterialUI.Widget.SnackBar snack = MaterialUI.Widget.SnackBar.Make(this);
+						snack.ApplyStyle(Resource.Style.Material_Widget_SnackBar_Mobile_MultiLine);
 						snack.Text("登录失败,请检查是否输入正确")
 							.ActionText("")
 							.Duration(1000);

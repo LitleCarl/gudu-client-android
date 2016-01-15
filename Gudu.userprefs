@@ -1,9 +1,9 @@
 ﻿<Properties StartupItem="Gudu/ZaoCanBus.csproj">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.DU2SSE159R119472" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Gudu/Activity/MainActivity.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.10.71.34.101:5555" />
+  <MonoDevelop.Ide.Workbench>
     <Files>
-      <File FileName="Gudu/Activity/MainActivity.cs" Line="25" Column="29" />
-      <File FileName="Gudu/Activity/OrderViewPagerActivity.cs" Line="106" Column="24" />
+      <File FileName="Gudu/Class/CurrentApp.cs" Line="121" Column="1" />
+      <File FileName="Gudu/Resources/values/Styles.xml" Line="46" Column="16" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

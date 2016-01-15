@@ -109,7 +109,8 @@ namespace Gudu
 				}
 
 				CartItem.AddToCart(this.Product, this.CurrentSelectSpecification, 1, true);
-				MaterialUI.Widget.SnackBar snack = MaterialUI.Widget.SnackBar.Make(this).ApplyStyle(Resource.Style.Material_Widget_SnackBar_Mobile_MultiLine);
+				MaterialUI.Widget.SnackBar snack = MaterialUI.Widget.SnackBar.Make(this);
+				snack.ApplyStyle(Resource.Style.Material_Widget_SnackBar_Mobile_MultiLine);
 				snack.Text("成功添加一个:"+this.Product.Name)
 					.ActionText("购物车")
 					.ActionClickListener(

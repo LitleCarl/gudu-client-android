@@ -32,8 +32,8 @@ namespace Gudu
 	{
 		private ViewPager viewPager;
 
-		private RelativeLayout _menuContainer;
-		private RelativeLayout _cardContainer;
+		private Android.Widget.RelativeLayout _menuContainer;
+		private Android.Widget.RelativeLayout _cardContainer;
 
 		// CardView部分
 		private Android.Widget.TextView _signatureTextView;
@@ -81,8 +81,8 @@ namespace Gudu
 			viewPager.Adapter = new MenuPagerAdapter(SupportFragmentManager, this);
 			tab_indicator.SetViewPager (viewPager);
 			//viewPager.SetCurrentItem()
-			_menuContainer = FindViewById<RelativeLayout> (Resource.Id.container_view);
-			_cardContainer = FindViewById<RelativeLayout> (Resource.Id.container_view_for_cardview);
+			_menuContainer = FindViewById<Android.Widget.RelativeLayout> (Resource.Id.container_view);
+			_cardContainer = FindViewById<Android.Widget.RelativeLayout> (Resource.Id.container_view_for_cardview);
 
 			_signatureTextView = FindViewById<Android.Widget.TextView> (Resource.Id.store_signature_textview);
 			_logoImageView = FindViewById<ImageView> (Resource.Id.logo_imageview);

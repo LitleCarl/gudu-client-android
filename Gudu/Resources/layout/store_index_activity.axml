@@ -230,12 +230,13 @@
         <com.rey.material.widget.TabPageIndicator
             android:id="@+id/tab_indicator"
             style="@style/Material.Widget.TabPageIndicator"
-            android:background="#47565E"
+            android:background="#ff3498db"
             android:layout_width="match_parent"
             local:tpi_tabPadding="20dp"
-            local:tpi_indicatorColor="@color/greenColor"
+            local:tpi_indicatorColor="#00ffff"
             local:tpi_mode="scroll"
             android:textAppearance="@style/TabIndicatorTextColor"
+            android:checkMark="?android:attr/textCheckMark"
             android:layout_height="48dp" />
         <android.support.v4.view.ViewPager
             android:id="@+id/menuViewPager"

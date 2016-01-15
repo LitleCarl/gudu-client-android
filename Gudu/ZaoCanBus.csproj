@@ -20,6 +20,7 @@
     <ReleaseVersion>0.3</ReleaseVersion>
     <AndroidEnableMultiDex>true</AndroidEnableMultiDex>
     <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
+    <AndroidSupportedAbis>armeabi-v7a;x86</AndroidSupportedAbis>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -40,7 +41,6 @@
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
     <JavaMaximumHeapSize>2G</JavaMaximumHeapSize>
-    <AndroidSupportedAbis>armeabi-v7a;x86</AndroidSupportedAbis>
     <RunCodeAnalysis>false</RunCodeAnalysis>
   </PropertyGroup>
   <ItemGroup>
@@ -132,6 +132,9 @@
     </Reference>
     <Reference Include="TsaoPullToRefresh">
       <HintPath>lib\TsaoPullToRefresh.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.v7.RecyclerView">
+      <HintPath>..\packages\Xamarin.Android.Support.v7.RecyclerView.23.1.1.0\lib\MonoAndroid403\Xamarin.Android.Support.v7.RecyclerView.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
